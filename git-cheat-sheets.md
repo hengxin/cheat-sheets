@@ -1,6 +1,21 @@
 ## Abstract
 This is a cheat sheet for common Git usage.
 
+## Git init and GitHub repository
+
+### Case study (1): Adding an existing project to GitHub
+
+You have created a repository (with url `rep-url`) in GitHub and you also have a local project.
+You can add the existing project to the GitHub repository in the following steps (all at the local project side):
+
+- `git init`
+- `git add -A`
+- `git commit -m 'commit-msg'`
+- `git remote add origin rep-url`
+- `git push origin master`
+
+> Refer to [Adding an existing project to GitHub using the command line](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+
 ## Commit and Exceptions
 
 ### Commit
@@ -17,9 +32,9 @@ This is a cheat sheet for common Git usage.
 - push
 `git commit origin branch-name`
 
-### Exceptions
+### 
 
-- amending the commit message *before* push
+- amend the commit message *before* push
 
   - `git commit --amend` to promote an editor with the original message; OR,
 
@@ -33,7 +48,7 @@ This is a cheat sheet for common Git usage.
   
   - `git checkout -- .` for all files 
   
-  ## Branches
+## Branches
 
 ### Create branch
 
