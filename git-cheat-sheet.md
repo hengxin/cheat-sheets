@@ -16,6 +16,13 @@ You can add the existing project to the GitHub repository in the following steps
 
 > Refer to [Adding an existing project to GitHub using the command line](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
 
+### Case study (2): Reinitialize an existing repository
+
+An interesting problem on `git init`: [Does running git init twice initialize a repository or reinitialize an existing repo?@stackoverflow](http://stackoverflow.com/q/5149694/1833118)
+
+The answer is "don't worry". Git docs:
+> Running `git init` in an existing repository is safe. It will not overwrite things that are already there. The primary reason for rerunning git init is to pick up newly added templates.
+
 ## Commit
 
 ### Basic Commands
@@ -66,6 +73,12 @@ Filter commit history:
   - `git checkout -- .` for all files 
   
 3. Delete commits
+
+## Remote
+
+- `git remote add origin git://remote-site-url`
+- `git remote set-url origin git://new.url.here`
+  Refer to [how to remove remote origin from git repo@stackoverflow](http://stackoverflow.com/a/16330439/1833118).
   
 ## Branches
 
