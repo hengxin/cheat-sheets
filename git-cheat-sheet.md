@@ -1,4 +1,3 @@
-## Abstract
 This is a cheat sheet for common Git usage.
 
 ## Git init and GitHub repository
@@ -56,7 +55,11 @@ Filter commit history:
 - `git log --since=[2.weeks | 2016-01-27 | 2 years 1 day 30 minutes ago]` there are also `--after|until|before`
 - `git --author|--committer|--grep|-S` where `-S(string)` only shows commits adding or removing code matching the string
 
-### Case Study
+### Case Study: undo
+
+1. Undo 'git add' *before* commit
+  - `git reset <file>` to remove this file from the current index
+  - `git reset` to unstage all due changes
 
 1. Amend the commit message *before* push
 
