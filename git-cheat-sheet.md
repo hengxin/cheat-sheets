@@ -61,7 +61,7 @@ Filter commit history:
   - `git reset <file>` to remove this file from the current index
   - `git reset` to unstage all due changes
 
-> Refer to [Undo 'git add' before commit@stackoverflow](http://stackoverflow.com/q/348170/1833118).
+  > Refer to [Undo 'git add' before commit@stackoverflow](http://stackoverflow.com/q/348170/1833118).
 
 2. Amend the commit message *before* push
 
