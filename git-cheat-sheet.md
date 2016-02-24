@@ -61,13 +61,15 @@ Filter commit history:
   - `git reset <file>` to remove this file from the current index
   - `git reset` to unstage all due changes
 
-1. Amend the commit message *before* push
+> Refer to [Undo 'git add' before commit@stackoverflow](http://stackoverflow.com/q/348170/1833118).
+
+2. Amend the commit message *before* push
 
   - `git commit --amend` to promote an editor with the original message; OR,
 
   - `git commit --amend -m 'new commit message'`
 
-2. Discard unstaged changes
+3. Discard unstaged changes
 
   - `git clean -df` to first removes all untracked files if you want, and then
 
@@ -75,7 +77,7 @@ Filter commit history:
   
   - `git checkout -- .` for all files 
   
-3. Delete commits
+4. Delete commits
 
 ## Remote
 
