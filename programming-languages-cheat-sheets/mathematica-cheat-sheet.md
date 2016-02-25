@@ -10,11 +10,15 @@ This file collects syntax, semantics, and common usages of Mathematica (mma, for
 
 - Partition
 
-  `In := Partition[{1,2,3,4,5,6},2]` => `Out:= {{1,2}, {3,4}, {5,6}}`
+  `In:= Partition[{1,2,3,4,5,6},2]` => `Out:= {{1,2}, {3,4}, {5,6}}`
   
-## Applying Functions to Lists
+## Filtering Lists
 
-## Predicates on Lists
+> *Refer to [Filtering Lists in Mathematica@mma.se](http://mathematica.stackexchange.com/q/16676/22068)*.
+
+- Select
+  
+  `In:= Select[{1,2,3,4,5,6}, # > 3 &]` => `Out:= {4,5,6}`
 
 ## Math & Counting Operations
 
