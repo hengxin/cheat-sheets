@@ -2,6 +2,24 @@ This file collects syntax, semantics, and common usages of Mathematica (mma, for
 
 # List Manipulation
 
+## Constructing Lists
+
+## Elements of Lists
+
+## Rearranging & Restructuring Lists
+
+- Partition
+
+  `In := Partition[{1,2,3,4,5,6},2]` => `Out:= {{1,2}, {3,4}, {5,6}}`
+  
+## Applying Functions to Lists
+
+## Predicates on Lists
+
+## Math & Counting Operations
+
+## Displaying & Visualizing Lists
+
 # Files
 
 ## Importing Data from File
