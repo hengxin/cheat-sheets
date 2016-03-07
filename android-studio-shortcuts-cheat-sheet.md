@@ -23,6 +23,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## Refactor
 
+- `Shift + F6`: rename
+
 ## Build
 
 ## Run
