@@ -1,5 +1,18 @@
 # Linux Commands Cheat Sheet
 
+## Terminals
+
+### Open
+- `ctrl+alt+t`: open a new terminal window
+- `ctrl+shift+t`: open a terminal tab in the current terminal window
+
+### Close
+- `exit`: close the current terminal tab
+- `ctrl+shift+w`: close the current terminal tab
+- `ctrl+shift+q`: close all terminal tabs and thus the current terminal window
+
+> Refer to [Is there a command to close a terminal window via commandline? (from askubuntu)](http://askubuntu.com/a/19399/306000).
+
 ## File and Directory
 
 ### `ls`
