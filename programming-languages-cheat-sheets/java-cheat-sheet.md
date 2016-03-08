@@ -4,6 +4,15 @@
 
 - [`File.separator` and `File.pathSeparator` (from stackoverflow)](http://stackoverflow.com/a/5972020/1833118)
   - Using them to write OS-independent code.
+- Using [`System.lineSeparator()`](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#lineSeparator--) to get the system-dependent line separator string. On UNIX systems, it returns `"\n"`; on Microsoft Windows systems it returns `"\r\n"`.
+
+## IO
+
+### java.io.Reader
+
+### java.io.Writer
+
+- [`newLine() in java.io.BufferedWriter`](http://docs.oracle.com/javase/6/docs/api/java/io/BufferedWriter.html#newLine()) uses the platform's own notion of line separator as defined by the system property `line.separator`. Using this method to write OS-independent code. 
 
 ## Networking
 
