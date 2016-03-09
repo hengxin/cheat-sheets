@@ -2,7 +2,33 @@
 
 ## File
 
-## Copy
+### List a Directory
+
+Using `FileFilter` or `FilenameFilter` to filter listed files obtained from `list()` or `listFiles()`.
+
+```
+File[] directories = new File("/your/path/").listFiles(new FileFilter() {
+    @Override
+    public boolean accept(File file) {
+        return file.isDirectory();
+    }
+});
+
+String[] list = dir.list(new FilenameFilter() {
+    @Override
+    public boolean accept(File dir, String name) {
+        return name.matches("[0-9]+");
+    }
+});
+```
+Or, written as lambda expression in JDK 8+.
+
+```
+File[] directories = new File("/your/path/").listFiles(File::isDirectory);
+String[] list = dir.list( (dir, name) -> name.matches("[0-9]+") );
+```
+
+### Copy
 
 In JDK 7+, using `Files.copy` as follows (stolen code: [Copy a file](http://www.javapractices.com/topic/TopicAction.do?Id=246)):
 
