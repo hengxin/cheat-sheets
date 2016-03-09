@@ -4,8 +4,8 @@ This is a cheat sheet for common Git usage.
 
 ### Case study (1): Adding an existing project to GitHub
 
-You have created a repository (with url `rep-url`) in GitHub and you also have a local project.
-You can add the existing project to the GitHub repository in the following steps (all at the local project side):
+You have created a repository (with url `rep-url`) in GitHub.
+You can add your existing local project to the GitHub repository as follows:
 
 - `git init`
 - `git add -A`
@@ -30,8 +30,10 @@ The answer is "don't worry". Git docs:
 `git status`
 
 - add files to commit
-`git add -A`
-
+  - `git add -A`: stages All = `git add .; git add -u`. See [git add (from stackoverflow)](http://stackoverflow.com/a/572660/1833118).
+  - `git add .`: stages new and modified, without deleted
+  - `git add -u`: stages modified and deleted, without new
+  
 - commit
 `git commit -m 'msg for this commit'`
 
@@ -41,9 +43,9 @@ The answer is "don't worry". Git docs:
 ### Commit History
 
 Use `git log` to show commit history.
-  - `-p`: show the patch (i.e., diff); 
-  - `-n`: show the last n commits
-  - `--stat`: show summary for each commit
+  - `-p`: patch (i.e., diff); 
+  - `-n`: the last n commits
+  - `--stat`: summary for each commit
   - `--pretty=[oneline, short, full, fuller]`: four default output formats
   - `--pretty=format:""`: specify your own output formats, for exmaple,
     - `%h`: abbreviated commit hash
@@ -122,3 +124,7 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
 
 ### Show tags
 `git tag` or `git show v0.5`
+
+## Git Ignore `.gitignore`
+
+- `/your/path/to/dir/`: ignore a directory relative to the `.git` path
