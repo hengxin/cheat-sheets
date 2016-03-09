@@ -2,6 +2,18 @@
 
 ## File
 
+## Copy
+
+In JDK 7+, using `Files.copy` as follows (stolen code: [Copy a file](http://www.javapractices.com/topic/TopicAction.do?Id=246)):
+
+```
+Path FROM = Paths.get("C:\\Temp\\from.txt");
+Path TO = Paths.get("C:\\Temp\\to.txt");
+CopyOption[] options = new CopyOption[]{ StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES }; 
+Files.copy(FROM, TO, options);
+```
+
+### OS-independent Code
 - [`File.separator` and `File.pathSeparator` (from stackoverflow)](http://stackoverflow.com/a/5972020/1833118)
   - Using them to write OS-independent code.
 - Using [`System.lineSeparator()`](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#lineSeparator--) to get the system-dependent line separator string. On UNIX systems, it returns `"\n"`; on Microsoft Windows systems it returns `"\r\n"`.
