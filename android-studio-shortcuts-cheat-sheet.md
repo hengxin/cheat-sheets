@@ -2,9 +2,17 @@
 
 The Table Of Content corresponds to the menus of Android Studo IDE.
 
+## The Most Useful Ones
+
+- `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items 
+
 ## File
 
+-  `Ctrl + E`: recently edited files
+
 ## Edit
+
+- `Alt + F7 (Edit | Find)`: Find Usages
 
 ## View
 
@@ -18,12 +26,13 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 - `Ctrl + Space`: code completion
 - `Alt + Insert (Code | Generate)`: generate `getter` and `setter` methods
+- `Ctrl + Alt + I`: Auto-Indent Lines
 
 ## Analyze
 
 ## Refactor
 
-- `Shift + F6`: rename
+- `Shift + F6`: Rename
 
 ## Build
 
