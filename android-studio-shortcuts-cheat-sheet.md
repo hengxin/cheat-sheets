@@ -14,6 +14,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 - `Alt + F7 (Edit | Find)`: Find Usages
 
+  > *Note:* In my Ubuntu system, I need to first disable the system default setting of `Alt + F7` for "Move Window" in "Keyboard" panel.
+
 ## View
 
 ## Navigate
