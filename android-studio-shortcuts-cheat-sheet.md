@@ -50,6 +50,11 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## Run
 
+- `Alt + Shift + F10`: Run... (pop `Run` dialog)
+- `Alt + Shift + F9`: Debug... (pop `Debug` dialog)
+- `Shift + F10`: Run the current chosen app
+- `Shift + F9`: Debug the current chosen app
+
 ## Tools
 
 ## VCS
