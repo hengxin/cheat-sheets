@@ -22,11 +22,19 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Ctrl + N (Navigate | Class)`: typing the class name to locate it
 - `Ctrl + F12 (Navigate | File Structure)`: navigate in the currently edited file; list of members of the current class
 
+- `F2`: Next Highlighted Error
+- `Shift + F2`: Previous Highlighted Error
+
+- `Alt + Down`: Next Method
+- `Alt + Up`: Previous Method
+
 ## Code
 
-- `Ctrl + Space`: code completion
-- `Alt + Insert (Code | Generate)`: generate `getter` and `setter` methods
+- `Ctrl + Space`: Code Completion
+- `Alt + Insert (Code | Generate)`: Generate `getter` And `setter` Methods
 - `Ctrl + Alt + I`: Auto-Indent Lines
+- `Ctrl + /`: Comment with Line Comment `//`
+- `Ctrl + Shift + /`: Comment with Block Comment `/**  */`
 
 ## Analyze
 
@@ -35,6 +43,9 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Shift + F6`: Rename
 
 ## Build
+
+- `Ctrl + F9`: Make Project
+- `What is this???`: Build APK
 
 ## Run
 
