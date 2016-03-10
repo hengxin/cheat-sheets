@@ -2,13 +2,12 @@
 
 The Table Of Content corresponds to the menus of Android Studo IDE.
 
-## The Most Useful Ones
+## The Most Powerful Ones
 
-- `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items 
+- `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items
+- `Alt + Enter`: Quick Fix
 
 ## File
-
--  `Ctrl + E`: recently edited files
 
 ## Edit
 
@@ -18,15 +17,15 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## View
 
+-  `Ctrl + E`: Recent Files
+
 ## Navigate
 
 - `Ctrl + B (Navigate | Declaration)`: navigate to the declaration of a class, method, or variable; OR `Ctrl + Click`
 - `Ctrl + N (Navigate | Class)`: typing the class name to locate it
 - `Ctrl + F12 (Navigate | File Structure)`: navigate in the currently edited file; list of members of the current class
-
 - `F2`: Next Highlighted Error
 - `Shift + F2`: Previous Highlighted Error
-
 - `Alt + Down`: Next Method
 - `Alt + Up`: Previous Method
 
@@ -56,6 +55,10 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 ## VCS
 
 ## Window
+
+- `Alt + Right (Window | Editor Tabs)`: Select Next Tab
+- `Alt + Left  (Window | Editor Tabs)`: Select Previous Tab
+- `Ctrl + F4   (Window | Editor Tabs)`: Close
 
 ## Help
 
