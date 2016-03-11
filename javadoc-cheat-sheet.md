@@ -2,7 +2,7 @@
 
 ## Code `{@code }`
 
-- [Refer to Method Parameter (from stackoverflow)](http://stackoverflow.com/q/1667212/1833118).
+- `{@code arg}`: Refer to Method Parameter [(from stackoverflow)](http://stackoverflow.com/q/1667212/1833118).
 
   ```
   /**
