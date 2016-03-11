@@ -67,4 +67,6 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## Help
 
+## Code Template
 
+- `sout` = `System.out.println(expr);`
