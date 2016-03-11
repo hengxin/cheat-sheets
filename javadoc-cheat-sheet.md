@@ -1,5 +1,17 @@
 # Javadoc Style Guide Cheat Sheet
 
+## Code `{@code }`
+
+- [Refer to Method Parameter (from stackoverflow)](http://stackoverflow.com/q/1667212/1833118).
+
+  ```
+  /**
+   * If {@code arg} is null, ....
+   * @param arg
+   */
+  void foo(String arg) {...}
+  ```
+
 ## Link `{@link }`
 
 - `{@link ClassName}`: Link to a Class
