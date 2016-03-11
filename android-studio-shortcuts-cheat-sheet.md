@@ -70,3 +70,7 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 ## Code Template
 
 - `sout` = `System.out.println(expr);`
+- `serr` = `System.err.println(expr);`
+- `sexit` = `System.exit(1);` (user-defined under "other")
+- `main` = `public static void main(String[] args) {$END$}` (the default is `psvm`)
+- `thiae` = `throw new IllegalArgumentException($END$);` (user-defined under "Java Exception")
