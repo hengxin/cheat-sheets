@@ -9,6 +9,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## File
 
+- `Alt + Insert (File | New)`: Create New Files, including Class, Package, file, Layout, etc.
+
 ## Edit
 
 - `Alt + F7 (Edit | Find)`: Find Usages
@@ -18,6 +20,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 ## View
 
 -  `Ctrl + E`: Recent Files
+-  `Ctrl + Q`: Quick Documentation
+-  `Ctrl + P`: Parameter Info
 
 ## Navigate
 
@@ -54,6 +58,7 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Alt + Shift + F9`: Debug... (pop `Debug` dialog)
 - `Shift + F10`: Run the current chosen app
 - `Shift + F9`: Debug the current chosen app
+- `Ctrl + F2`: Stop
 
 ## Tools
 
@@ -67,10 +72,26 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## Help
 
-## Code Template
+## Code Template `File | Settings | Editor | Live Templates`
 
-- `sout` = `System.out.println(expr);`
-- `serr` = `System.err.println(expr);`
-- `sexit` = `System.exit(1);` (user-defined under "other")
-- `main` = `public static void main(String[] args) {$END$}` (the default is `psvm`)
-- `thiae` = `throw new IllegalArgumentException($END$);` (user-defined under "Java Exception")
+- `sout` = `System.out.println($END$);`
+- `psfs` = `public static final String $END$`
+
+### Template Group: Java Exception (user-defined)
+- `thiae` = `throw new IllegalArgumentException($END$);`
+- `thusoe` = `throw new UnsupportedOperationException($END$)`
+
+### Template Group: System (user-defined)
+- `serr` = `System.err.println($END$);`
+- `sexit` = `System.exit(1); $END$`
+- `soptime` = 
+      ```
+      long start_time = System.currentTimeMillis();
+      $END$
+      long finish_time = System.currentTimeMillis();
+      System.out.println("Time: " + DurationFormatUtils.formatDurationHMS(finish_time - start_time));
+      ```
+
+### Template Group: plain
+- `main` = `public static void main(String[] args) {$END$}`
+
