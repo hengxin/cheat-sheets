@@ -37,6 +37,9 @@
 
 ### `cd`
 
+- `cd ../../../`: Go three directories up
+- `cd -`: Go to previous `pwd`
+
 ### Create
 
 ### Move (Rename), Copy, and Remove
