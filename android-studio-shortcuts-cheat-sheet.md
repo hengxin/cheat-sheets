@@ -4,6 +4,7 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## The Most Powerful Ones
 
+- `Ctrl + Shift + A`: Quick Command Search; Type "action or option name" to search.
 - `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items
 - `Alt + Enter`: Quick Fix
 
@@ -19,7 +20,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## View
 
--  `Ctrl + E`: Recent Files
+-  `Ctrl + E`: Recent Files; Then type to search.
+-  `Ctrl + Shift + E`: Recently Changed Files
 -  `Ctrl + Q`: Quick Documentation
 -  `Ctrl + P`: Parameter Info
 
@@ -32,9 +34,11 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Shift + F2`: Previous Highlighted Error
 - `Alt + Down`: Next Method
 - `Alt + Up`: Previous Method
+- `Ctrl + U`: Super Method
 
 ## Code
 
+- `Ctrl + O`: Override Methods
 - `Ctrl + Space`: Code Completion
 - `Alt + Insert (Code | Generate)`: Generate `getter` And `setter` Methods
 - `Ctrl + Alt + I`: Auto-Indent Lines
