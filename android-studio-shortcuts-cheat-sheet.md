@@ -4,19 +4,22 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## The Most Powerful Ones
 
-- `Ctrl + Shift + A`: Quick Command Search; Type "action or option name" to search.
+- `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 - `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items
 - `Alt + Enter`: Quick Fix
 
 ## File
 
 - `Alt + Insert (File | New)`: Create New Files, including Class, Package, file, Layout, etc.
+- `Ctrl + Alt + S`: 
+
+  > *Note:* You (in Ubuntu) may need to first disable `Ctrl + Alt + S` for `Toggle shaded state` in `Keyboard | Windows`
 
 ## Edit
 
 - `Alt + F7 (Edit | Find)`: Find Usages
 
-  > *Note:* In my Ubuntu system, I need to first disable the system default setting of `Alt + F7` for "Move Window" in "Keyboard" panel.
+  > *Note:* You (in Ubuntu) may need to first disable `Alt + F7` for `Move Window` in `Keyboard | Windows`.
 
 ## View
 
@@ -63,6 +66,7 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Shift + F10`: Run the current chosen app
 - `Shift + F9`: Debug the current chosen app
 - `Ctrl + F2`: Stop
+- `Ctrl + F8`: Toggle Line Breakpoint
 
 ## Tools
 
@@ -75,6 +79,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Ctrl + F4   (Window | Editor Tabs)`: Close
 
 ## Help
+
+- `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 
 ## Code Template `File | Settings | Editor | Live Templates`
 
