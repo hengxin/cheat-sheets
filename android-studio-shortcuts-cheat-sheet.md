@@ -11,7 +11,8 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 ## File
 
 - `Alt + Insert (File | New)`: Create New Files, including Class, Package, file, Layout, etc.
-- `Ctrl + Alt + S`: Settings
+- `Ctrl + Alt + S`: Settings...
+- `Ctrl + Alt + Shift + S`: Project Structure...
 
   > *Note:* You (in Ubuntu) may need to first disable `Ctrl + Alt + S` for `Toggle shaded state` in `Keyboard | Windows`
 
@@ -82,6 +83,12 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 - `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 
+## Others
+
+### Search and Replace
+
+- `Ctrl + Shift + F`: Find in Path...
+
 ## Code Template `File | Settings | Editor | Live Templates`
 
 - `sout` = `System.out.println($END$);`
@@ -105,3 +112,6 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 ### Template Group: plain
 - `main` = `public static void main(String[] args) {$END$}`
 
+## Related Resources
+
+- [Android Studio Tips & Tricks: Moving Around](http://www.developerphil.com/android-studio-tips-tricks-moving-around/)
