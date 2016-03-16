@@ -8,6 +8,18 @@
 
 ## File
 
+### New
+
+- New a `File`, creating directories if necessary.
+  
+  ```
+  public static File create(path) {
+      File file = new File(path);
+      path.getParentFile().mkdirs();
+      return file;
+  }
+  ```
+
 ### List a Directory
 
 Using `FileFilter` or `FilenameFilter` to filter listed files obtained from `list()` or `listFiles()`.
