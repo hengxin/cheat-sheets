@@ -11,7 +11,7 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 ## File
 
 - `Alt + Insert (File | New)`: Create New Files, including Class, Package, file, Layout, etc.
-- `Ctrl + Alt + S`: 
+- `Ctrl + Alt + S`: Settings
 
   > *Note:* You (in Ubuntu) may need to first disable `Ctrl + Alt + S` for `Toggle shaded state` in `Keyboard | Windows`
 
