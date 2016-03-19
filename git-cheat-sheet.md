@@ -1,8 +1,8 @@
-This is a cheat sheet for common Git usage.
+# Git Commands Cheat Sheet
 
-## Git init and GitHub repository
+## `git init` and GitHub repository
 
-### Case study (1): Adding an existing project to GitHub
+### Case study (1): [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
 
 You have created a repository (with url `rep-url`) in GitHub.
 You can add your existing local project to the GitHub repository as follows:
@@ -13,32 +13,25 @@ You can add your existing local project to the GitHub repository as follows:
 - `git remote add origin rep-url`
 - `git push origin master`
 
-> Refer to [Adding an existing project to GitHub using the command line](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+### Case study (2): [Reinitialize an existing repository@stackoverflow](http://stackoverflow.com/q/5149694/1833118)
 
-### Case study (2): Reinitialize an existing repository
-
-An interesting problem on `git init`: [Does running git init twice initialize a repository or reinitialize an existing repo?@stackoverflow](http://stackoverflow.com/q/5149694/1833118)
-
-The answer is "don't worry". Git docs:
+According to Git Docs:
 > Running `git init` in an existing repository is safe. It will not overwrite things that are already there. The primary reason for rerunning git init is to pick up newly added templates.
+
+### Case Study (3): [Split a repository in two](https://confluence.atlassian.com/bitbucket/split-a-repository-in-two-313464964.html)
+  You may want to replace Step 7 with a simpler one as Step 5 [here](https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/): `git filter-branch --prune-empty --subdirectory-filter YOUR_FOLDER_NAME master`
 
 ## Commit
 
 ### Basic Commands
 
-- check status
-`git status`
-
-- add files to commit
-  - `git add -A`: stages All = `git add .; git add -u`. See [git add (from stackoverflow)](http://stackoverflow.com/a/572660/1833118).
+- `git status`: check status
+- `git add`: [add files to commit@stackoverflow](http://stackoverflow.com/a/572660/1833118)
+  - `git add -A`: stages All = `git add .; git add -u`
   - `git add .`: stages new and modified, without deleted
   - `git add -u`: stages modified and deleted, without new
-  
-- commit
-`git commit -m 'msg for this commit'`
-
-- push
-`git commit origin branch-name`
+- `git commit -m 'msg for this commit'`: commit
+- `git commit origin branch-name`: push
 
 ### Commit History
 
@@ -59,27 +52,20 @@ Filter commit history:
 
 ### Case Study: undo
 
-1. Undo 'git add' *before* commit
+#### [Undo 'git add' *before* commit@stackoverflow](http://stackoverflow.com/q/348170/1833118)
   - `git reset <file>` to remove this file from the current index
   - `git reset` to unstage all due changes
 
-  > Refer to [Undo 'git add' before commit@stackoverflow](http://stackoverflow.com/q/348170/1833118).
-
-2. Amend the commit message *before* push
-
+#### Amend the commit message *before* push
   - `git commit --amend` to promote an editor with the original message; OR,
-
   - `git commit --amend -m 'new commit message'`
 
-3. Discard unstaged changes
-
+#### Discard unstaged changes
   - `git clean -df` to first removes all untracked files if you want, and then
-
   - `git checkout the-file-to-discard` for specific file; OR
+  - `git checkout -- .` for all files
   
-  - `git checkout -- .` for all files 
-  
-4. Delete commits
+#### Delete commits
 
 ## Remote
 
@@ -89,15 +75,16 @@ Filter commit history:
   
 ## Branches
 
-### Create branch
+### Basic Commands
 
-- create branch
-`git branch branch-name`
+- `git branch branch-name`: create branch
+- `git checkout branch-name`: checkout branch
+- `git checkout -b branch-name`: create and checkout branch
 
-- checkout branch
-`git checkout branch-name`
+### Case Study
 
-> Note: create + checkout: `git checkout -b branch-name`
+#### [Move existing, uncommited work to a new branch in Git@stackoverflow](http://stackoverflow.com/q/1394797/1833118)
+`git checkout -b <new-branch>`: This will leave your current branch as is, create and checkout a new branch and keep all your changes. Then `git add <files>`, `git commit`.
 
 ## Tags
 
