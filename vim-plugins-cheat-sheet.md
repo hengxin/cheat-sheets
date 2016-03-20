@@ -1,18 +1,11 @@
-# Vim (GVIM) Plugins and Configurations Cheat Sheet
+# Vim (GVIM) Plugins Cheat Sheet
 
 ## [The `vimrc` File](http://vim.wikia.com/wiki/Vimrc)
 `vimrc` stands for "vim runtime configuration".
 - On Unix based systems, it is `.vimrc`;
 - On Windows systems, it is `_vimrc`.
 
-## Runtime Configurations
-
-### [Setting Fonts@stackoverflow](http://stackoverflow.com/a/17508781/1833118)
-- `:set guifont=*`: to pop up a dialog that allows you to select the font;
-- `:set guifont?`: to show the current guifont;
-- adding `set guifont=<font>` (e.g., `set guifont=Lucida_Sans_Typewriter:h14:cANSI` to your `vimrc` file.
-
-Note that spaces in the font need to be [escaped](http://vim.wikia.com/wiki/Change_font), e.g., `set guifont=Monospace\ 10`
+Unless otherwise stated, all the following configurations are installed in the `vimrc` file.
 
 ## Vim Plugin Manager
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
