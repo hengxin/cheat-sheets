@@ -19,23 +19,9 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ## Word Processing
 
-### [Spell Checking](https://robots.thoughtbot.com/vim-spell-checking)
-
-- `:setlocal spell`: switch on spell checking
-- `:setlocal spell spelllang=en us`: specifying language
-- `Ctrl + N | Ctrl + P`: word completion
-
-### [Wrap](https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim)
-
-- `:set textwidth=120`
-
 ### Formatting
 
 - `gq`: formating selected text
-
-### [Line Numbers](http://vim.wikia.com/wiki/Display_line_numbers)
-- `:set number`: display line numbers
-- `:set nonumber`: display no line numbers
 
 ## Tag
 
