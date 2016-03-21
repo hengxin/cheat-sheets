@@ -3,15 +3,23 @@
 ## Terminals
 
 ### Open
-- `ctrl+alt+t`: open a new terminal window
-- `ctrl+shift+t`: open a terminal tab in the current terminal window
+- `Ctrl + Alt + T`: open a new terminal window
+- `Ctrl + Shift + T`: open a terminal tab in the current terminal window
 
-### Close
+### [Close](http://askubuntu.com/a/19399/306000)
 - `exit`: close the current terminal tab
-- `ctrl+shift+w`: close the current terminal tab
-- `ctrl+shift+q`: close all terminal tabs and thus the current terminal window
+- `Ctrl + Shift + W`: close the current terminal tab
+- `Ctrl + Shift + Q`: close all terminal tabs and thus the current terminal window
 
-> Refer to [Is there a command to close a terminal window via commandline? (from askubuntu)](http://askubuntu.com/a/19399/306000).
+### Tab Switch
+- `Ctrl + PgUp`: previous tab
+- `Ctrl + PgDn`: next tab
+- `Ctrl + Shift + PgUp`: move forward
+- `Ctrl + Shift + PgDn`: move backward
+
+### Edit
+- `Ctrl + Shift + C`: copy
+- `Ctrl + Shift + V`: paste
 
 ## File and Directory
 
@@ -45,3 +53,8 @@
 ### Move (Rename), Copy, and Remove
 
 - `cp -R srcDir destDir` copy srcDir to destDir recursively (`-R`)
+
+## Windows
+
+- `Win + RightArrow`: move and re-size working window to the *right* half the screen
+- `Win + LeftArrow`: move and re-size working window to the *left* half the screen
