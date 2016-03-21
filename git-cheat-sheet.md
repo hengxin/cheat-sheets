@@ -41,10 +41,7 @@ Use `git log` to show commit history.
   - `--stat`: summary for each commit
   - `--pretty=[oneline, short, full, fuller]`: four default output formats
   - `--pretty=format:""`: specify your own output formats, for exmaple,
-    - `%h`: abbreviated commit hash
-    - `%s`: subject
-    - `%an`: author name
-    - `%ar`: author date, relative
+    - `%h`: abbreviated commit hash; `%s`: subject; `%an`: author name; `%ar`: author date, relative
 
 Filter commit history:
 - `git log --since=[2.weeks | 2016-01-27 | 2 years 1 day 30 minutes ago]` there are also `--after|until|before`
@@ -79,7 +76,8 @@ Filter commit history:
 
 - `git branch branch-name`: create branch
 - `git checkout branch-name`: checkout branch
-- `git checkout -b branch-name`: create and checkout branch
+- `git checkout -b branch-name`: create *and* checkout branch
+- `git fetch  \\  git checkout branch-name`: [checkout a new remote branch](http://stackoverflow.com/a/1783426/1833118)
 
 ### Case Study
 
