@@ -15,7 +15,17 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ## Motion
 
-## Search
+## [Search](http://vim.wikia.com/wiki/Searching)
+
+### Basic searching:
+- `/<text to search>`
+- `n`: next
+- `N`: previous
+- `ggn`: the first one
+- `GN`: the last one
+
+### Searching for the current word:
+
 
 ## Word Processing
 
