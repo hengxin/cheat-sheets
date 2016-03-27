@@ -44,6 +44,13 @@
 \end{document}
 ```
 
+## Algorithms
+
+### [Footnote in algorithm](http://tex.stackexchange.com/a/18444/23098)
+
+Using `footnotemark` and `footnotetext`.
+
+
 ## Resources
 
 ### Packages
