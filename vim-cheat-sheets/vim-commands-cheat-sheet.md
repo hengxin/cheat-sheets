@@ -17,7 +17,7 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ## [Search](http://vim.wikia.com/wiki/Searching)
 
-### Basic searching:
+### Basic search
 - `/<text to search>`
 - `n`: next
 - `N`: previous
@@ -26,6 +26,13 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ### Searching for the current word:
 
+## [Search and Replace](http://vim.wikia.com/wiki/Search_and_replace)
+
+### Basic search and replace
+- `:%s /foo/bar/gci`: replace each occurrence of "foo" with "bar" (`%`) in all lines, `g`lobally, ask for `c`onfirmation, case `i`nsensitive (`I` is for case sensitive)
+- `:s /foo/bar/g`: in one line
+- `:%s /\<foo\>/bar/g`: exactly the words "foo"
+- `:%s /foo//g`: delete occurrences of "foo"
 
 ## Word Processing
 
