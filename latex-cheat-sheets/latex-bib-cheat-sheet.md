@@ -1,5 +1,10 @@
 # LaTeX Bib Cheat Sheet
 
+## Official Documents
+
+- [How to Use the IEEEtran BIBTEX Style](ftp://ftp.dante.de/tex-archive/biblio/bibtex/contrib/IEEEtran/IEEEtran_bst_HOWTO.pdf)
+- [IEEE Citation Reference](http://www.ieee.org/documents/ieeecitationref.pdf)
+
 ## Abbreviations
 
 Where to find the abbreviations of journals:
@@ -17,3 +22,37 @@ Where to find the abbreviations of conferences:
 - [IPL] `Inform. Process. Lett.`  =  `Information Processing Letters`
 - [TOCS] `ACM Trans. Comp. Syst.`  =  `ACM Transactions on Computer Systems`
 - [VLDB] `Proc. VLDB Endow.`  =  `Proceedings of the VLDB Endowment`
+
+### [Conferences](http://www.ieee.org/documents/ieeecitationref.pdf)
+
+#### Abbrev
+- `Annals`  =>  `Ann.`
+- `Annual`  => `Annu.`
+- `International`  =>  `Int.`
+- `Proceedings` => `Proc.`
+- `Conference`  =>  `Conf.`
+- `Symposium` => `Symp.`
+- `Colloquium`  =>  `Colloq.`
+- `Congress`  =>  `Congr.`
+- `First | Second | Third`  =>  `1st | 2nd | 3rd`
+
+#### Omit
+- `of the`
+- `on`
+
+#### Abbrev again
+- `System(s)`  =>  `Syst.`
+
+## Authors
+- [Using `et al` when the author list is too long](http://tex.stackexchange.com/a/164513/23098)
+```
+%%%%% in `.bib` file:
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLuse_forced_etal       = "yes",
+  CTLmax_names_forced_etal = "3",
+  CTLnames_show_etal       = "2" 
+}
+%%%%% in `.txt` file:
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+```
