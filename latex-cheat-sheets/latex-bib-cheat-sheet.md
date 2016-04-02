@@ -42,6 +42,9 @@ Where to find the abbreviations of conferences:
 
 #### Abbrev again
 - `System(s)`  =>  `Syst.`
+- `Distributed` => `Distrib.`
+- `Computing` => `Comput.`
+- `Computer(s)` => `Comput.`
 
 ## Authors
 - [Using `et al` when the author list is too long](http://tex.stackexchange.com/a/164513/23098)
