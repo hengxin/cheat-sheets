@@ -4,6 +4,7 @@
 
 - [How to Use the IEEEtran BIBTEX Style](ftp://ftp.dante.de/tex-archive/biblio/bibtex/contrib/IEEEtran/IEEEtran_bst_HOWTO.pdf)
 - [IEEE Citation Reference](http://www.ieee.org/documents/ieeecitationref.pdf)
+- [Citing and referencing: Standard abbreviations used in the IEEE Reference list](http://guides.lib.monash.edu/c.php?g=219786&p=1454302)
 
 ## Abbreviations
 
