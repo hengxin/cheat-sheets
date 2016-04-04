@@ -73,7 +73,8 @@ let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
 
 ### Install: `Plugin 'tpope/vim-surround'`
 ### Usages
-- 
+- `ds(`: delete surrounding of `()`; `(hello world)` => `hello world`
+- `cs({`: change surrounding `()` to `{}`; `(hello world)` => `{hello world}`
 
 ## [EasyMotion](https://github.com/easymotion/vim-easymotion) 
 
