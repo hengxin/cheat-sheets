@@ -9,6 +9,19 @@
   \addplot+[scatter,samples=100, mark repeat=5,mark phase=7] { sin(deg(x)) };
   ```
 
+## Labels
+
+### `pin`
+- [Label data points using `pin`](http://tex.stackexchange.com/a/191398/23098)
+  ```
+  \addplot table  {\datatable}
+  node[pos=0.0, pin=right:``first point'']{} 
+  node[pos=1.0, pin=left:``last point'']{};
+  ```
+
+### `node near coord`
+- [Lable data points using `node near coord`](http://tex.stackexchange.com/a/191439/23098)
+
 ## Legends
 
 ### `\addlegendimage{}` and `\addlegendentry{}`
