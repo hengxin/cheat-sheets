@@ -36,6 +36,12 @@ This document is for LaTeX typesetting. See separate documents for [`TikZ`](http
 
 ## Basic LaTeX Typesetting
 
+### Fonts
+- [Font Size](http://tex.stackexchange.com/a/107058/23098)
+
+  - `\tiny  \scriptsize  \footnotesize  \small  \normalsize  \large  \Large  \LARGE  \huge  \Huge`
+  - In Math: `\displaystyle  \textstyle  \scriptstyle  \scriptscriptstyle`
+
 ### Colors
 - [Page 8 of "A very minimal introduction to TikZ"](http://cremeronline.com/LaTeX/minimaltikz.pdf)
   
