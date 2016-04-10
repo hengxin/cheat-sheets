@@ -52,7 +52,8 @@
 
 ### Move (Rename), Copy, and Remove
 
-- `cp -R srcDir destDir` copy srcDir to destDir recursively (`-R`)
+- `mv srcDir destDir`: move srcDir to destDir recursively (no `-R`)
+- `cp -R srcDir destDir`: copy srcDir to destDir recursively (`-R`)
 
 ## Windows
 
