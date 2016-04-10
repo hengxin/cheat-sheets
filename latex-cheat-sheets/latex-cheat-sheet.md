@@ -7,6 +7,9 @@ This document is for LaTeX typesetting. See separate documents for [`TikZ`](http
 - [The TeX Catalogue Online](http://texcatalogue.ctan.org/index.html)
 - [TeXdoc Online](http://texdoc.net/)
 
+## LaTeX Ecosystems
+- [Differences between LuaTeX, ConTeXt and XeTeX](http://tex.stackexchange.com/q/36/23098)
+
 ## Document Class
 
 - article
@@ -22,7 +25,8 @@ This document is for LaTeX typesetting. See separate documents for [`TikZ`](http
   % UTF-8 encoding
   % Compile with latex+dvipdfmx, pdflatex, xelatex or lualatex
   % XeLaTeX is recommanded
-  \documentclass[UTF8]{ctexart}
+  \documentclass[UTF8, a4paper]{ctexart}
+  \renewcommand{\proofname}{证明}
   \begin{document}
   文章内容。
   \end{document}
@@ -55,6 +59,9 @@ This document is for LaTeX typesetting. See separate documents for [`TikZ`](http
 
 
 ## Theorems and Proofs
+
+### Packages
+- [`\usepackage{amsthm}`]()
 
 ```
 \documentclass{article}
@@ -94,14 +101,19 @@ This document is for LaTeX typesetting. See separate documents for [`TikZ`](http
 
 ## Maths
 
-### Resources
+### Docs and Tools
 - [Short Math Guide for LaTeX](ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf)
 - [Comprehensive LaTeX Symbol List](http://mirror.jmu.edu/pub/CTAN/info/symbols/comprehensive/symbols-a4.pdf)
 - [Detexify: LaTeX Handwritten Symbol Recognition](http://detexify.kirelabs.org/classify.html)
 
+### Maths Packages
+- `\usepackage{amsfonts}`: font (e.g., $\mathbb{R}$)
+- `\usepackage{amssymb}`: load `amsfonts` automatically
+- `usepackage{amsmath}`
+
 ### Common Usages
 - [bold math symbols](http://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols)
-  - `\boldsymbol{\infty}` or `\pmb{\infty}` to one symbol at a time
+  - `$\boldsymbol{\infty}$` or `$\pmb{\infty}$` to one symbol at a time
   - `\boldmath$x^2$` or `$\mathbf{x^2}$`
   - using `bm` package: `$\bm{a}=\bm{\alpha}$`
 
