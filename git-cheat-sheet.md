@@ -112,4 +112,16 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
 
 ## Git Ignore `.gitignore`
 
+### Collections
+- [github/gitignore](https://github.com/github/gitignore)
+
+### Specific Examples
 - `/your/path/to/dir/`: ignore a directory relative to the `.git` path
+- [Gitignore for Microsoft Office](https://github.com/github/gitignore/blob/master/Global/MicrosoftOffice.gitignore)
+  ```
+  *.tmp
+  ~$*.doc*
+  ~$*.xls*
+  *.xlk
+  ~$*.ppt*
+  ```
