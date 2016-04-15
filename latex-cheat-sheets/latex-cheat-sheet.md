@@ -1,6 +1,8 @@
 # LaTeX Cheat Sheet
 
-This document is for LaTeX typesetting. See separate documents for [`TikZ`](https://github.com/hengxin/cheat-sheets/blob/master/latex-cheat-sheets/latex-tikz-cheat-sheet.md) and [`PGFPlots`](https://github.com/hengxin/cheat-sheets/blob/master/latex-cheat-sheets/latex-pgfplots-cheat-sheet.md).
+This document is for basic LaTeX typesetting. See other documents for [`TikZ`](https://github.com/hengxin/cheat-sheets/blob/master/latex-cheat-sheets/latex-tikz-cheat-sheet.md) and [`PGFPlots`](https://github.com/hengxin/cheat-sheets/blob/master/latex-cheat-sheets/latex-pgfplots-cheat-sheet.md).
+
+For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/hengxin/cheat-sheets/blob/master/latex-cheat-sheets/latex-chinese-cheat-sheet.md).
 
 ## Official Documents and Tutorials
 - [CTAN: Comprehensive TEX Archive Network](http://www.ctan.org/)
@@ -13,30 +15,6 @@ This document is for LaTeX typesetting. See separate documents for [`TikZ`](http
 ## Document Class
 
 - article
-
-### For Chinese Language
-
-- [ctexart @ tex.stackexchange](http://tex.stackexchange.com/a/17637/23098)
-
-  `ctexart` is designed for Chinese typesetting. 
-  Font sizes, indentation, name translation, line spacing, ... everything is set.
-  
-  ```
-  % UTF-8 encoding
-  % Compile with latex+dvipdfmx, pdflatex, xelatex or lualatex
-  % XeLaTeX is recommanded
-  \documentclass[UTF8, a4paper]{ctexart}
-  \renewcommand{\proofname}{证明}
-  \begin{document}
-  文章内容。
-  \end{document}
-  ```
- OR,
- 
- ```
- \documentclass{article}
- \usepackage[UTF8]{ctex}
- ```
 
 ## Basic LaTeX Typesetting
 
