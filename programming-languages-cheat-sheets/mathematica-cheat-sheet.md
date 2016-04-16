@@ -26,6 +26,13 @@ data[[All, 2]]; (* all y values *)
   
   `In:= Select[{1,2,3,4,5,6}, # > 3 &]` => `Out:= {4,5,6}`
 
+# String Manipulation
+- [`StringSplit`](http://reference.wolfram.com/language/ref/StringSplit.html)
+  - `In:= StringSplit["3+3greater5;2am;2016-04-15;0ms;rate5;200000;replica5.txt", {";","."}]` => `Out:= {"3+3greater5", "2am", "2016-04-15", "0ms", "rate5", "200000", "replica5", "txt"}`
+- [`StringRiffle`](http://reference.wolfram.com/language/ref/StringRiffle.html)
+  - `In: StringRiffle[{"a", "b", "c", "d", "e"}, ", "]` => `Out:= "a, b, c, d, e"`
+  - `In: StringRiffle[{"a", "b", "c", "d", "e"}, {"(", " ", ")"}]` => `Out:= "(a b c d e)"`
+
 ## Math & Counting Operations
 
 ### Statistics
@@ -38,15 +45,21 @@ data[[All, 2]]; (* all y values *)
 # Files
 
 ## Directory and Files
-
 - [List Files in a Directory]()
 ```
 SetDirectory[dir];
 FileNames[];  OR  FileNames[form]  OR FileNames[form, {dir1, dir2, ...}]
 ```
 
-## Data Importing
+## Rename, Copy, Move, Delete
+- [`FileNameJoin`](http://reference.wolfram.com/language/ref/FileNameJoin.html)
+  - `In:= FileNameJoin[{"dir1", "dir2", "file"}]` => `Out:= "dir1\\dir2\\file"`
+- [`RenameDirectory`](http://reference.wolfram.com/language/ref/RenameDirectory.html)
+- [`RenameFile`](http://reference.wolfram.com/language/ref/RenameFile.html)
+- [`CopyFile`](http://reference.wolfram.com/language/ref/CopyFile.html)
+  - [`OverwriteTarget`](http://mathematica.stackexchange.com/a/63462/22068): `CopyFile[ "foo1.txt", "foo2.txt", OverwriteTarget -> True ]`
 
+## Data Importing
 - Numerical data file, e.g., `10, 20, 30` , one data per line
 
   `dataList = Flatten[Import[filePath, "Data"]];` => `{ 10, 20, 30 }`
