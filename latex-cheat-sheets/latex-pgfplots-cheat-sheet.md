@@ -76,3 +76,19 @@
   - `[legend pos=south east] % or north west, ... ,outer north east`
   - `legend style={at={(0.5,-0.1)},anchor=north}`
     - `<x>` and `<y>` are in terms of the rel axis cs (ranges from 0 to 1 over the width and height of the axis box).
+
+## Boxplots
+
+- [boxplot style options](http://tex.stackexchange.com/a/181011/23098)
+  ```
+  \addplot+[
+    every box/.style={very thick,dashed,draw=black,fill=yellow},
+    every whisker/.style={red,ultra thick},
+    every median/.style={densely dotted,cyan,ultra thick},
+  ]
+```
+
+- [Using named nodes as pgfplots coordinates](http://tex.stackexchange.com/a/257493/23098)
+  ```
+  \addplot+[boxplot] table[y=A] \datatable coordinate (A) at (boxplot box cs: \boxplotvalue{average}, 0.5);
+  ```
