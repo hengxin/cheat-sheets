@@ -92,3 +92,9 @@
   ```
   \addplot+[boxplot] table[y=A] \datatable coordinate (A) at (boxplot box cs: \boxplotvalue{average}, 0.5);
   ```
+
+- [Boxplots in groups](http://tex.stackexchange.com/a/183856/23098)
+  Using `draw position`:
+  ```
+  draw position={1/3 + floor(\plotnumofactualtype/2) + 1/3*mod(\plotnumofactualtype,2)},
+  ```
