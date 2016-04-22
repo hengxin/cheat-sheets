@@ -8,6 +8,20 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 - [CTAN: Comprehensive TEX Archive Network](http://www.ctan.org/)
 - [The TeX Catalogue Online](http://texcatalogue.ctan.org/index.html)
 - [TeXdoc Online](http://texdoc.net/)
+- [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
+- [TeX Frequently Asked Questions](http://www.tex.ac.uk/)
+
+## Blogs, Q/A Sites, Forums
+- [TeX Stack Exchange](http://tex.stackexchange.com/)
+- [TeXblog](http://texblog.net/)
+- [\howto TEX](http://www.howtotex.com/)
+- [StackTex@Twitter](https://twitter.com/StackTex)
+
+## Online LaTeX Editors
+- [Overleaf](https://www.overleaf.com/)
+  Overleaf is an online LaTeX and Rich Text collaborative writing and publishing tool that makes the whole process of writing, editing and publishing scientific documents much quicker and easier.
+- [ShareLaTeX](https://www.sharelatex.com/)
+  LaTeX, Evolved. The easy to use, online, collaborative LaTeX editor.
 
 ## LaTeX Ecosystems
 - [Differences between LuaTeX, ConTeXt and XeTeX](http://tex.stackexchange.com/q/36/23098)
@@ -23,6 +37,16 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
   - `\tiny  \scriptsize  \footnotesize  \small  \normalsize  \large  \Large  \LARGE  \huge  \Huge`
   - In Math: `\displaystyle  \textstyle  \scriptstyle  \scriptscriptstyle`
+- [Change font size of an align environment](http://tex.stackexchange.com/a/33589/23098)
+  ```
+  {\tiny
+    \begin{align}
+      a &< b
+    \end{align}
+  }%
+  Following paragraph.
+  ```
+  Insert a `%` symbol after closing the group with `\tiny`.
 
 ### Colors
 - [Page 8 of "A very minimal introduction to TikZ"](http://cremeronline.com/LaTeX/minimaltikz.pdf)
@@ -35,6 +59,8 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
   
   It gives pre-defined colors and shows how to define colors. It also mentions other packages like `color` and `xcolor`.
 
+- [Lighten colors](http://tex.stackexchange.com/a/48663/23098)
+  Using the `xcolor` package: `red!60`
 
 ## Theorems and Proofs
 
