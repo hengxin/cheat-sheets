@@ -19,21 +19,26 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ### Basic search
 - `/<text to search>`
-- `n`: next
-- `N`: previous
-- `ggn`: the first one
-- `GN`: the last one
+  - `n`: next
+  - `N`: previous
+  - `ggn`: the first one
+  - `GN`: the last one
 
-### Searching for the current word:
+### Searching for the word under cursor:
+- `*`
 
-## [Search and Replace](http://vim.wikia.com/wiki/Search_and_replace)
+## Search and Replace
 
-### Basic search and replace
+### [Basic search and replace](http://vim.wikia.com/wiki/Search_and_replace)
 - `:%s /foo/bar/gci`: replace each occurrence of "foo" with "bar" (`%`) in all lines, `g`lobally, ask for `c`onfirmation, case `i`nsensitive (`I` is for case sensitive)
 - `:s /foo/bar/g`: in one line
 - `:%s /\<foo\>/bar/g`: exactly the words "foo"
 - `:%s /foo//g`: delete occurrences of "foo"
 
+### [Count number of matches of a pattern](http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern):
+  - `:%s/pattern//gn`: the number of *times* that pattern matches text 
+  - `:%s/pattern/n`: the number of *lines* where the pattern matches
+    
 ## Word Processing
 
 ### Formatting
