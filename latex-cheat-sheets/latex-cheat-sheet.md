@@ -11,6 +11,12 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 - [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
 - [TeX Frequently Asked Questions](http://www.tex.ac.uk/)
 
+## Books
+
+### LaTeX Basics
+### LaTeX Programming
+- [Victor Eijkhout/TeX by Topic](https://bitbucket.org/VictorEijkhout/tex-by-topic)
+
 ## Blogs, Q/A Sites, Forums
 - [TeX Stack Exchange](http://tex.stackexchange.com/)
 - [TeXblog](http://texblog.net/)
