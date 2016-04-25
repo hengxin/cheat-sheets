@@ -11,6 +11,11 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 - [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
 - [TeX Frequently Asked Questions](http://www.tex.ac.uk/)
 
+## LaTeX Templates
+- [LaTeX Templates](http://www.latextemplates.com/)
+  
+  {The best source of free quality LaTeX templates}
+
 ## Books
 
 ### LaTeX Basics
@@ -25,7 +30,7 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
 ## Online LaTeX Editors
 - [Overleaf](https://www.overleaf.com/)
--
+
   Overleaf is an online LaTeX and Rich Text collaborative writing and publishing tool that makes the whole process of writing, editing and publishing scientific documents much quicker and easier.
 - [ShareLaTeX](https://www.sharelatex.com/)
 
