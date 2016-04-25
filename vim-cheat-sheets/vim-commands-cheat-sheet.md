@@ -36,10 +36,15 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 - `:%s /foo//g`: delete occurrences of "foo"
 
 ### [Count number of matches of a pattern](http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern):
-  - `:%s/pattern//gn`: the number of *times* that pattern matches text 
-  - `:%s/pattern/n`: the number of *lines* where the pattern matches
+  - `:%s/pattern//gn`: count the number of *times* that pattern matches text 
+  - `:%s/pattern//n`: count the number of *lines* where the pattern matches
+  - `*` => `:%s///gn`: count the number of occurrences of the word under the cursor
     
 ## Word Processing
+
+### [Word Count](http://vim.wikia.com/wiki/Word_count)
+- `g` => `Ctrl + g`: in the current buffer or a visual block
+- `:w !wc`: using external program `wc`
 
 ### Formatting
 
