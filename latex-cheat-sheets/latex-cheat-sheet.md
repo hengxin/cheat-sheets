@@ -25,8 +25,10 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
 ## Online LaTeX Editors
 - [Overleaf](https://www.overleaf.com/)
+-
   Overleaf is an online LaTeX and Rich Text collaborative writing and publishing tool that makes the whole process of writing, editing and publishing scientific documents much quicker and easier.
 - [ShareLaTeX](https://www.sharelatex.com/)
+
   LaTeX, Evolved. The easy to use, online, collaborative LaTeX editor.
 
 ## LaTeX Ecosystems
@@ -88,7 +90,28 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 \end{document}
 ```
 
+## Floats
+
+- [How to change the spacing between figures/tables and text?](http://tex.stackexchange.com/a/26522/23098)
+ - Single column: `\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}`
+```
+\textfloatsep — distance between floats on the top or the bottom and the text;
+\floatsep — distance between two floats;
+\intextsep — distance between floats inserted inside the page text (using h) and the text proper.
+
+When typesetting in two column mode, two more lengths are available:
+\dbltextfloatsep — distance between a float spanning both columns and the text;
+\dblfloatsep — distance between two floats spanning both columns.
+```
+
+## Figures
+
 ## Tables
+
+### `table` and `table*`
+- `table*` for spanning two columns
+- `\renewcommand{\arraystretch}{1.2}` to stretch the table vertically
+- `\resizebox{\textwidth}{!}{% ... %}` to scale the table to text width
 ```
 \begin{table}[t!]
   \renewcommand{\arraystretch}{1.2}
@@ -102,12 +125,32 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 \end{table}
 ```
 
-- `table*` for spanning two columns
-- `\renewcommand{\arraystretch}{1.2}` to stretch the table vertically
-- `\resizebox{\textwidth}{!}{% ... %}` to scale the table to text width
+### `threeparttable` package
+- [`\tnote` and `tablenotes` @ Section 9.3.1 Footnotes within Tables (HOWTO IEEEtran)](https://www.cs.cmu.edu/~steffan/personal/tmp/IEEEtran_HOWTO.pdf)
+- [Resizing table when using package {threeparttable}](http://tex.stackexchange.com/a/205525/23098)
 
-
-## Figures
+```
+\begin{table*}[t!]
+  \renewcommand{\arraystretch}{1.1}
+  \centering
+  \caption{}
+  \label{tbl:}
+  \resizebox{\textwidth}{!}{% OR: \begin{adjustbox}{max width=\textwidth}
+  \begin{threeparttable}[b]
+  \begin{tabular}{|c||c|c|}
+  \hline
+  & data1 \tnote{a} & data2 \tnote{1} & data3 \tnote{a}
+  \hline
+  \end{tabular}%
+  \begin{tablenotes}
+    \footnotesize
+    \item[a] footnote for {a}.
+    \item[1] footnote for {1}.
+  \end{tablenotes}
+  \end{threeparttable}
+}%                            OR: \end{adjustbox}
+\end{table*}
+```
 
 ## Maths
 
@@ -120,6 +163,18 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 - `\usepackage{amsfonts}`: font (e.g., $\mathbb{R}$)
 - `\usepackage{amssymb}`: load `amsfonts` automatically
 - `usepackage{amsmath}`
+
+### Array ``
+- [Adjusting space between array rows and columns](http://tex.stackexchange.com/a/103511/23098)
+  - Using `\arraycolsep` and `\arraystretch`
+  ```
+  \[\arraycolsep=1.0pt\def\arraystretch{1.5}
+    \begin{array}{rll}
+      x(1) &= \dfrac{x(0)}{1} &= x(0)\\
+      x(2) &= \dfrac{x(1)}{2} &= \dfrac{x(0)}{2}\\
+    \end{array}
+  \]
+  ```
 
 ### Common Usages
 - [bold math symbols](http://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols)
