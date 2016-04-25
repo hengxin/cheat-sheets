@@ -51,6 +51,32 @@
   ]
   \addplot+[nodes near coords, mark=pentagon] table[x=xtick, y=median, meta=median] {dataFile};
   ```
+## Grid
+
+### Draw Grid
+- [How to draw (major) grid lines only at specified positions?](http://tex.stackexchange.com/a/306095/23098)
+```
+\begin{axis}[
+  xtick={-4,-2,...,4},
+  % place some extra x ticks ...
+  extra x ticks={0,2},
+  % ... but do not repeat the already existent labels from the "normal" ticks ...
+  extra x tick labels={},
+  % ... and set the style of the extra ticks to `major'
+  extra tick style={
+    grid=major,
+  },
+]
+```
+
+### Grid Styles
+- [Change the appearance of grids in pgfplots](http://tex.stackexchange.com/a/91223/23098)
+
+```
+minor ticks: \pgfplotsset{minor grid style={dashed,red}}
+major ticks: \pgfplotsset{major grid style={dashed, red}}
+both minor and major ticks: \pgfplotsset{grid style={dashed,gray}}
+```
 
 ## Legends
 
