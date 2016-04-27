@@ -79,3 +79,15 @@ let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
 ## [EasyMotion](https://github.com/easymotion/vim-easymotion) 
 
 ## [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+
+## [vim-scripts/LanguageTool](https://github.com/vim-scripts/LanguageTool)
+
+`This plugin integrates the LanguageTool grammar checker into Vim.`
+### Install: 
+ 1. `Plugin 'vim-scripts/LanguageTool'` in `.vimrc` => `:PluginInstall`
+ 2. Install [standalone LanguageTool grammar checker for desktop](https://www.languagetool.org/)
+ 3. Put `let g:languagetool_jar="~/SoftwareService/LanguageTool-3.3/languagetool-commandline.jar"` in `.vimrc`
+
+### Usages
+- `:LanguageToolCheck`
+- `:LanguageToolClear`
