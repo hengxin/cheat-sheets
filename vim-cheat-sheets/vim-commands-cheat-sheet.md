@@ -23,9 +23,8 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
   - `N`: previous
   - `ggn`: the first one
   - `GN`: the last one
-
-### Searching for the word under cursor:
-- `*`
+  - `*`: search for the word under cursor
+- [`:noh`: Vim clear last search highlighting](http://stackoverflow.com/a/658478/1833118)
 
 ## Search and Replace
 
@@ -36,10 +35,15 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 - `:%s /foo//g`: delete occurrences of "foo"
 
 ### [Count number of matches of a pattern](http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern):
-  - `:%s/pattern//gn`: count the number of *times* that pattern matches text 
-  - `:%s/pattern//n`: count the number of *lines* where the pattern matches
-  - `*` => `:%s///gn`: count the number of occurrences of the word under the cursor
+- `:%s/pattern//gn`: count the number of *times* that pattern matches text 
+- `:%s/pattern//n`: count the number of *lines* where the pattern matches
+- `*` => `:%s///gn`: count the number of occurrences of the word under the cursor
     
+### Use Cases
+- [Multiple search and replace in one line](http://stackoverflow.com/a/4737221/1833118)
+
+  `:%s/aaa/bbb/e | %s/111/222/e` (`e`: suppress errors)
+
 ## Word Processing
 
 ### [Word Count](http://vim.wikia.com/wiki/Word_count)
