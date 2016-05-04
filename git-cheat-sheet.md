@@ -125,3 +125,4 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
   *.xlk
   ~$*.ppt*
   ```
+- [TeX.gitignore](https://github.com/github/gitignore/blob/master/TeX.gitignore)
