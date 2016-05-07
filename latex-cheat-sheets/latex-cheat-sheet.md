@@ -97,6 +97,7 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
 ## Floats
 
+### General Settings
 - [How to change the spacing between figures/tables and text?](http://tex.stackexchange.com/a/26522/23098)
  - Single column: `\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}`
 ```
@@ -108,12 +109,17 @@ When typesetting in two column mode, two more lengths are available:
 \dbltextfloatsep — distance between a float spanning both columns and the text;
 \dblfloatsep — distance between two floats spanning both columns.
 ```
+### General Packages
+- [rotating](https://puzzling.org/technology/2012/06/useful-latex-packages-tables-and-figures/)
 
-## Figures
+  It is for a big table (`\begin{sidewaystable}`) or figure (`\begin{sidewaysfigure}`) that should be rotated sideways onto its own page.
 
-## Tables
 
-### `table` and `table*`
+### Figures
+
+### Tables
+
+#### `table` and `table*`
 - `table*` for spanning two columns
 - `\renewcommand{\arraystretch}{1.2}` to stretch the table vertically
 - `\resizebox{\textwidth}{!}{% ... %}` to scale the table to text width
@@ -130,7 +136,7 @@ When typesetting in two column mode, two more lengths are available:
 \end{table}
 ```
 
-### `threeparttable` package
+#### `threeparttable` package
 - [`\tnote` and `tablenotes` @ Section 9.3.1 Footnotes within Tables (HOWTO IEEEtran)](https://www.cs.cmu.edu/~steffan/personal/tmp/IEEEtran_HOWTO.pdf)
 - [Resizing table when using package {threeparttable}](http://tex.stackexchange.com/a/205525/23098)
 
@@ -155,6 +161,24 @@ When typesetting in two column mode, two more lengths are available:
   \end{threeparttable}
 }%                            OR: \end{adjustbox}
 \end{table*}
+```
+
+#### [`dcolumn` package](https://puzzling.org/technology/2012/06/useful-latex-packages-tables-and-figures/)
+The dcolumn package produces tabular columns that are perfectly aligned on a decimal point.
+```
+usepackage{dcolumn}
+% create a new column type, d, which takes the . out of numbers, replacing the .
+% with a cdot and aligning on it.
+newcolumntype{d}[1]{D{.}{cdot}{#1}}
+
+% a tabular enviroment with a 1 and 3 figures after the decimal point column
+begin{tabular}{d{1}d{3}}
+multicolumn{1}{c}{Heading 1} & multicolumn{1}{c}{Heading 2}\
+1.6 & 1.657
+\
+2.0 & 6.563
+\
+end{tabular}
 ```
 
 ## Maths
