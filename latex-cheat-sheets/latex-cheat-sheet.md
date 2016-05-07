@@ -225,3 +225,6 @@ Using `footnotemark` and `footnotetext`.
 - [Tables Generator](http://www.tablesgenerator.com/)
 
   It is for LaTeX tables, HTML tables, Text tables, Markdown tables, and MediaWiki tables.
+- [Excel-to-LATEX – Convert Excel spreadsheets to LATEX tables](https://www.ctan.org/pkg/excel2latex?lang=en)
+
+  This Excel-To-LATEX converter exports the current selection as a LATEX file which can be included via the \input command in an existing LATEX document. Nearly all formatting is supported (bold, italic, border lines, multicolumn cells, ...). Works with Excel up to Excel 2010.
