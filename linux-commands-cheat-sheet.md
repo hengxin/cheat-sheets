@@ -36,7 +36,6 @@
 - `-h` = `--human-readable`: print sizes in human readable format (e.g., 1K 234M 2G).
 
 #### Case Study
-
 - `ls -laSh`
 - [How do I get the size of a directory on the command line?](http://unix.stackexchange.com/q/185764)
   - `du -sh * (or <file>)`: give the size of all the directories, files etc in current directory in human readable format.
@@ -44,9 +43,17 @@
     > `du`: disk usage; `df`: disk free space
 
 ### `cd`
-
 - `cd ../../../`: Go three directories up
 - `cd -`: Go to previous `pwd`
+
+### `ln`
+- `ln -sv <target> <link-name>`: create a *symbolic* link to <target> with the name <link-name>
+- `ln <target> <link-name>`: create a *hard* link
+- `unlink <link-name>`
+
+#### Case Study
+- `ln -sv ~/dotfiles/vim/vimrc ~/.vimrc`
+- `ln -sv ~/.dotfiles/vim/vim/ ~/.vim`
 
 ### Create
 
@@ -54,6 +61,9 @@
 
 - `mv srcDir destDir`: move srcDir to destDir recursively (no `-R`)
 - `cp -R srcDir destDir`: copy srcDir to destDir recursively (`-R`)
+- `cp -R srcDir destDir/`: ???
+- `cp -R srcDir/ destDir/`: ???
+- `cp -R srcDir/ destDir`: ???
 
 ### Tar
 - [`tar -xvzf community_images.tar.gz`](http://askubuntu.com/a/25348/306000)
