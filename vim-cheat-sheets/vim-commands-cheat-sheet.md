@@ -54,6 +54,9 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 - `gq`: formating selected text
 
+## Windows (Splitted Windows)
+- `Ctrl + W | Ctrl + X`: Rotates the current focused window with the closest window to the right.
+
 ## Tag
 
 ## Resources for VIM
