@@ -1,5 +1,8 @@
 # LaTeX Beamer Cheat Sheet
 
+## Documents and Tutorials
+- [Beamer User Guide](http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf)
+
 ## Beamer Themes and Templates
 
 ### Gallery
@@ -7,6 +10,14 @@
 - [Beamer theme gallery](http://deic.uab.es/~iblanes/beamer_gallery/)
 - [ShareLaTeX | Templates | Presentations](https://www.sharelatex.com/templates/presentations)
 - [Overleaf | Templates | Presentations](https://www.overleaf.com/latex/templates/tagged/presentation#.VylqI2F96V4)
+
+### Beamer Appearance
+- [BEAMER appearance cheat sheet](http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
+- [Change bullet style / formatting in Beamer](http://tex.stackexchange.com/a/11170/23098)
+```
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+```
 
 ### For Thesis
 - [Beamer2Thesis](http://cfiandra.github.io/Beamer2Thesis/)
