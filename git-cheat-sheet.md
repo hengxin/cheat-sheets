@@ -1,5 +1,14 @@
 # Git Commands Cheat Sheet
 
+## `git config`
+
+### Password
+- [Caching your GitHub password in Git](https://help.github.com/articles/caching-your-github-password-in-git/)
+```
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600000' # in seconds
+```
+
 ## `git init` and GitHub repository
 
 ### Case study (1): [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
