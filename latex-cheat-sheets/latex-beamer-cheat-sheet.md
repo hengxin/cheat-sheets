@@ -26,6 +26,11 @@
 
 ### For Posters
 
+## Columns
+
+### alignment
+`\begin{columns}[t]`
+
 ## Tools
 
 - [wiki2beamer](http://wiki2beamer.sourceforge.net/)
