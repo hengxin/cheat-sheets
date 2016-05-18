@@ -193,7 +193,7 @@ end{tabular}
 - `\usepackage{amssymb}`: load `amsfonts` automatically
 - `usepackage{amsmath}`
 
-### Array ``
+### Array
 - [Adjusting space between array rows and columns](http://tex.stackexchange.com/a/103511/23098)
   - Using `\arraycolsep` and `\arraystretch`
   ```
@@ -205,11 +205,27 @@ end{tabular}
   \]
   ```
 
-### Common Usages
+### Math Symbols
 - [bold math symbols](http://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols)
   - `$\boldsymbol{\infty}$` or `$\pmb{\infty}$` to one symbol at a time
   - `\boldmath$x^2$` or `$\mathbf{x^2}$`
   - using `bm` package: `$\bm{a}=\bm{\alpha}$`
+- [Command for argmin or argmax](http://tex.stackexchange.com/a/284054/23098)
+```
+% limits underneath
+\DeclareMathOperator*{\argminA}{arg\,min} % Jan Hlavacek
+\DeclareMathOperator*{\argminB}{argmin}   % Jan Hlavacek
+\DeclareMathOperator*{\argminC}{\arg\min}   % rbp
+
+\newcommand{\argminD}{\arg\!\min} % AlfC
+\newcommand{\argminE}{\mathop{\mathrm{argmin}}}          % ASdeL
+\newcommand{\argminF}{\mathop{\mathrm{argmin}}\limits}   % ASdeL
+
+% limits on side
+\DeclareMathOperator{\argminG}{arg\,min} % Jan Hlavacek
+\DeclareMathOperator{\argminH}{argmin}   % Jan Hlavacek
+\newcommand{\argminI}{\mathop{\mathrm{argmin}}\nolimits} % ASdeL
+```
 
 ## Algorithms
 
