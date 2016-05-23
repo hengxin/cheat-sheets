@@ -45,6 +45,11 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
 ## Basic LaTeX Typesetting
 
+### Text
+- [Strikethrough text](http://tex.stackexchange.com/a/23712/23098)
+  - `\usepackage[normalem]{ulem} \sout{Hello World}`; see [ulem](http://ctan.org/pkg/ulem)
+  - `\usepackage{soul} \st{Hellow world}`
+
 ### Fonts
 - [Font Size](http://tex.stackexchange.com/a/107058/23098)
 
@@ -59,7 +64,7 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
   }%
   Following paragraph.
   ```
-  Insert a `%` symbol after closing the group with `\tiny`.
+  *Note:* Insert a `%` symbol after closing the group with `\tiny`.
 
 ### Colors
 - [Page 8 of "A very minimal introduction to TikZ"](http://cremeronline.com/LaTeX/minimaltikz.pdf)
@@ -109,6 +114,7 @@ When typesetting in two column mode, two more lengths are available:
 \dbltextfloatsep — distance between a float spanning both columns and the text;
 \dblfloatsep — distance between two floats spanning both columns.
 ```
+
 ### General Packages
 - [rotating](https://puzzling.org/technology/2012/06/useful-latex-packages-tables-and-figures/)
 
@@ -116,6 +122,38 @@ When typesetting in two column mode, two more lengths are available:
 
 
 ### Figures
+- [subcaption vs. subfig: Best package for referencing a subfigure](http://tex.stackexchange.com/q/13625/23098)
+
+  `Using subcaption > subfig > subfigure`
+
+#### [`subcaption`](http://texdoc.net/texmf-dist/doc/latex/caption/subcaption.pdf)
+- [`\usepackage{graphicx, subcaption}`](https://github.com/hengxin/algorithm-ta-tutorial/blob/master/algorithm-tutorial-graph-decomposition-2016-05-19/sections/dfs-bfs.tex)
+```
+  \begin{figure}
+    \begin{subfigure}{0.50\linewidth}
+	    \centering
+	    \includegraphics[width=0.50\textwidth]{<figure>}
+	    \caption{DFS on directed graph.}
+    \end{subfigure}%
+    \begin{subfigure}{0.50\linewidth}
+	    \centering
+	    \includegraphics[width=0.50\textwidth]{<figure>}
+	    \caption{DFS on undirected graph.}
+      \end{subfigure}
+
+    \begin{subfigure}{0.50\linewidth}
+	    \centering
+	    \includegraphics[width=0.50\textwidth]{<figure>}
+	    \caption{BFS on directed graph.}
+      \end{subfigure}%
+    \begin{subfigure}{0.50\linewidth}
+	    \centering
+	    \includegraphics[width=0.60\textwidth]{<figure>}
+	    \caption{BFS on undirected graph.}
+    \end{subfigure}
+  \caption{The caption.}
+  \end{figure}
+```
 
 ### Tables
 
