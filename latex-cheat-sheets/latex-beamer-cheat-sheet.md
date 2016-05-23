@@ -35,6 +35,35 @@
 - [Vertical space between items](http://tex.stackexchange.com/a/12374/23098)
   
   `\setlength\itemsep{1em}`
+- [Reverse numbering on the enumerate environment](http://tex.stackexchange.com/a/113704/23098)
+```
+\usepackage{etaremune}
+\begin{etaremune}
+  \item Last things first
+  \item \ldots
+  \item First things last
+\end{etaremune}
+```
+
+## Listings and Algorithms
+- `\begin{frame}[fragile]{frame-name}`
+- [Beamer and algorithm/pseudocode](http://tex.stackexchange.com/a/26544/23098)
+```
+\usepackage{algorithm2e, algorithmic}
+\begin{frame}[fragile]
+  \begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \FOR{$i=1$ to $N$}
+      \STATE $i$
+    \ENDFOR
+  \end{algorithmic}
+  \caption{}
+  \label{alg:seq}
+\end{algorithm}
+```
+
+## Blocks
+
 
 ## Tools
 
