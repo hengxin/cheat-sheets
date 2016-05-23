@@ -31,6 +31,11 @@
 ### alignment
 `\begin{columns}[t]`
 
+## List: enumerate, itemize, and description
+- [Vertical space between items](http://tex.stackexchange.com/a/12374/23098)
+  
+  `\setlength\itemsep{1em}`
+
 ## Tools
 
 - [wiki2beamer](http://wiki2beamer.sourceforge.net/)
