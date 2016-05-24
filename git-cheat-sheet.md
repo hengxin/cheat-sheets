@@ -40,7 +40,7 @@ According to Git Docs:
   - `git add .`: stages new and modified, without deleted
   - `git add -u`: stages modified and deleted, without new
 - `git commit -m 'msg for this commit'`: commit
-- `git commit origin branch-name`: push
+- `git push origin branch-name`: push
 
 ### Commit History
 
