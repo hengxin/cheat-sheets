@@ -81,12 +81,19 @@ Filter commit history:
   
 ## Branches
 
-### Basic Commands
+### Create and Checkout Branches
 
 - `git branch branch-name`: create branch
 - `git checkout branch-name`: checkout branch
 - `git checkout -b branch-name`: create *and* checkout branch
 - `git fetch  \\  git checkout branch-name`: [checkout a new remote branch](http://stackoverflow.com/a/1783426/1833118)
+
+### [Delete Branches](http://stackoverflow.com/a/10999165/1833118)
+
+- `git push origin --delete <branch-name>`: delete a remote branch
+- `git branch -d <branch-name>`: delete a branch locally
+
+Note: use `-D` for `--delete --force`; force deletion without checking merged status
 
 ### Case Study
 
