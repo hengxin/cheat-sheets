@@ -4,7 +4,7 @@ This document is for basic LaTeX typesetting. See other documents for [`TikZ`](h
 
 For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/hengxin/cheat-sheets/blob/master/latex-cheat-sheets/latex-chinese-cheat-sheet.md).
 
-## Official Documents and Tutorials
+## Official Documentfons and Tutorials
 - [CTAN: Comprehensive TEX Archive Network](http://www.ctan.org/)
 - [The TeX Catalogue Online](http://texcatalogue.ctan.org/index.html)
 - [TeXdoc Online](http://texdoc.net/)
@@ -65,6 +65,9 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
   Following paragraph.
   ```
   *Note:* Insert a `%` symbol after closing the group with `\tiny`.
+- [How to remove the warnings “Font shape `OT1/cmss/m/n' in size <4> not available” and “Size substitutions with differences” in beamer?](http://tex.stackexchange.com/a/58088/23098)
+  
+  Adding `\usepackage{lmodern} % http://ctan.org/pkg/lm`
 
 ### Colors
 - [Page 8 of "A very minimal introduction to TikZ"](http://cremeronline.com/LaTeX/minimaltikz.pdf)
