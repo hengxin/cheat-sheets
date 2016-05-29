@@ -64,6 +64,10 @@
 - `cp -R srcDir destDir/`: ???
 - `cp -R srcDir/ destDir/`: ???
 - `cp -R srcDir/ destDir`: ???
+- [Copying multiple specific files from one folder to another](http://askubuntu.com/a/327285/306000)
+
+  - `cp /home/usr/dir/{file1,file2,file3,file4} /home/usr/destination/` *Note:* no space between files
+  - `cp /home/usr/dir/file{1..4} ./`
 
 ### Tar
 - [`tar -xvzf community_images.tar.gz`](http://askubuntu.com/a/25348/306000)
