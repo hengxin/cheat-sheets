@@ -1,11 +1,5 @@
 # Java Programming Language Cheat Sheet
 
-## Java Collection Framework
-
-### Collections
-
-- `Collections.sort(List<T> list, Comparator<? super T> c)`: Sort a list by the order defined by `Comparator`; or `T` should `implements Comparable<T>`.
-
 ## File
 
 ### New
