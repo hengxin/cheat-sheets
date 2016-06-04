@@ -46,5 +46,27 @@ Read the official document for [How to Write Doc Comments for the Javadoc Tool](
    * </ol>
    */
   ```
-  
+
+## Doc [`{@inheritDoc}`](http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/javadoc.html#@inheritDoc)
+
+Inherits (copies) documentation from the "nearest" inheritable class or implementable interface into the current doc comment at this tag's location. 
+This tag is valid only in these places in a doc comment:
+
+- In the main description block of a method.
+- In `@return`, `@param` and `@throws` tags of a method.
+
+  ```
+    /**
+     * @param phase {@inheritDoc}. There are two phases in the 2PC protocol.
+     *                           So the value of @param phase here is either 0 or 1.
+     * @param registeredParties {@inheritDoc}.
+     *
+     * @return {@code true} if both phases have been finished; {@code false}, otherwise.
+     *
+     * @throws IllegalArgumentException thrown if no such a phase exists.
+     */
+    @Override
+    protected boolean onAdvance(int phase, int registeredParties) { }
+  ```
+
 ## Table
