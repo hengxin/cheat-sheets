@@ -23,6 +23,23 @@
 
   - Bring it foreground: `% fg` and then close it via `Ctrl + C`.
   - `ps -ax | grep rmiregistry` and then `kill -9 <pid>`; see [here](http://www.coderanch.com/t/208280/java/java/kill-rmiregistry-Linux).
+  
+- [How to check if RMI Registry is already running?](https://community.oracle.com/thread/2082536?start=0&tstart=0)
+
+  ```
+  static {
+      try {
+          rmiRegistry = LocateRegistry.createRegistry(RMI_REGISTRY_PORT);
+      } catch (RemoteException e) {
+          try {
+              rmiRegistry = LocateRegistry.getRegistry(RMI_REGISTRY_PORT);            
+          } catch (RemoteException re) {
+              LOGGER.error("Failed to create/get RMI Registry on port [{}].", RMI_REGISTRY_PORT);
+              re.printStackTrace();
+          }
+      }
+  }  
+  ```
 
 ### Export Remote Objects
 
