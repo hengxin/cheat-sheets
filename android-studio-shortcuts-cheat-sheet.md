@@ -1,11 +1,15 @@
 # Android Studio Shortcuts Cheet Sheet
 
-The Table Of Content corresponds to the menus of Android Studo IDE.
+The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 ## The Most Powerful Ones
 
 - `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 - `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items
+  - `Ctrl + E`: Find Recent Files
+  - `Ctrl + N`: Find Classes
+  - `Ctrl + Shift + N`: Find Files
+  - `Ctrl + Alt + Shift + N`: Find Symbols
 - `Alt + Enter`: Quick Fix
 
 ## File
@@ -31,29 +35,35 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 
 ## Navigate
 
-- `Ctrl + B (Navigate | Declaration)`: navigate to the declaration of a class, method, or variable; OR `Ctrl + Click`
-- `Ctrl + N (Navigate | Class)`: typing the class name to locate it
-- `Ctrl + F12 (Navigate | File Structure)`: navigate in the currently edited file; list of members of the current class
+- `Ctrl + B (Navigate | Declaration)`: Navigate to the declaration of a class, method, or variable; OR `Ctrl + Click`
+- `Ctrl + Alt + B (Navigate | Implementation(s))`: Navigate to implementation methods of an `abstract` method
+- `Ctrl + N (Navigate | Class)`: Typing the class name to locate it
+- `Ctrl + F12 (Navigate | File Structure)`: Navigate in the currently edited file; list of members of the current class
 - `F2`: Next Highlighted Error
 - `Shift + F2`: Previous Highlighted Error
 - `Alt + Down`: Next Method
 - `Alt + Up`: Previous Method
 - `Ctrl + U`: Super Method
+- `Ctrl + H`: Type Hierarchy (shown in side toolwindow)
 
 ## Code
 
 - `Ctrl + O`: Override Methods
+- `Ctrl + I`: Implements Methods
 - `Ctrl + Space`: Code Completion
 - `Alt + Insert (Code | Generate)`: Generate `getter` And `setter` Methods
 - `Ctrl + Alt + I`: Auto-Indent Lines
 - `Ctrl + /`: Comment with Line Comment `//`
 - `Ctrl + Shift + /`: Comment with Block Comment `/**  */`
+- `Ctrl + NumPad + (Code | Folding)`: Expand
+- `Ctrl + NumPad - (Code | Folding)`: Collapse
 
 ## Analyze
 
 ## Refactor
 
 - `Shift + F6`: Rename
+- [`F6 (Refactor | Move...)`](http://stackoverflow.com/a/31569235/1833118): Move inner class to upper level (*Note:* select the Class name first)
 
 ## Build
 
@@ -68,6 +78,11 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Shift + F9`: Debug the current chosen app
 - `Ctrl + F2`: Stop
 - `Ctrl + F8`: Toggle Line Breakpoint
+- `F7`: Step Into
+- `F8`: Step Over (debug the next line)
+- `F9`: Resume Program
+- `Ctrl + F8`: Toggle Line Breakpoint
+- `Ctrl + Shift + F8`: View All Breakpoint (Conditions)
 
 ## Tools
 
@@ -78,12 +93,22 @@ The Table Of Content corresponds to the menus of Android Studo IDE.
 - `Alt + Right (Window | Editor Tabs)`: Select Next Tab
 - `Alt + Left  (Window | Editor Tabs)`: Select Previous Tab
 - `Ctrl + F4   (Window | Editor Tabs)`: Close
+- `Ctrl + Alt + <NUM>`: Go To Tabs; see the [plugin:GoToTabs](https://plugins.jetbrains.com/plugin/7784)
+
+### Active Tool Window
+- `Shift + Escape`: Hide Active Tool Window
+- `Alt + <NUM>`: Activate some Tool Window
+- `Alt + M`: Show/Hide side `Maven Projects`
+- `Alt + P`: Show/Hide side `PlantUML`
 
 ## Help
 
 - `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 
 ## Others
+
+## Unit Tests
+- `Alt + Enter | Create Test`: on a Class name to pop a dialog for creating unit tests
 
 ### Search and Replace
 
