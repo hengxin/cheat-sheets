@@ -37,7 +37,7 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 - `Ctrl + B (Navigate | Declaration)`: Navigate to the declaration of a class, method, or variable; OR `Ctrl + Click`
 - `Ctrl + Alt + B (Navigate | Implementation(s))`: Navigate to implementation methods of an `abstract` method
-- `Ctrl + N (Navigate | Class)`: Typing the class name to locate it
+- `Ctrl + N (Navigate | Class)`: Typing the Class name to locate it
 - `Ctrl + F12 (Navigate | File Structure)`: Navigate in the currently edited file; list of members of the current class
 - `F2`: Next Highlighted Error
 - `Shift + F2`: Previous Highlighted Error
@@ -63,7 +63,8 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 ## Refactor
 
 - `Shift + F6`: Rename
-- [`F6 (Refactor | Move...)`](http://stackoverflow.com/a/31569235/1833118): Move inner class to upper level (*Note:* select the Class name first)
+- [`F6 (Refactor | Move...)`](http://stackoverflow.com/a/31569235/1833118): Select the Class name first; Move inner class to upper level
+- `F6 (Refactor | Move...)`: Select the file first; Move the file to another package/directory
 
 ## Build
 
