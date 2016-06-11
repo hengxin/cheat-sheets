@@ -6,3 +6,6 @@
   Using `throw new IllegalArgumentException(<msg>)`. 
   
   Do not forget to declare this exception in `@throw` clause in JavaDoc (instead of in the surrounding method).
+  
+## Threads
+- `TimeUnit.SECONDS.sleep(100);` instead of `Thread.sleep(100000);`
