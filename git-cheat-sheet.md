@@ -15,6 +15,10 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600000' # in seconds
 ```
 
+- [Git Push Fails - fatal: The remote end hung up unexpectedly](https://confluence.atlassian.com/bitbucketserverkb/git-push-fails-fatal-the-remote-end-hung-up-unexpectedly-779171796.html)
+
+  I encounter this issue with Bitbucket. The resolution is to increase the Git buffer size to the largest individual file size of your repo: `git config --global http.postBuffer 157286400`
+
 ## `git init` and GitHub repository
 
 ### Case study (1): [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
