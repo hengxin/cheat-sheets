@@ -15,6 +15,14 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ## Motion
 
+### Jumping
+
+#### [Jumping to previously edited place](http://stackoverflow.com/q/2131305/1833118)
+
+- `'.` or ``.`: The last change is held in the mark named `.`
+- `g;`: Go to [count] older position in change list
+- `g,`: Go to [count] newer cursor position in change list
+
 ## [Search](http://vim.wikia.com/wiki/Searching)
 
 ### Basic search

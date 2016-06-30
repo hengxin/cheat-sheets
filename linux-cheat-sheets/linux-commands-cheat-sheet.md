@@ -2,6 +2,10 @@
 
 ## Terminals
 
+### Install
+- `sudo apt install gnome-terminal`
+- `sudo apt remove gnome-terminal`
+
 ### Open
 - `Ctrl + Alt + T`: open a new terminal window
 - `Ctrl + Shift + T`: open a terminal tab in the current terminal window
@@ -56,6 +60,8 @@
 - `ln -sv ~/.dotfiles/vim/vim/ ~/.vim`
 
 ### Create
+- `mkdir <dir>`: create empty directory `<dir>`
+- `touch <file>`: create empty file `<file>`
 
 ### Move (Rename), Copy, and Remove
 
@@ -68,6 +74,12 @@
 
   - `cp /home/usr/dir/{file1,file2,file3,file4} /home/usr/destination/` *Note:* no space between files
   - `cp /home/usr/dir/file{1..4} ./`
+
+### Read and Write Files and Directories
+- `head -n 10 <file>`: Print the first 10 lines of file
+- `tail -n 10 <file>`: Print the last 10 lines of file
+- `tail -f <file>`: Print appended data as the file grows
+- `tail -f -s <N> <file>`: Sleep for N seconds between iterations
 
 ### Tar
 - [`tar -xvzf community_images.tar.gz`](http://askubuntu.com/a/25348/306000)
@@ -84,3 +96,18 @@
 
 - `Win + RightArrow`: move and re-size working window to the *right* half the screen
 - `Win + LeftArrow`: move and re-size working window to the *left* half the screen
+
+## Processes
+- [`jobs` and then `fg <num>`](http://stackoverflow.com/a/14099502/1833118): show a list of background processes and bring some one back to the foreground
+- [`fg`](http://unix.stackexchange.com/a/45029): bring the last process back to foreground
+- [`jobs` and then `kill -19 %job-id`](http://unix.stackexchange.com/a/45029): suspend the process (`Ctrl + Z`)
+
+## Networking
+
+### Ping
+- `ping <ip> >> ping-log 2>&1`: also redirected stat into file.
+- `kill -SIGINT <ping-pid>`: If the program is terminated with a SIGINT, a brief summary is displayed.
+- [`kill -SIGQUIT <ping-pid>`](http://unix.stackexchange.com/a/143853): Shorter current statistics can be obtained without termination of process with signal SIGQUIT.
+- `kill -SIGINT `pgrep ping``: show stat and stop ping
+- `kill -SIGQUIT `pgrep ping``: show stat without stopping ping
+- [`kill $(pidof ping)`](http://unix.stackexchange.com/a/58141): kill all ping processes
