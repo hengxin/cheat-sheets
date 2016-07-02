@@ -40,9 +40,10 @@
 - `full_path="$part1/$part2"`: concatenate two strings to build a path 
 - `if [ "$a" = "$b" ]`: test equals of two strings
 
-## Date
-- [`date +"%A, %B %d %Y"`](http://www.simplehelp.net/2008/12/18/the-linux-date-command/): Friday, June 30 2016
+## Date and Time
+- [`date +"%A, %T, %B %d, %Y"`](http://www.simplehelp.net/2008/12/18/the-linux-date-command/): Friday, 10:10:00, June 30, 2016
 - [`date --date="next month"`]: next month|last month|5 days ago|tomorrow|next Sunday|
+- [`time <cmd>`](http://unix.stackexchange.com/a/52315): timing
 
 ## Threads
 - `sleep 5s/5m/5h/5d`: waits 5 seconds/minutes/hours/days
