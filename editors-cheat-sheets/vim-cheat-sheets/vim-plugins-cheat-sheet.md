@@ -71,7 +71,10 @@ let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
 
 ## [Surround](https://github.com/tpope/vim-surround)
 
-### Install: `Plugin 'tpope/vim-surround'`
+### Install
+
+Adding `Plugin 'tpope/vim-surround'` to `.vimrc`
+
 ### Usages
 - `ds(`: delete surrounding of `()`; `(hello world)` => `hello world`
 - `cs({`: change surrounding `()` to `{}`; `(hello world)` => `{hello world}`
@@ -91,3 +94,13 @@ let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
 ### Usages
 - `:LanguageToolCheck`
 - `:LanguageToolClear`
+
+## [bashsupport](https://github.com/vim-scripts/bash-support.vim)
+
+### Install
+
+Adding `Plugin 'vim-scripts/bash-support.vim'` to `.vimrc`
+
+### Usage
+- [Make Vim as Your Bash-IDE Using bash-support Plugin](http://www.thegeekstuff.com/2009/02/make-vim-as-your-bash-ide-using-bash-support-plugin/) 
+- `:h bashsupport`
