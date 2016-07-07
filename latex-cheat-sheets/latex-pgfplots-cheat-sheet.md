@@ -39,9 +39,19 @@
   node[pos=0.0, pin=right:``first point'']{} 
   node[pos=1.0, pin=left:``last point'']{};
   ```
+- [Change pin node style in pgfplots](http://tex.stackexchange.com/a/42302/23098)
 
-### `node near coord`
-- [Lable data points using `node near coord`](http://tex.stackexchange.com/a/191439/23098)
+  ```
+  \tikzset{every pin edge/.style={draw=red, ultra thick}}
+  \node [coordinate, pin={[ultra thick, draw=blue, fill=yellow]foobar}] at (0,0) {};
+  ```
+
+  ```
+  \node [coordinate, pin={[ultra thick, draw=blue, fill=yellow,pin edge={red, ultra thick}]foobar}] at (0,0) {};
+  ```
+
+### `node near coords`
+- [Lable data points using `node near coords`](http://tex.stackexchange.com/a/191439/23098)
   ```
   \begin{axis}[
     every node near coord/.append style={
@@ -51,38 +61,69 @@
   ]
   \addplot+[nodes near coords, mark=pentagon] table[x=xtick, y=median, meta=median] {dataFile};
   ```
+
+- [Shifting in `node near coords`](http://tex.stackexchange.com/a/177449/23098)
+  ```
+  every node near coord/.append style={yshift=-0.5cm}   % yshift can be adjusted
+  ```
+
+- [`nodes near coords` with logarithmic axis: Wrong values](http://tex.stackexchange.com/a/142967/23098)
+  ```
+  point meta = rawx % or, point meta = rawy
+  ```
+- [`nodes near coords`pgfplots how to nicely place nodes](http://tex.stackexchange.com/a/58870/23098)
+  ```
+  nodes near coords,
+  every node near coord/.append style = {
+  font=\scriptsize,
+  /pgf/number format/precision=3, % set the precision
+  anchor=-\coordindex*10 % angle: 0, -10, -20, ...
+  }
+  ```
+
+- [Define node/pins near some coords using `nodes near coords`?](http://tex.stackexchange.com/a/191439/23098)
+  ```
+  nodes near some coords={1,3}
+  ```
 ## Grid
 
 ### Draw Grid
 - [How to draw (major) grid lines only at specified positions?](http://tex.stackexchange.com/a/306095/23098)
-```
-\begin{axis}[
-  xtick={-4,-2,...,4},
-  % place some extra x ticks ...
-  extra x ticks={0,2},
-  % ... but do not repeat the already existent labels from the "normal" ticks ...
-  extra x tick labels={},
-  % ... and set the style of the extra ticks to `major'
-  extra tick style={
-    grid=major,
-  },
-]
-```
+  ```
+  \begin{axis}[
+    xtick={-4,-2,...,4},
+    % place some extra x ticks ...
+    extra x ticks={0,2},
+    % ... but do not repeat the already existent labels from the "normal" ticks ...
+    extra x tick labels={},
+    % ... and set the style of the extra ticks to `major'
+    extra tick style={
+      grid=major,
+    },
+  ]
+  ```
 
 ### Grid Styles
+
+- [Enable grids](http://tex.stackexchange.com/a/96837/23098)
+  ```
+  ymajorgrids % or xmajorgrids
+  ```
+
 - [Change the appearance of grids in pgfplots](http://tex.stackexchange.com/a/91223/23098)
 
-```
-minor ticks: \pgfplotsset{minor grid style={dashed,red}}
-major ticks: \pgfplotsset{major grid style={dashed, red}}
-both minor and major ticks: \pgfplotsset{grid style={dashed,gray}}
-```
+  ```
+  minor ticks: \pgfplotsset{minor grid style={dashed,red}}
+  major ticks: \pgfplotsset{major grid style={dashed, red}}
+  both minor and major ticks: \pgfplotsset{grid style={dashed,gray}}
+  ```
 
 ## Legends
 
 - `legend entries={ }`
 
 ### `\addlegendimage{}` and `\addlegendentry{}`
+
   - [Adding legend title](http://tex.stackexchange.com/a/2332/23098)
 
     ```
@@ -112,7 +153,7 @@ both minor and major ticks: \pgfplotsset{grid style={dashed,gray}}
     every whisker/.style={red,ultra thick},
     every median/.style={densely dotted,cyan,ultra thick},
   ]
-```
+  ```
 
 - [Using named nodes as pgfplots coordinates](http://tex.stackexchange.com/a/257493/23098)
   ```
