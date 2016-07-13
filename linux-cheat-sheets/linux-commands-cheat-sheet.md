@@ -30,8 +30,8 @@
 ### `ls`
 
 #### Options
-- `-a`
-- `-l`
+- `-a`: show all files, including dot files
+- `-l`: long format
 - `-s` = `--summary`: display only a total for each argument
 - `-t` = `--sort=time`
 - `-X` = `--sort=extension`
@@ -43,8 +43,10 @@
 - `ls -laSh`
 - [How do I get the size of a directory on the command line?](http://unix.stackexchange.com/q/185764)
   - `du -sh * (or <file>)`: give the size of all the directories, files etc in current directory in human readable format.
-  
-    > `du`: disk usage; `df`: disk free space
+    - `du`: disk usage; `df`: disk free space
+    - `-s`: summary
+    - `-h`: human-readable
+    - `--max-depth=<NUM>`: for directory and subdirectories
 
 ### `cd`
 - `cd ../../../`: Go three directories up
@@ -80,6 +82,7 @@
 - `tail -n 10 <file>`: Print the last 10 lines of file
 - `tail -f <file>`: Print appended data as the file grows
 - `tail -f -s <N> <file>`: Sleep for N seconds between iterations
+- [`watch "ls -lrt | tail -10"`](http://www.jamesseibel.com/blog/how-to-tail-a-directory-in-linux): tail *-f* a directory
 
 ### Tar
 - [`tar -xvzf community_images.tar.gz`](http://askubuntu.com/a/25348/306000)
@@ -90,7 +93,6 @@
 - [`tar xf community_images.tar.gz`](http://askubuntu.com/a/398336/306000) suffices.
   
   At some point tar was upgraded to auto-decompress.
-
 
 ## Windows
 
