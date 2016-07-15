@@ -10,6 +10,13 @@
 
 ## Basic Syntax
 
+### Variables
+- [store command in a variable and later execute it](http://stackoverflow.com/q/4668640/1833118)
+```
+cmd="ls -la $APPROOTDIR | grep exception"
+$cmd
+```
+
 ### The very basics
 - `#`: for comment
 - `#!/bash/bin`: *must* be the first line
@@ -38,7 +45,11 @@
 ## String
 - `"$a$b"`: concatenate two strings
 - `full_path="$part1/$part2"`: concatenate two strings to build a path 
-- `if [ "$a" = "$b" ]`: test equals of two strings
+- `if [ "$a" = "$b" ]`: test equality of two strings
+
+## Arrays
+- [`ele=${arr[$RANDOM % ${#arr[@]} ]}`](http://stackoverflow.com/a/2388555/1833118): randomly select an element from an array
+- [``](http://stackoverflow.com/q/3685970/1833118): check if an array contains a value
 
 ## Date and Time
 - [`date +"%A, %T, %B %d, %Y"`](http://www.simplehelp.net/2008/12/18/the-linux-date-command/): Friday, 10:10:00, June 30, 2016

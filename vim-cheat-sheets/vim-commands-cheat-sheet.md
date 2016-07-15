@@ -12,6 +12,10 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 ### Editing a File
 
 ### Inserting Text
+- [:%s/^/\=printf('%-4d', line('.'))](http://vim.wikia.com/wiki/Insert_line_numbers): insert line numbers at the start of every line
+  - `^`: matches the start of every line
+  - `\=`: the result of evaluating the following expression
+  - `printf`: specify the format
 
 ## Motion
 
@@ -51,6 +55,8 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 - [Multiple search and replace in one line](http://stackoverflow.com/a/4737221/1833118)
 
   `:%s/aaa/bbb/e | %s/111/222/e` (`e`: suppress errors)
+
+- [Shift+V | /\%V<pattern>](http://stackoverflow.com/a/16572822/1833118): search in current line only
 
 ## Word Processing
 

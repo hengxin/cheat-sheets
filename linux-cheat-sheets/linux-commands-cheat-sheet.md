@@ -99,6 +99,13 @@
 - `Win + RightArrow`: move and re-size working window to the *right* half the screen
 - `Win + LeftArrow`: move and re-size working window to the *left* half the screen
 
+## System Monitor
+
+- `sudo poweroff`: shutdown
+- `sudo reboot`: reboot
+- [`free -m`](http://askubuntu.com/a/9655/306000): memory usage; also try `watch -n 5 free -m`
+- [`ps aux --sort -rss | head -n 15`](http://unix.stackexchange.com/a/92498): sorting down processes by memory usage
+
 ## Processes
 - [`jobs` and then `fg <num>`](http://stackoverflow.com/a/14099502/1833118): show a list of background processes and bring some one back to the foreground
 - [`fg`](http://unix.stackexchange.com/a/45029): bring the last process back to foreground
@@ -113,3 +120,6 @@
 - `kill -SIGINT `pgrep ping``: show stat and stop ping
 - `kill -SIGQUIT `pgrep ping``: show stat without stopping ping
 - [`kill $(pidof ping)`](http://unix.stackexchange.com/a/58141): kill all ping processes
+
+### IP
+- [`getent hosts <host> | awk 'NR==1 { print $1 }'`](http://unix.stackexchange.com/a/20793): resolve hostname to ip
