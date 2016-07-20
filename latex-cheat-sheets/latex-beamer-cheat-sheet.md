@@ -18,6 +18,10 @@
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 ```
+- [Changing frame margins in Beamer Theme](http://tex.stackexchange.com/a/75983/23098)
+```
+\setbeamersize{text margin left = 1em, text margin right = 1em}
+```
 
 ### For Thesis
 - [Beamer2Thesis](http://cfiandra.github.io/Beamer2Thesis/)
@@ -27,9 +31,15 @@
 ### For Posters
 
 ## Columns
-
-### alignment
-`\begin{columns}[t]`
+- `\begin{columns}[t]`: alignment
+- [Separate beamer columns with vertical lines](http://tex.stackexchange.com/a/95188/23098)
+```
+\vrule{}
+```
+- [Adding horizontal line](http://tex.stackexchange.com/a/209960/23098)
+```
+\color{red}\rule{\linewidth}{4pt}
+```
 
 ## List: enumerate, itemize, and description
 - [Vertical space between items](http://tex.stackexchange.com/a/12374/23098)
@@ -46,7 +56,7 @@
 ```
 
 ## Listings and Algorithms
-- `\begin{frame}[fragile]{frame-name}`
+- `\begin{frame}[fragile]{frame-name} % fragile cannot be ignored`
 - [Beamer and algorithm/pseudocode](http://tex.stackexchange.com/a/26544/23098)
 ```
 \usepackage{algorithm2e, algorithmic}
@@ -63,7 +73,50 @@
 ```
 
 ## Blocks
+- [Changing default width of blocks in beamer](http://tex.stackexchange.com/q/12550/23098)
+  - [Original block environments with customizable width](http://tex.stackexchange.com/a/12558/23098)
+  ```
+  \addtobeamertemplate{block begin}{%
+    \setlength{\textwidth}{0.9\textwidth}%
+  }{}
+  
+  \addtobeamertemplate{block alerted begin}{%
+    \setlength{\textwidth}{0.9\textwidth}%
+  }{}
+  
+  \addtobeamertemplate{block example begin}{%
+    \setlength{\textwidth}{0.9\textwidth}%
+  }{}
+  ```
+  - [Define your own block environment with an optional parameter for its width](http://tex.stackexchange.com/a/12551/23098)
+  ```
+  \newenvironment<>{varblock}[2][.9\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \begin{actionenv}#3%
+    \def\insertblocktitle{#2}%
+    \par%
+    \usebeamertemplate{block begin}}
+  {\par%
+    \usebeamertemplate{block end}%
+  \end{actionenv}}
 
+  \begin{varblock}[4cm]{New block}
+    Variable width, here 4cm
+  \end{varblock}
+  ```
+
+## Overlay
+
+## Layout
+- [Absolute position in frame](http://tex.stackexchange.com/a/80496/23098)
+```
+\usepackage[overlay,absolute]{textpos}
+\only<2->{
+  \begin{textblock}{5}(6,6) 
+    Some more text
+  \end{textblock}
+}
+```
 
 ## Tools
 

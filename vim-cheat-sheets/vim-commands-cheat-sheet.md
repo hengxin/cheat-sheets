@@ -5,6 +5,15 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ![vi-vim-cheat-sheet](http://www.viemu.com/vi-vim-cheat-sheet.gif)
 
+## Resources for VIM
+
+### Tutorials
+- [Why, oh WHY, do those #?@! nutheads use vi?](http://www.viemu.com/a-why-vi-vim.html) `6 misconcepts about VIM and 6 powerful examples`
+
+### Tools
+
+- [ViEmu](http://www.viemu.com/): `Vi/vim emulation for Visual Studio, Xcode, Word, Outlook & SQL Server`
+
 ## How to Exit
 
 ## File
@@ -73,15 +82,6 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ## Tag
 
-## Resources for VIM
-
-### Tutorials
-- [Why, oh WHY, do those #?@! nutheads use vi?](http://www.viemu.com/a-why-vi-vim.html) `6 misconcepts about VIM and 6 powerful examples`
-
-### Tools
-- [ViEmu](http://www.viemu.com/): `Vi/vim emulation for Visual Studio, Xcode, Word, Outlook & SQL Server`
-
-
-
-
-
+## Shell Commands
+- [`:!<cmd>`](http://superuser.com/a/285505): Execute a command with a shell from within Vim
+- [`:shell`](http://superuser.com/a/285505): Start a shell from within Vim

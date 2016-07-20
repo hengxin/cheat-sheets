@@ -234,18 +234,6 @@ end{tabular}
 - `\usepackage{amssymb}`: load `amsfonts` automatically
 - `usepackage{amsmath}`
 
-### Array
-- [Adjusting space between array rows and columns](http://tex.stackexchange.com/a/103511/23098)
-  - Using `\arraycolsep` and `\arraystretch`
-  ```
-  \[\arraycolsep=1.0pt\def\arraystretch{1.5}
-    \begin{array}{rll}
-      x(1) &= \dfrac{x(0)}{1} &= x(0)\\
-      x(2) &= \dfrac{x(1)}{2} &= \dfrac{x(0)}{2}\\
-    \end{array}
-  \]
-  ```
-
 ### Math Symbols
 - [bold math symbols](http://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols)
   - `$\boldsymbol{\infty}$` or `$\pmb{\infty}$` to one symbol at a time
@@ -266,6 +254,43 @@ end{tabular}
 \DeclareMathOperator{\argminG}{arg\,min} % Jan Hlavacek
 \DeclareMathOperator{\argminH}{argmin}   % Jan Hlavacek
 \newcommand{\argminI}{\mathop{\mathrm{argmin}}\nolimits} % ASdeL
+```
+- [xmark and checkmark](http://tex.stackexchange.com/a/42620/23098)
+```
+\usepackage{amssymb, pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+```
+
+### Array
+- [Adjusting space between array rows and columns](http://tex.stackexchange.com/a/103511/23098)
+  - Using `\arraycolsep` and `\arraystretch`
+  ```
+  \[\arraycolsep=1.0pt\def\arraystretch{1.5}
+    \begin{array}{rll}
+      x(1) &= \dfrac{x(0)}{1} &= x(0)\\
+      x(2) &= \dfrac{x(1)}{2} &= \dfrac{x(0)}{2}\\
+    \end{array}
+  \]
+  ```
+
+### Align
+- [amsmath align environment: row spacing](http://tex.stackexchange.com/a/14680/23098)
+```
+\begin{align*}
+  X &= \frac{\textit{Some text here}}{\textit{And some text here}}\\[1em]
+  Y &= \frac{\textit{Will make everything}}{\textit{Look too close together}}
+\end{align*}
+```
+Or, to add a little extra spacing to every row of an align:
+```
+\begingroup
+  \addtolength{\jot}{1em}
+  \begin{align*}
+    X &= \frac{\textit{Some text here}}{\textit{And some text here}}\\
+    Y &= \frac{\textit{Will make everything}}{\textit{Look too close together}}
+  \end{align*}
+\endgroup
 ```
 
 ## Algorithms
