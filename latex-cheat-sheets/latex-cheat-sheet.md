@@ -49,6 +49,18 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 - [Strikethrough text](http://tex.stackexchange.com/a/23712/23098)
   - `\usepackage[normalem]{ulem} \sout{Hello World}`; see [ulem](http://ctan.org/pkg/ulem)
   - `\usepackage{soul} \st{Hellow world}`
+  - `\sout{\textcolor{blue}{text}}`: with textcolor; It seems that `soul` does not work.
+- [Thickness for \sout{} (strikethrough) command from ulem package](http://tex.stackexchange.com/a/287603/23098)
+```
+\usepackage{ulem}
+\newcommand{\soutthick}[1]{%
+    \renewcommand{\ULthickness}{2.4pt}%
+       \sout{#1}%
+    \renewcommand{\ULthickness}{.4pt}% Resetting to ulem default
+}
+\soutthick{text}
+\sout{text}
+```
 
 ### Fonts
 - [Font Size](http://tex.stackexchange.com/a/107058/23098)
@@ -65,9 +77,16 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
   Following paragraph.
   ```
   *Note:* Insert a `%` symbol after closing the group with `\tiny`.
+
+
 - [How to remove the warnings “Font shape `OT1/cmss/m/n' in size <4> not available” and “Size substitutions with differences” in beamer?](http://tex.stackexchange.com/a/58088/23098)
   
   Adding `\usepackage{lmodern} % http://ctan.org/pkg/lm`
+
+- [Simplest way to typeset entire document in sans serif](http://tex.stackexchange.com/a/2097/23098)
+```
+\renewcommand{\familydefault}{\sfdefault} % switch to using sans-serif for everything except mathematics
+```
 
 ### Colors
 - [Page 8 of "A very minimal introduction to TikZ"](http://cremeronline.com/LaTeX/minimaltikz.pdf)
@@ -82,6 +101,15 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
 - [Lighten colors](http://tex.stackexchange.com/a/48663/23098)
   Using the `xcolor` package: `red!60`
+
+### Hyperlinks and URLs
+- [How to change the color of `\href` links](http://tex.stackexchange.com/a/13424/23098)
+```
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+% then in body
+\href{http://tex.stackexchange.com/questions/13423/how-to-color-href-links-in-beamer}{Your question}
+```
 
 ## Theorems and Proofs
 
@@ -128,6 +156,16 @@ When typesetting in two column mode, two more lengths are available:
 - [subcaption vs. subfig: Best package for referencing a subfigure](http://tex.stackexchange.com/q/13625/23098)
 
   `Using subcaption > subfig > subfigure`
+- [use includegraphics with relative path](http://tex.stackexchange.com/a/172327/23098)
+```
+\usepackage{graphicx} % in preamble
+\graphicspath{{sub/}} % in body
+```
+
+- [Rotate figures](http://tex.stackexchange.com/a/120156/23098)
+```
+\includegraphics[width = 6.0in, angle = 90]{file}; % not rotate = 90
+```
 
 #### [`subcaption`](http://texdoc.net/texmf-dist/doc/latex/caption/subcaption.pdf)
 - [`\usepackage{graphicx, subcaption}`](https://github.com/hengxin/algorithm-ta-tutorial/blob/master/algorithm-tutorial-graph-decomposition-2016-05-19/sections/dfs-bfs.tex)

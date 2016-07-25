@@ -1,6 +1,40 @@
 # LaTeX TikZ Cheat Sheet
 
-## Arrows
+## Basics (no need of libraries)
+- [Transparent node with opaque text](http://tex.stackexchange.com/a/42408/23098)
+
+After setting the `opacity`, you have to reset the `text opacity=1` to get opaque text. 
+The `opacity` key is a shorthand for setting the `draw opacity` and the `fill opacity` at the same time, 
+and the `fill opacity` in turn automatically applies to the `text opacity`.
+
+```
+\node at(2,0) [right,fill=green,opacity=.2,text opacity=1] {Node};
+```
+
+- [Get arbitrary font size; How to get larger fonts than \Huge in nodes with tikz](http://tex.stackexchange.com/a/96573/23098)
+```
+\usepackage{lmodern}
+\draw (2,1.5) node[font=\fontsize{52}{58}\sffamily\bfseries]{TEXT};
+```
+
+## TikZ Styles (`.style`)
+- [Tikz /.style with (two) parameters](http://tex.stackexchange.com/q/21395/23098)
+```
+transformer/.style 2 args={draw, cylinder, gray!80, rotate=90, minimum height=#1, minimum width=#2}]
+\node [transformer={2.3cm}{1cm}] () at (0,0.6) {};
+```
+
+- [How to set a default parameter for all edges](http://tex.stackexchange.com/a/129071/23098)
+```
+\path[->,every edge/.append style = {double}] (0,0) edge[bend left] (1,1) (1,3)edge[loop above] ();
+\path[->] (0,3) edge[bend left] (1,2) edge[loop above] ();
+```
+
+## Arrows (`\usetikzlibrary{arrows}`)
+- [Double-headed arrows](http://tex.stackexchange.com/a/120809/23098)
+```
+\draw[>=triangle 90, ->>] (0,0) -- (2,0);  % set `>=` first
+```
 
 ## Background Library
 
@@ -37,6 +71,12 @@
 }};
 ```
 
+## Positioning (`\usetikzlibrary{positioning}`)
+- [Align nodes to the left](http://tex.stackexchange.com/a/13673/23098)
+```
+\node [draw,below = of A.west, anchor = west] (B) {B};
+```
+
 ## Shapes
 
 - [Shapes: circle, ellipse, circle split, diamond, polygon, sign, star](http://www.texample.net/tikz/examples/node-shapes/)
@@ -60,7 +100,6 @@
   - `minimum size = <dimen>`: to get a square
   - `minimum width = <dimen>` + `minimum height = <dimen>`
 
-
 ## To Path Library
 `\usetikzlibrary{topaths}`
 
@@ -74,3 +113,14 @@
 ### curve
 `\path[->] (c) edge[back, bend right] (e);`
 
+## Fun and Miscellaneous
+- [Nice scientific pictures show off](http://tex.stackexchange.com/q/158668/23098)
+
+- [How can I draw an egg using TikZ](http://tex.stackexchange.com/a/74175/23098)
+```
+\begin{tikzpicture}
+    \draw (0,0) 
+    .. controls (0,-1.5) and (2,-1.5).. (2,0)
+    .. controls (2,2.5) and (0,2.5) .. (0,0);
+\end{tikzpicture}
+```

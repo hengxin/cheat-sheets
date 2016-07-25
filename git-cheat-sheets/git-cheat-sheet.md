@@ -81,7 +81,7 @@ Filter commit history:
   - `git checkout the-file-to-discard` for specific file; OR
   - `git checkout -- .` for all files
   
-#### Delete commits
+#### Undo commits
 
 ## Remote
 
@@ -135,6 +135,17 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
 
 ### Show tags
 `git tag` or `git show v0.5`
+
+## [Git Large Files; `git-lfs`](https://github.com/github/git-lfs)
+
+### Install git-lfs
+- `curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash`: install packagecloud
+- `sudo apt-get install git-lfs`
+- `git lfs install`
+
+### Using git-lfs in a repository
+- `git lfs track "*.zip"`: specify file patterns to store with Git LFS (stored in `.gitattributes`)
+- `git lfs ls-files`
 
 ## Git Ignore `.gitignore`
 

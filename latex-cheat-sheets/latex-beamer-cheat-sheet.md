@@ -3,24 +3,34 @@
 ## Documents and Tutorials
 - [Beamer User Guide](http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf)
 
-## Beamer Themes and Templates
+## Gallery of Beamer Themes and Templates
 
-### Gallery
 - [Beamer Theme Matrix](https://www.hartwork.org/beamer-theme-matrix/)
 - [Beamer theme gallery](http://deic.uab.es/~iblanes/beamer_gallery/)
 - [ShareLaTeX | Templates | Presentations](https://www.sharelatex.com/templates/presentations)
 - [Overleaf | Templates | Presentations](https://www.overleaf.com/latex/templates/tagged/presentation#.VylqI2F96V4)
 
-### Beamer Appearance
+## Beamer Appearance
 - [BEAMER appearance cheat sheet](http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
+
+### beamertemplate
 - [Change bullet style / formatting in Beamer](http://tex.stackexchange.com/a/11170/23098)
 ```
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 ```
+
+### beamersize
 - [Changing frame margins in Beamer Theme](http://tex.stackexchange.com/a/75983/23098)
 ```
 \setbeamersize{text margin left = 1em, text margin right = 1em}
+```
+
+### beamercolor
+- [Adding color to the footnote mark in Beamer](http://tex.stackexchange.com/a/6152/23098)
+```
+\setbeamercolor{footnote}{fg = red}
+\setbeamercolor{footnote mark}{fg = red}
 ```
 
 ### For Thesis
@@ -39,6 +49,37 @@
 - [Adding horizontal line](http://tex.stackexchange.com/a/209960/23098)
 ```
 \color{red}\rule{\linewidth}{4pt}
+```
+
+- [Display the footnote in the bottom of the slide while using `columns`](http://tex.stackexchange.com/a/86651/23098)
+```
+\begin{columns}
+\column{.5\textwidth}
+Some text for the first column and a test footnote\footnotemark
+\column{.5\textwidth}
+Some text for the second column and a test footnote\footnotemark
+\end{columns}
+\footnotetext[1]{A test footnote in the first column}
+\footnotetext[2]{A test footnote in the second column}
+```
+
+```
+\begin{columns}
+\column{.5\textwidth}
+Some text for the first column and a test footnote\footnotemark
+\column{.5\textwidth}
+Some text for the second column and a test footnote\footnotemark[1]
+\end{columns}
+\footnotetext{A test footnote for both columns}
+``` 
+
+```
+\begin{columns}
+\column{.5\textwidth}
+Some text for the first column and a test footnote\footnote[frame]{A test footnote in the first column}
+\column{.5\textwidth}
+Some text for the second column and a test footnote\footnote[frame]{A test footnote in the second column}
+\end{columns}
 ```
 
 ## List: enumerate, itemize, and description
