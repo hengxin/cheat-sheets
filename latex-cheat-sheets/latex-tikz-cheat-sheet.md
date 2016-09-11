@@ -17,6 +17,11 @@ and the `fill opacity` in turn automatically applies to the `text opacity`.
 \draw (2,1.5) node[font=\fontsize{52}{58}\sffamily\bfseries]{TEXT};
 ```
 
+- [Increasing math mode font size in tikz picture](http://tex.stackexchange.com/a/215813/23098)
+```
+\draw (1,0) node[font=\fontsize{60}{60}\selectfont]{$\pi$} circle (1);
+```
+
 ## TikZ Styles (`.style`)
 - [Tikz /.style with (two) parameters](http://tex.stackexchange.com/q/21395/23098)
 ```
@@ -30,10 +35,14 @@ transformer/.style 2 args={draw, cylinder, gray!80, rotate=90, minimum height=#1
 \path[->] (0,3) edge[bend left] (1,2) edge[loop above] ();
 ```
 
-## Arrows (`\usetikzlibrary{arrows}`)
+## Arrows (`\usetikzlibrary{arrows, arrows.meta}`)
 - [Double-headed arrows](http://tex.stackexchange.com/a/120809/23098)
 ```
 \draw[>=triangle 90, ->>] (0,0) -- (2,0);  % set `>=` first
+```
+- [Adjusting the size of an arrow](http://tex.stackexchange.com/a/150739/23098)
+```
+\draw[>={Latex[length = 5pt, width = 2pt]}, ->] (0,0) -- (2,0);
 ```
 
 ## Background Library

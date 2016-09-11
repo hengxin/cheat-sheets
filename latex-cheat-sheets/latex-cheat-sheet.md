@@ -337,6 +337,7 @@ Or, to add a little extra spacing to every row of an align:
 
 Using `footnotemark` and `footnotetext`.
 
+
 ## Resources
 
 ### Packages

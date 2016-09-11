@@ -15,6 +15,11 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600000' # in seconds
 ```
 
+- [Unable to connect to cache daemon?](http://stackoverflow.com/a/22711778/1833118)
+```
+sudo chown <your-user> ~/.git-credential-cache/socket
+```
+
 - [Git Push Fails - fatal: The remote end hung up unexpectedly](https://confluence.atlassian.com/bitbucketserverkb/git-push-fails-fatal-the-remote-end-hung-up-unexpectedly-779171796.html)
 
   I encounter this issue with Bitbucket. The resolution is to increase the Git buffer size to the largest individual file size of your repo: `git config --global http.postBuffer 157286400`
@@ -148,6 +153,9 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
 - `git lfs ls-files`
 
 ## Git Ignore `.gitignore`
+
+## Git Trace
+- [`GIT_CURL_VERBOSE=1 GIT_TRACE=1 git push`](https://github.com/github/git-lfs/issues/1356)
 
 ### Collections
 - [github/gitignore](https://github.com/github/gitignore)

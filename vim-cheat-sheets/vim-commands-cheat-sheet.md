@@ -16,15 +16,41 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 ## How to Exit
 
+## Vim Sessions
+
 ## File
+
+### [netrw: Vimmers, You Don’t Need NerdTree](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3)
+- `:E` or `:Explore`: enter the explorer mode
+- `i`: toggling the list style
+- `d`: creates a new directory
+- `%`: creates and opens a new file
+- `D`: deletes a directory or file
+- `R`: renames a file
+- `t`: enter the file/directory under the cursor in a new tab
+- `o`: opens the file in a horizontal split
+- `v`: opens the file in a vertical split
+- `c-w=`: resize split windows
+- `c-6`: go back to the previous buffer (i.e., exit netrw without selecting any file)
 
 ### Editing a File
 
-### Inserting Text
+- `p`: put text *after* the cursor
+- `shift-p`: put text *before* the cursor
+
+#### Inserting Text
 - [:%s/^/\=printf('%-4d', line('.'))](http://vim.wikia.com/wiki/Insert_line_numbers): insert line numbers at the start of every line
   - `^`: matches the start of every line
   - `\=`: the result of evaluating the following expression
   - `printf`: specify the format
+
+#### [Substitute characters and lines easily](http://vim.wikia.com/wiki/Substitute_characters_and_lines_easily)
+- `[count]s`: substitute [count] chars
+- `[count]S`: delete [count] lines and enter the insert mode
+
+#### Editing Text in Insert Mode
+- `c-h`: delete a char
+- `c-w`: delete a word
 
 ## Motion
 
@@ -35,6 +61,13 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 - `'.` or ``.`: The last change is held in the mark named `.`
 - `g;`: Go to [count] older position in change list
 - `g,`: Go to [count] newer cursor position in change list
+
+#### [Jumps](http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations)
+- `c-o`: jump back to the previous location
+- `c-i`: jump forward to the next location 
+- `:jumps`: display the jump list, then
+  - `[count] c-o`
+  - `[count] c-i`
 
 ## [Search](http://vim.wikia.com/wiki/Searching)
 
@@ -77,8 +110,14 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 
 - `gq`: formating selected text
 
-## Windows (Splitted Windows)
-- `Ctrl + W | Ctrl + X`: Rotates the current focused window with the closest window to the right.
+## Windows and Screens
+- `c-w | c-x`: Rotates the current focused window with the closest window to the right.
+- `:on (:only)`: leave this split window only
+
+### [How to move screen without moving cursor in Vim?](http://stackoverflow.com/a/3458821/1833118)
+- `zz`: move current line to the middle of the screen
+- `zt`: move current line to the top of the screen
+- `zb`: move current line to the bottom of the screen
 
 ## Tag
 

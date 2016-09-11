@@ -1,4 +1,4 @@
-# Android Studio Shortcuts Cheet Sheet
+# IntelliJ Shortcuts Cheet Sheet
 
 The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
@@ -7,6 +7,7 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 - `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items
   - `Ctrl + E`: Find Recent Files
+  - `Ctrl + Shift + E`: Fine Recently Edited Files
   - `Ctrl + N`: Find Classes
   - `Ctrl + Shift + N`: Find Files
   - `Ctrl + Alt + Shift + N`: Find Symbols
@@ -19,12 +20,18 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Ctrl + Alt + Shift + S`: Project Structure...
 
   > *Note:* You (in Ubuntu) may need to first disable `Ctrl + Alt + S` for `Toggle shaded state` in `Keyboard | Windows`
+- `Alt + F4`: Exit IntelliJ
 
 ## Edit
 
 - `Alt + F7 (Edit | Find)`: Find Usages
 
   > *Note:* You (in Ubuntu) may need to first disable `Alt + F7` for `Move Window` in `Keyboard | Windows`.
+- `Ctrl + Shift + F7 (Edit | Find | Highlight Usages in File)`: Highlight usages of some variable in the current file
+  - `F3 | Shift + F3`: navigate through highlighted usages
+  - `Escape`: remove highlighting
+
+- `Shift + Insert`: Copy
 
 ## View
 
@@ -36,7 +43,7 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 ## Navigate
 
 - `Ctrl + B (Navigate | Declaration)`: Navigate to the declaration of a class, method, or variable; OR `Ctrl + Click`
-- `Ctrl + Alt + B (Navigate | Implementation(s))`: Navigate to implementation methods of an `abstract` method
+- `Ctrl + Alt + B (Navigate | Implementation(s))`: Navigate to *implementation* methods of an `abstract` method
 - `Ctrl + N (Navigate | Class)`: Typing the Class name to locate it
 - `Ctrl + F12 (Navigate | File Structure)`: Navigate in the currently edited file; list of members of the current class
 - `F2`: Next Highlighted Error
@@ -45,6 +52,9 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Alt + Up`: Previous Method
 - `Ctrl + U`: Super Method
 - `Ctrl + H`: Type Hierarchy (shown in side toolwindow)
+- `Ctrl + Alt + H`: Call Hierarchy
+- `Ctrl + Shift + H`: Method Hierarchy
+- `Ctrl + ]`: Jump to Declaration
 
 ## Code
 
@@ -62,14 +72,16 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 ## Refactor
 
-- `Shift + F6`: Rename
+- [Ctrl + Alt + Shift + T](https://plus.google.com/+PhilippeBreault/posts/NDiu73V43ip): "Refactor This" Dialog
+- `F5 (Refactor | Copy...)`: Select a file first; Make a copy of this file.
 - [`F6 (Refactor | Move...)`](http://stackoverflow.com/a/31569235/1833118): Select the Class name first; Move inner class to upper level
-- `F6 (Refactor | Move...)`: Select the file first; Move the file to another package/directory
+- `F6 (Refactor | Move...)`: Select a file first; Move the file to another package/directory.
+- `Shift + F6`: Rename
 
 ## Build
 
 - `Ctrl + F9`: Make Project
-- `What is this???`: Build APK
+- `Ctrl + Shift + Alt + F9`: ReBuild Project (user-defined)
 
 ## Run
 
@@ -77,6 +89,7 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Alt + Shift + F9`: Debug... (pop `Debug` dialog)
 - `Shift + F10`: Run the current chosen app
 - `Shift + F9`: Debug the current chosen app
+- `Ctrl + F5`: Rerun
 - `Ctrl + F2`: Stop
 - `Ctrl + F8`: Toggle Line Breakpoint
 - `F7`: Step Into
@@ -97,10 +110,12 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Ctrl + Alt + <NUM>`: Go To Tabs; see the [plugin:GoToTabs](https://plugins.jetbrains.com/plugin/7784)
 
 ### Active Tool Window
-- `Shift + Escape`: Hide Active Tool Window
+- `Shift + Escape`: Hide active tool window
 - `Alt + <NUM>`: Activate some Tool Window
 - `Alt + M`: Show/Hide side `Maven Projects`
 - `Alt + P`: Show/Hide side `PlantUML`
+- `Alt + F`: Show/Hide `Find` tool window
+- `Alt + H`: Show/Hide `Hierarchy` tool window (You maybe need to first configure this mapping.)
 
 ## Help
 
@@ -119,6 +134,8 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 - `sout` = `System.out.println($END$);`
 - `psfs` = `public static final String $END$`
+- `psflog` = `private static final Logger LOGGER = getLogger($CLASS_NAME$.class);`
+  - `$CLASS_NAME$`: the result of pre-defined function `className()`
 
 ### Template Group: Java Exception (user-defined)
 - `thiae` = `throw new IllegalArgumentException($END$);`

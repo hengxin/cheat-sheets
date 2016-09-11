@@ -65,7 +65,15 @@
 - `mkdir <dir>`: create empty directory `<dir>`
 - `touch <file>`: create empty file `<file>`
 
-### Move (Rename), Copy, and Remove
+### `chmod` 
+- `sudo chmod 776 <file>` 
+- [`sudo -R chmod 776 <dir>`](http://stackoverflow.com/a/3740159/1833118): chmod recursively 
+
+### `chown`
+- [`find . -type f -name '*.pdf' | xargs chown someuser:somegroup`](http://superuser.com/a/260939): This starts in current dir '.' to look for files (filetype f) of name pattern `'*.pdf'` then passes to xargs, which constructs a command line to chmod. 
+- [chown -R <usr:grp> <dir>](http://superuser.com/q/260925): chown recursively
+
+### Move (Rename) and Copy
 
 - `mv srcDir destDir`: move srcDir to destDir recursively (no `-R`)
 - `cp -R srcDir destDir`: copy srcDir to destDir recursively (`-R`)
@@ -76,7 +84,22 @@
 
   - `cp /home/usr/dir/{file1,file2,file3,file4} /home/usr/destination/` *Note:* no space between files
   - `cp /home/usr/dir/file{1..4} ./`
+- [Remote copy file or directory](http://askubuntu.com/a/446726/306000)
+  - `scp -r /path/to/local/dir user@remotehost:/path/to/remote/dir`
 
+### Remove File/Dir
+- [Kinds of `rm`](http://askubuntu.com/a/60433/306000)
+  - `rm -rf /path/to/directory`: remove the folder
+  - `rm -rf /path/to/directory/*`: remove things in the folder (not the folder itself)
+  - `rm -f /path/to/directory/*`: remove files (not folder) in this folder
+
+### [Rsync: a remote and local file synchronization tool](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps)
+- `rsync -avzP -e 'ssh' /path/to/local/dir user@remotehost:/path/to/remote/dir`
+  - `-a`: a combination flag
+  - `-v`: verbose 
+  - `-z`: compression
+  - `-P`: show progress
+	
 ### Read and Write Files and Directories
 - `head -n 10 <file>`: Print the first 10 lines of file
 - `tail -n 10 <file>`: Print the last 10 lines of file
@@ -94,6 +117,11 @@
   
   At some point tar was upgraded to auto-decompress.
 
+### Printer
+- [`:hardcopy`](http://stackoverflow.com/a/1410821/1833118): send this file to printer
+- [`:set printdevice = xxx`](http://stackoverflow.com/a/26287771/1833118): set options for printing
+- [`:hardcopy > output.pdf`](http://stackoverflow.com/a/26287771/1833118): print as pdf
+
 ## Windows
 
 - `Win + RightArrow`: move and re-size working window to the *right* half the screen
@@ -110,6 +138,13 @@
 - [`jobs` and then `fg <num>`](http://stackoverflow.com/a/14099502/1833118): show a list of background processes and bring some one back to the foreground
 - [`fg`](http://unix.stackexchange.com/a/45029): bring the last process back to foreground
 - [`jobs` and then `kill -19 %job-id`](http://unix.stackexchange.com/a/45029): suspend the process (`Ctrl + Z`)
+
+## [`ps`]()
+- `ps aux | grep apt`: search `apt`-related processes
+- [`ps aux | grep KEYWORD | grep -v grep | grep -v KEYWORD | awk '{print $2}'`](http://stackoverflow.com/a/14669525/1833118): extract pid from `ps aux | grep`
+
+## [`kill`]()
+- [kill -s 9 `ps aux | grep skype`](http://askubuntu.com/a/396529/306000)
 
 ## Networking
 
