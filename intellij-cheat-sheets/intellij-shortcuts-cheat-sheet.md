@@ -4,13 +4,13 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 ## The Most Powerful Ones
 
-- `Ctrl + Shift + A (Help)`: Find Action; Type "action or option name" to search.
 - `Double Shift`: Search Everywhere; `Double Shift` *again*: to include non-project items
-  - `Ctrl + E`: Find Recent Files
-  - `Ctrl + Shift + E`: Fine Recently Edited Files
   - `Ctrl + N`: Find Classes
   - `Ctrl + Shift + N`: Find Files
-  - `Ctrl + Alt + Shift + N`: Find Symbols
+  - `Ctrl + Alt + Shift + N`: Find Symbols (e.g., methods)
+  - `Ctrl + E`: Find Recent Files
+  - `Ctrl + Shift + E`: Fine Recently Edited Files
+  - `Ctrl + Shift + A`: Find Action; Type "action or option name" to search.
 - `Alt + Enter`: Quick Fix
 
 ## File

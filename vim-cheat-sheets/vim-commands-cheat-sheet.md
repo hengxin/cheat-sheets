@@ -111,8 +111,19 @@ The following wonderful graphical cheat sheet of vi/vim is stolen from [This Blo
 - `gq`: formating selected text
 
 ## Windows and Screens
+- [multiple windows](https://www.cs.oberlin.edu/~kuperman/help/vim/windows.html)
+- `:split <file>`: split window and load another file
+- `:vsplit <file>`: vertical split
+- `:sview <file>`: read-only view file
+- `ctrl + w & up arrow`: move cursor up a window
+- `ctrl + w & ctrl + w`: move cursor to another window (cycle)
 - `c-w | c-x`: Rotates the current focused window with the closest window to the right.
+- `ctrl + w=`: make all split windowns equal size
+- `ctrl + w_`: maximize the current window
+- `10 ctrl-w +`: increase window size by 10 lines
+- `:hide`: close the current window
 - `:on (:only)`: leave this split window only
+- `:ls`: show current buffers
 
 ### [How to move screen without moving cursor in Vim?](http://stackoverflow.com/a/3458821/1833118)
 - `zz`: move current line to the middle of the screen

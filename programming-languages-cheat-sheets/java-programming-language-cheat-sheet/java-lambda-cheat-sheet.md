@@ -14,3 +14,10 @@ IntStream.range(0,20).forEach(i -> doSomething());
 ```
 Collectors.toCollection(HashSet::new)
 ```
+
+## Collections
+- [Applying a change to all values in a List](http://stackoverflow.com/a/19710021/1833118)
+```
+List<String> list = Arrays.asList("Bob", "Steve", "Jim", "Arbby");
+list.replaceAll(String::toUpperCase);
+```
