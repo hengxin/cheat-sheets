@@ -4,6 +4,7 @@
 
 ### axis labels
   - [Position of axis label](http://tex.stackexchange.com/a/122749/23098)
+
   ```
   every axis x label/.style={ 
     at={(current axis.right of origin)},
@@ -34,6 +35,7 @@
 
 ### `pin`
 - [Label data points using `pin`](http://tex.stackexchange.com/a/191398/23098)
+
   ```
   \addplot table  {\datatable}
   node[pos=0.0, pin=right:``first point'']{} 
@@ -52,6 +54,7 @@
 
 ### `node near coords`
 - [Lable data points using `node near coords`](http://tex.stackexchange.com/a/191439/23098)
+
   ```
   \begin{axis}[
     every node near coord/.append style={
@@ -63,15 +66,18 @@
   ```
 
 - [Shifting in `node near coords`](http://tex.stackexchange.com/a/177449/23098)
+
   ```
   every node near coord/.append style={yshift=-0.5cm}   % yshift can be adjusted
   ```
 
 - [`nodes near coords` with logarithmic axis: Wrong values](http://tex.stackexchange.com/a/142967/23098)
+
   ```
   point meta = rawx % or, point meta = rawy
   ```
 - [`nodes near coords`pgfplots how to nicely place nodes](http://tex.stackexchange.com/a/58870/23098)
+
   ```
   nodes near coords,
   every node near coord/.append style = {
@@ -82,6 +88,7 @@
   ```
 
 - [Define node/pins near some coords using `nodes near coords`?](http://tex.stackexchange.com/a/191439/23098)
+
   ```
   nodes near some coords={1,3}
   ```
@@ -89,6 +96,7 @@
 
 ### Draw Grid
 - [How to draw (major) grid lines only at specified positions?](http://tex.stackexchange.com/a/306095/23098)
+
   ```
   \begin{axis}[
     xtick={-4,-2,...,4},
@@ -106,6 +114,7 @@
 ### Grid Styles
 
 - [Enable grids](http://tex.stackexchange.com/a/96837/23098)
+
   ```
   ymajorgrids % or xmajorgrids
   ```
@@ -122,6 +131,9 @@
 
 - `legend entries={ }`
 
+  - [Comma in legend in pgfplots](http://tex.stackexchange.com/q/129624/23098)
+    - [One solution: `legend entries =  {}{$a, b$}`](http://tex.stackexchange.com/a/129626/23098)
+    - [Another solution: `legend entries =  {$a, b$\\$c, d$\\}`](http://tex.stackexchange.com/a/154807/23098): In this case, the last element must be terminated by `\\` as well.
 ### `\addlegendimage{}` and `\addlegendentry{}`
 
   - [Adding legend title](http://tex.stackexchange.com/a/2332/23098)
@@ -147,6 +159,7 @@
 ## Boxplots
 
 - [boxplot style options](http://tex.stackexchange.com/a/181011/23098)
+
   ```
   \addplot+[
     every box/.style={very thick,dashed,draw=black,fill=yellow},
@@ -156,12 +169,14 @@
   ```
 
 - [Using named nodes as pgfplots coordinates](http://tex.stackexchange.com/a/257493/23098)
+
   ```
   \addplot+[boxplot] table[y=A] \datatable coordinate (A) at (boxplot box cs: \boxplotvalue{average}, 0.5);
   ```
 
 - [Boxplots in groups](http://tex.stackexchange.com/a/183856/23098)
   Using `draw position`:
+
   ```
   draw position={1/3 + floor(\plotnumofactualtype/2) + 1/3*mod(\plotnumofactualtype,2)},
   ```

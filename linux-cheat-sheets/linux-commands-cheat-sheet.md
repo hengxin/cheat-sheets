@@ -158,3 +158,6 @@
 
 ### IP
 - [`getent hosts <host> | awk 'NR==1 { print $1 }'`](http://unix.stackexchange.com/a/20793): resolve hostname to ip
+
+### Port
+

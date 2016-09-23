@@ -61,12 +61,15 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Ctrl + O`: Override Methods
 - `Ctrl + I`: Implements Methods
 - `Ctrl + Space`: Code Completion
-- `Alt + Insert (Code | Generate)`: Generate `getter` And `setter` Methods
 - `Ctrl + Alt + I`: Auto-Indent Lines
 - `Ctrl + /`: Comment with Line Comment `//`
 - `Ctrl + Shift + /`: Comment with Block Comment `/**  */`
-- `Ctrl + NumPad + (Code | Folding)`: Expand
-- `Ctrl + NumPad - (Code | Folding)`: Collapse
+- `Ctrl + [NumPad] + (Code | Folding)`: Expand
+- `Ctrl + [NumPad] - (Code | Folding)`: Collapse
+- `Alt + Insert (Code | Generate)`
+  - Generate `getter` And `setter` Methods
+  - [Generate `equals()` and `hashCode()`](http://stackoverflow.com/a/29256901/1833118): I use the `java.util.Objects.equals and hashCode (java 7+)` template.
+  - Generate `toString()`: I use the `MoreObjects.toStringHelper (Guava 18+)` template.
 
 ## Analyze
 
@@ -85,18 +88,20 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 ## Run
 
-- `Alt + Shift + F10`: Run... (pop `Run` dialog)
-- `Alt + Shift + F9`: Debug... (pop `Debug` dialog)
+### Run
 - `Shift + F10`: Run the current chosen app
-- `Shift + F9`: Debug the current chosen app
+- `Alt + Shift + F10`: Run... (pop `Run` dialog)
 - `Ctrl + F5`: Rerun
 - `Ctrl + F2`: Stop
+
+### Debug
+- `Shift + F9`: Debug the current chosen app
+- `Alt + Shift + F9`: Debug... (pop `Debug` dialog)
 - `Ctrl + F8`: Toggle Line Breakpoint
+- `Ctrl + Shift + F8`: View All Breakpoint; Set Conditions
 - `F7`: Step Into
 - `F8`: Step Over (debug the next line)
 - `F9`: Resume Program
-- `Ctrl + F8`: Toggle Line Breakpoint
-- `Ctrl + Shift + F8`: View All Breakpoint (Conditions)
 
 ## Tools
 
@@ -111,7 +116,7 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 
 ### Active Tool Window
 - `Shift + Escape`: Hide active tool window
-- `Alt + <NUM>`: Activate some Tool Window
+- `Alt + <NUM>`: Activate "numbered" Tool Windows
 - `Alt + M`: Show/Hide side `Maven Projects`
 - `Alt + P`: Show/Hide side `PlantUML`
 - `Alt + F`: Show/Hide `Find` tool window

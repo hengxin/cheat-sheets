@@ -1,5 +1,11 @@
 # Java Programming Language Cheat Sheet
 
+## [Java String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+
+- [`myString.split("\\s+");`](http://stackoverflow.com/a/225360/1833118): split with any whitespace
+
+Note that: `\\s` is equivalent to `[ \\t\\n\\x0B\\f\\r]`.
+
 ## File
 
 ### New
@@ -13,6 +19,14 @@
       return file;
   }
   ```
+
+### Read and Write Files Using [Guava: Files](https://google.github.io/guava/releases/19.0/api/docs/com/google/common/io/Files.html)
+
+```
+List<String> lines = Files.readLines(file, Charsets.UTF_8);
+Files.write(CharSequence from, File to, Charset charset);
+```
+There is also `Files.readLines(File file, Charset charset, LineProcessor<T> callback)`.
 
 ### List a Directory
 
