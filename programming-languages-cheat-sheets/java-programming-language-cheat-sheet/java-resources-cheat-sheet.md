@@ -14,6 +14,14 @@
   Command line parsing framework for Java.
   This is an *annotation* based parameter parsing framework for Java.
 
+- [Java Hamcrest](http://hamcrest.org/JavaHamcrest/)
+
+  Matchers that can be combined to create flexible expressions of intent.
+
+- [BeanIO](http://www.beanio.org/)
+
+  BeanIO is an open source Java framework for marshalling and unmarshalling Java beans from a flat file, stream, or simple String object.
+
 ## Code Snippets
 
 - [Collected Java Practices](http://www.javapractices.com/home/HomeAction.do)

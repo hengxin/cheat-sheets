@@ -4,6 +4,15 @@
 
 - [Java 8 Cheatsheet by Nikolche Mihajlovski](http://www.java8.org/)
 
+## [`Stream`]()
+
+- [How to Convert a Java 8 Stream to an Array?](http://stackoverflow.com/a/23079174/1833118)
+
+```
+String[] stringArray = streamString.toArray(String[]::new);
+```
+
+
 ## [`IntStream`](https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html)
 ```
 IntStream.range(0,20).forEach(i -> doSomething());
@@ -29,7 +38,6 @@ list.replaceAll(String::toUpperCase);
 Integer sum = integers.reduce(0, Integer::sum);
 ```
 
-
 ## Collectors
 
 - [Collectors.joining](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html#joining-java.lang.CharSequence-java.lang.CharSequence-java.lang.CharSequence-)
@@ -38,3 +46,16 @@ Integer sum = integers.reduce(0, Integer::sum);
 ```
 result = list.stream().collect(Collectors.joining("-","[","]"));
 ```
+
+## References
+
+- [How do Java 8 array constructor references work?]()
+
+```
+IntFunction<int[]> i;
+i = int[]::new
+```
+
+The [answer](http://stackoverflow.com/a/29448239/1833118) is that:
+The compiler desugars array constructor references `Foo[]::new` to a lambda 
+`(i -> new Foo[i])`.
