@@ -1,5 +1,8 @@
 # Linux Commands Cheat Sheet
 
+## Systems
+- [`lsb_release -a`](https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md#ubuntu): find out your Ubuntu version
+
 ## Terminals
 
 ### Install

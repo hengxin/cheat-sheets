@@ -68,6 +68,22 @@ transformer/.style 2 args={draw, cylinder, gray!80, rotate=90, minimum height=#1
     ] (0,0) circle (4.4cm);
 ```
 
+## Labels
+
+- [How to place label in middle of line (above and below) with TikZ](http://tex.stackexchange.com/a/96938/23098)
+
+```
+\begin{tikzpicture}
+  \draw (-2,0) -- node[below] {a} node[above] {b} ++(4,0);
+\end{tikzpicture}
+```
+
+```
+\begin{tikzpicture}
+  \draw (-2,0) -- node[below] {a} ++(2,0) -- node[above] {b} ++(2,0);
+\end{tikzpicture}
+```
+
 ## Node
 - [Itemize list inside a tikzpicture node](http://tex.stackexchange.com/a/220824/23098)
 ```
@@ -79,6 +95,17 @@ transformer/.style 2 args={draw, cylinder, gray!80, rotate=90, minimum height=#1
     \end{itemize}\end{varwidth}}
 }};
 ```
+
+## Patterns Library (`\usetikzlibrary{patterns}`)
+
+- [Pattern color differs from normal color?](http://tex.stackexchange.com/a/40888/23098)
+
+```
+\draw [color = gray, pattern color = gray, pattern = north east lines] (t1) rectangle (t2);
+```
+
+- [Density of patterns (1)](http://tex.stackexchange.com/a/119711/23098)
+- [Density of patterns (2)](http://tex.stackexchange.com/a/29815/23098)
 
 ## Positioning (`\usetikzlibrary{positioning}`)
 - [Align nodes to the left](http://tex.stackexchange.com/a/13673/23098)

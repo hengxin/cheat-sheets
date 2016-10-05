@@ -71,7 +71,7 @@ Filter commit history:
 - `git log --since=[2.weeks | 2016-01-27 | 2 years 1 day 30 minutes ago]` there are also `--after|until|before`
 - `git --author|--committer|--grep|-S` where `-S(string)` only shows commits adding or removing code matching the string
 
-### Case Study: undo
+### Case Study
 
 #### [Undo 'git add' *before* commit@stackoverflow](http://stackoverflow.com/q/348170/1833118)
   - `git reset <file>` to remove this file from the current index
@@ -86,7 +86,15 @@ Filter commit history:
   - `git checkout the-file-to-discard` for specific file; OR
   - `git checkout -- .` for all files
   
-#### Undo commits
+#### [Undo commits *before* push]()
+  - [`git reset --hard origin/master`](http://stackoverflow.com/a/1611227/1833118): undo the last commit, to reset it to whatever the origin was at
+  - [`git reset HEAD~1`](http://stackoverflow.com/a/14281090/1833118): undo the last commit
+  - [`git reset --hard {commit-id}`](http://stackoverflow.com/a/32072299/1833118): to go back to the particular commit
+
+#### [Undo the last commit *after* push](http://stackoverflow.com/a/6459157/1833118)
+  - `git log`: to get the commit hash
+  - `git revert <commit-hash>`: revert the commit
+  - `git push`: send it to remote as usual
 
 ## Remote
 
@@ -105,8 +113,8 @@ Filter commit history:
 
 ### [Delete Branches](http://stackoverflow.com/a/10999165/1833118)
 
+- [`git branch -d <branch-name>`](https://makandracards.com/makandra/621-git-delete-a-branch-local-or-remote): delete a branch locally
 - `git push origin --delete <branch-name>`: delete a remote branch
-- `git branch -d <branch-name>`: delete a branch locally
 
 Note: use `-D` for `--delete --force`; force deletion without checking merged status
 

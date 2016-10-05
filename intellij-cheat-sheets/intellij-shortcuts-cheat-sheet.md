@@ -46,6 +46,10 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `Ctrl + Alt + B (Navigate | Implementation(s))`: Navigate to *implementation* methods of an `abstract` method
 - `Ctrl + N (Navigate | Class)`: Typing the Class name to locate it
 - `Ctrl + F12 (Navigate | File Structure)`: Navigate in the currently edited file; list of members of the current class
+
+- [`Ctrl + Shift + F`](https://www.jetbrains.com/help/idea/2016.2/finding-and-replacing-text-in-project.html): Finding a piece of text in all the files within the specified path
+- [`Ctrl + Shift + R`](https://www.jetbrains.com/help/idea/2016.2/finding-and-replacing-text-in-project.html): Replacing a piece of text in all the files within the specified path
+
 - `F2`: Next Highlighted Error
 - `Shift + F2`: Previous Highlighted Error
 - `Alt + Down`: Next Method
