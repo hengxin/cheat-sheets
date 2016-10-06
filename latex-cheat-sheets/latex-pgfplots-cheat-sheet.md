@@ -92,6 +92,26 @@
   ```
   nodes near some coords={1,3}
   ```
+
+## Import and Export Data
+- [`\pgfplotstableread`]()
+
+```
+\pgfplotstableread{longdatafile.dat}{\data}
+
+\addplot [] table [x = xcol, y = ycol] {\data};
+```
+
+## Markers
+
+### `mark options = { }`
+- [Pgfplots - ugly marks when using dotted or dashed line](http://tex.stackexchange.com/a/185242/23098)
+
+```
+\begin{axis}[mark options={solid,...},...]
+\end{axis}
+```
+
 ## Grid
 
 ### Draw Grid
