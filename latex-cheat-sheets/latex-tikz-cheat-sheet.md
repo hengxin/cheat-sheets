@@ -23,13 +23,42 @@ and the `fill opacity` in turn automatically applies to the `text opacity`.
 ```
 
 ## TikZ Styles (`.style`)
+
+- [Tikz /.style with one parameter](http://tex.stackexchange.com/q/119453/23098)
+
+```
+declaration: qar/.style={draw,rectangle,fill=#1}
+
+usage: \node [qar={blue}] {};
+```
+
 - [Tikz /.style with (two) parameters](http://tex.stackexchange.com/q/21395/23098)
+
 ```
 transformer/.style 2 args={draw, cylinder, gray!80, rotate=90, minimum height=#1, minimum width=#2}]
 \node [transformer={2.3cm}{1cm}] () at (0,0.6) {};
 ```
 
+- [Set a default value for an argument in a TikZ style](http://tex.stackexchange.com/a/119458/23098)
+
+```
+qar/.style={
+    draw,
+    rectangle,
+    fill=#1
+},
+qar/.default=red % using the `.default` handler
+
+qar2/.style 2 args={
+    rectangle,
+    draw=#1, thick,
+    fill=#2
+},
+qar2/.default={blue}{yellow}
+```
+
 - [How to set a default parameter for all edges](http://tex.stackexchange.com/a/129071/23098)
+
 ```
 \path[->,every edge/.append style = {double}] (0,0) edge[bend left] (1,1) (1,3)edge[loop above] ();
 \path[->] (0,3) edge[bend left] (1,2) edge[loop above] ();
