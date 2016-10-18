@@ -36,7 +36,10 @@ The following are some tips and advanced features.
   Text.
   </div>
   ```
-- [Anchors and Links within the Same Page](http://stackoverflow.com/q/23656415/1833118)
+
+### [Links](https://www.mediawiki.org/wiki/Help%3aLinks)
+
+- [Internal links](https://www.mediawiki.org/wiki/Help%3aLinks#Internal_links)
   - Link to sections within the same page
 
   ```
@@ -48,3 +51,41 @@ The following are some tips and advanced features.
   <div id="NameOfAnchorHere">optional text</div>
   [[#NameOfAnchorHere| test]]
   ```
+
+  - Link to sections in another page
+  
+  ```
+  [[Main Page#Concrete_Paragraph|different text2]]
+  ```
+
+  - Word-ending links
+
+  ```
+  [[Help]]s
+  [[Help]]<nowiki />ful advice
+  ```
+
+ - Internal link to an image or a file of other types	
+
+  ```
+  [[media:example.jpg]]
+  [[:file:example.pdf|some alias]]
+  ```
+- [How to avoid auto-links](https://www.mediawiki.org/wiki/Help%3aLinks#How_to_avoid_auto-links)
+
+  ```
+  <nowiki>https://mediawiki.org</nowiki>
+  ```
+
+### Pages
+
+- [Rename/Move pages](https://meta.wikimedia.org/wiki/Help:Moving_a_page); More specifically, [How to do rename/move pages](https://meta.wikimedia.org/wiki/Help:Moving_a_page#How_to_do_it)
+
+### [Categories](https://www.mediawiki.org/wiki/Help:Categories)
+
+- [Adding a page to a category](https://www.mediawiki.org/wiki/Help:Categories#Adding_a_page_to_a_category): adding `[[Category:Name]]` to the page
+- [Creating a category page](https://www.mediawiki.org/wiki/Help:Categories#Creating_a_category_page):  
+  - creating a new page whose name starts with `Category:`
+  - specifying `[[Category:PARENT CATEGORY NAME]]` as [parent category](https://commons.wikimedia.org/wiki/Commons:How_to_create_new_categories_or_subcategories)
+- [Linking to a category](https://www.mediawiki.org/wiki/Help:Categories#Linking_to_a_category): `[[:Category:Help|Help category]]` or `[[:Category:Help]]`
+
