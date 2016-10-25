@@ -87,7 +87,7 @@ $wgFileExtensions = array_merge(
 
 ### Extensions
 
-#### [CSS Extension](https://www.mediawiki.org/wiki/Extension:CSS)
+#### [Extension:CSS](https://www.mediawiki.org/wiki/Extension:CSS)
 
 The CSS extension allows CSS stylesheets to be included in specific articles. 
 
