@@ -2,7 +2,7 @@
 
 ## Install
 
-- [How To Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+*Note:* The following documents the way how [the article: How To Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) sets up ssh keys. 
 
 1. `ssh-keygen -t rsa`: create the RSA key pair
 2. store the keys and passphrase: by default, it is `~/.ssh/id_rsa`

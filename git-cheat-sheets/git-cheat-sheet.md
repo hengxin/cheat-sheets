@@ -10,12 +10,14 @@
 
 ### Password
 - [Caching your GitHub password in Git](https://help.github.com/articles/caching-your-github-password-in-git/)
+
 ```
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600000' # in seconds
 ```
 
 - [Unable to connect to cache daemon?](http://stackoverflow.com/a/22711778/1833118)
+
 ```
 sudo chown <your-user> ~/.git-credential-cache/socket
 ```
@@ -24,9 +26,9 @@ sudo chown <your-user> ~/.git-credential-cache/socket
 
   I encounter this issue with Bitbucket. The resolution is to increase the Git buffer size to the largest individual file size of your repo: `git config --global http.postBuffer 157286400`
 
-## `git init` and GitHub repository
+## GitHub repository and `git init` 
 
-### Case study (1): [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+### [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
 
 You have created a repository (with url `rep-url`) in GitHub.
 You can add your existing local project to the GitHub repository as follows:
@@ -37,13 +39,28 @@ You can add your existing local project to the GitHub repository as follows:
 - `git remote add origin rep-url`
 - `git push origin master`
 
-### Case study (2): [Reinitialize an existing repository@stackoverflow](http://stackoverflow.com/q/5149694/1833118)
+### [Reinitialize an existing repository@stackoverflow](http://stackoverflow.com/q/5149694/1833118)
 
 According to Git Docs:
-> Running `git init` in an existing repository is safe. It will not overwrite things that are already there. The primary reason for rerunning git init is to pick up newly added templates.
 
-### Case Study (3): [Split a repository in two](https://confluence.atlassian.com/bitbucket/split-a-repository-in-two-313464964.html)
+  ```
+  Running `git init` in an existing repository is safe. It will not overwrite things that are already there.
+  The primary reason for rerunning git init is to pick up newly added templates.
+  ```
+
+### [Split a repository in two](https://confluence.atlassian.com/bitbucket/split-a-repository-in-two-313464964.html)
   You may want to replace Step 7 with a simpler one as Step 5 [here](https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/): `git filter-branch --prune-empty --subdirectory-filter YOUR_FOLDER_NAME master`
+
+### [Rename local git root folder](http://stackoverflow.com/q/7199659/1833118)
+
+Basically, it is [safe](http://stackoverflow.com/a/7199670/1833118) to rename the folder containing a Git repository. All paths inside the Git repository are relative.
+
+For possible issues, see [exceptions](http://stackoverflow.com/a/7200624/1833118).
+
+### [Renaming a (remote) repository](https://help.github.com/articles/renaming-a-repository/)
+
+- Rename online
+- `git remote set-url origin new_url`: change a remote's URL
 
 ## Commit
 
@@ -71,7 +88,7 @@ Filter commit history:
 - `git log --since=[2.weeks | 2016-01-27 | 2 years 1 day 30 minutes ago]` there are also `--after|until|before`
 - `git --author|--committer|--grep|-S` where `-S(string)` only shows commits adding or removing code matching the string
 
-### Case Study
+### Undos
 
 #### [Undo 'git add' *before* commit@stackoverflow](http://stackoverflow.com/q/348170/1833118)
   - `git reset <file>` to remove this file from the current index
@@ -99,8 +116,22 @@ Filter commit history:
 ## Remote
 
 - `git remote add origin git://remote-site-url`
-- `git remote set-url origin git://new.url.here`
-  Refer to [how to remove remote origin from git repo@stackoverflow](http://stackoverflow.com/a/16330439/1833118).
+
+### [Changing a remote's URL](https://help.github.com/articles/changing-a-remote-s-url/)
+
+```
+git remote -v
+git remote set-url origin git://new.url.here
+git remote -v
+```
+
+### [Rename a remote](https://help.github.com/articles/renaming-a-remote/)
+
+```
+git remote -v
+git remote rename origin destination
+git remote -v
+```
   
 ## Branches
 
@@ -111,6 +142,18 @@ Filter commit history:
 - `git checkout -b branch-name`: create *and* checkout branch
 - `git fetch  \\  git checkout branch-name`: [checkout a new remote branch](http://stackoverflow.com/a/1783426/1833118)
 
+### Rename local and remote branches
+
+- [Rename a local branch](http://stackoverflow.com/a/6591218/1833118)
+  - `git branch -m <old-branch> <new-branch>`: to rename a branch while pointed to any branch
+  - `git branch -m <new-branch>`: rename the current branch
+
+  When pushed, this will add the new branch when you push, but won't delete the old branch.
+- [Rename a remote branch](http://stackoverflow.com/a/16220970/1833118)
+  - `git branch -m old_branch new_branch`: rename branch locally
+  - `git push origin :old_branch` OR `git push origin --delete old_branch`: delete the old branch
+  - `git push --set-upstream origin new_branch` OR `git push -u --all`: push the new branch, set local branch to track the new remote
+
 ### [Delete Branches](http://stackoverflow.com/a/10999165/1833118)
 
 - [`git branch -d <branch-name>`](https://makandracards.com/makandra/621-git-delete-a-branch-local-or-remote): delete a branch locally
@@ -118,9 +161,7 @@ Filter commit history:
 
 Note: use `-D` for `--delete --force`; force deletion without checking merged status
 
-### Case Study
-
-#### [Move existing, uncommited work to a new branch in Git@stackoverflow](http://stackoverflow.com/q/1394797/1833118)
+### [Move existing, uncommited work to a new branch in Git@stackoverflow](http://stackoverflow.com/q/1394797/1833118)
 `git checkout -b <new-branch>`: This will leave your current branch as is, create and checkout a new branch and keep all your changes. Then `git add <files>`, `git commit`.
 
 ## Tags
