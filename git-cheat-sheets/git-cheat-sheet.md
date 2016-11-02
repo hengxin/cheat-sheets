@@ -62,7 +62,7 @@ For possible issues, see [exceptions](http://stackoverflow.com/a/7200624/1833118
 - Rename online
 - `git remote set-url origin new_url`: change a remote's URL
 
-## Commit
+## Commit: `git commit`
 
 ### Basic Commands
 
@@ -98,6 +98,12 @@ Filter commit history:
   - `git commit --amend` to promote an editor with the original message; OR,
   - `git commit --amend -m 'new commit message'`
 
+#### [How to make Git “forget” about a file that was tracked but is now in .gitignore?](http://stackoverflow.com/a/1274447/1833118)
+
+```
+git rm --cached <file>
+```
+
 #### Discard unstaged changes
   - `git clean -df` to first removes all untracked files if you want, and then
   - `git checkout the-file-to-discard` for specific file; OR
@@ -112,6 +118,15 @@ Filter commit history:
   - `git log`: to get the commit hash
   - `git revert <commit-hash>`: revert the commit
   - `git push`: send it to remote as usual
+
+## Push: `git push`
+
+- [Git hangs while writing objects in git push](http://stackoverflow.com/a/26663047/1833118)
+- [The remote end hung up unexpectedly while git cloning](http://stackoverflow.com/a/6849424/1833118)
+
+```
+git config --global http.postBuffer 524288000
+```
 
 ## Remote
 
@@ -203,14 +218,10 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
 
 ## Git Ignore `.gitignore`
 
-## Git Trace
-- [`GIT_CURL_VERBOSE=1 GIT_TRACE=1 git push`](https://github.com/github/git-lfs/issues/1356)
-
-### Collections
+### `.gitignore` templates
 - [github/gitignore](https://github.com/github/gitignore)
-
-### Specific Examples
 - `/your/path/to/dir/`: ignore a directory relative to the `.git` path
+- [TeX.gitignore](https://github.com/github/gitignore/blob/master/TeX.gitignore)
 - [Gitignore for Microsoft Office](https://github.com/github/gitignore/blob/master/Global/MicrosoftOffice.gitignore)
   ```
   *.tmp
@@ -219,4 +230,19 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
   *.xlk
   ~$*.ppt*
   ```
-- [TeX.gitignore](https://github.com/github/gitignore/blob/master/TeX.gitignore)
+
+### [Applying .gitignore to committed files](http://stackoverflow.com/a/7532131/1833118)
+
+```
+git ls-files -ci --exclude-standard  % to see the files that are included in the exclude lists
+git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached  % to remove them from the repository (without deleting them from disk)
+```
+
+OR, adding the following as an alias in your `.gitconfig` file and using `git ign`
+
+```
+ign = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+```
+
+## Git Trace
+- [`GIT_CURL_VERBOSE=1 GIT_TRACE=1 git push`](https://github.com/github/git-lfs/issues/1356)

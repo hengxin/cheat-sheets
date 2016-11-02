@@ -43,21 +43,25 @@
 ## Columns
 - `\begin{columns}[t]`: alignment
 - [Separate beamer columns with vertical lines](http://tex.stackexchange.com/a/95188/23098)
+
 ```
 \vrule{}
 ```
+
 - [Adding horizontal line](http://tex.stackexchange.com/a/209960/23098)
+
 ```
 \color{red}\rule{\linewidth}{4pt}
 ```
 
 - [Display the footnote in the bottom of the slide while using `columns`](http://tex.stackexchange.com/a/86651/23098)
+
 ```
 \begin{columns}
-\column{.5\textwidth}
-Some text for the first column and a test footnote\footnotemark
-\column{.5\textwidth}
-Some text for the second column and a test footnote\footnotemark
+  \column{.5\textwidth}
+    Some text for the first column and a test footnote\footnotemark
+  \column{.5\textwidth}
+    Some text for the second column and a test footnote\footnotemark
 \end{columns}
 \footnotetext[1]{A test footnote in the first column}
 \footnotetext[2]{A test footnote in the second column}
@@ -65,20 +69,20 @@ Some text for the second column and a test footnote\footnotemark
 
 ```
 \begin{columns}
-\column{.5\textwidth}
-Some text for the first column and a test footnote\footnotemark
-\column{.5\textwidth}
-Some text for the second column and a test footnote\footnotemark[1]
+  \column{.5\textwidth}
+	Some text for the first column and a test footnote\footnotemark
+  \column{.5\textwidth}
+	Some text for the second column and a test footnote\footnotemark[1]
 \end{columns}
 \footnotetext{A test footnote for both columns}
 ``` 
 
 ```
 \begin{columns}
-\column{.5\textwidth}
-Some text for the first column and a test footnote\footnote[frame]{A test footnote in the first column}
-\column{.5\textwidth}
-Some text for the second column and a test footnote\footnote[frame]{A test footnote in the second column}
+  \column{.5\textwidth}
+    Some text for the first column and a test footnote\footnote[frame]{A test footnote in the first column}
+  \column{.5\textwidth}
+	Some text for the second column and a test footnote\footnote[frame]{A test footnote in the second column}
 \end{columns}
 ```
 
@@ -87,6 +91,7 @@ Some text for the second column and a test footnote\footnote[frame]{A test footn
   
   `\setlength\itemsep{1em}`
 - [Reverse numbering on the enumerate environment](http://tex.stackexchange.com/a/113704/23098)
+
 ```
 \usepackage{etaremune}
 \begin{etaremune}
@@ -116,6 +121,7 @@ Some text for the second column and a test footnote\footnote[frame]{A test footn
 ## Blocks
 - [Changing default width of blocks in beamer](http://tex.stackexchange.com/q/12550/23098)
   - [Original block environments with customizable width](http://tex.stackexchange.com/a/12558/23098)
+
   ```
   \addtobeamertemplate{block begin}{%
     \setlength{\textwidth}{0.9\textwidth}%
@@ -129,7 +135,9 @@ Some text for the second column and a test footnote\footnote[frame]{A test footn
     \setlength{\textwidth}{0.9\textwidth}%
   }{}
   ```
+
   - [Define your own block environment with an optional parameter for its width](http://tex.stackexchange.com/a/12551/23098)
+
   ```
   \newenvironment<>{varblock}[2][.9\textwidth]{%
   \setlength{\textwidth}{#1}
@@ -148,8 +156,20 @@ Some text for the second column and a test footnote\footnote[frame]{A test footn
 
 ## Overlay
 
+See the wonderful blog article: [The beamer slide overlay concept](http://www.texdev.net/2014/01/17/the-beamer-slide-overlay-concept/).
+
+- [Auto-incrementing the overlay](http://tex.stackexchange.com/q/67281/23098)
+
+```
+\begin{itemize}[<+->]
+  \item This is on the first and all following slides
+  \item This is on the second and all following slides
+\end{itemize}
+```
+
 ## Layout
 - [Absolute position in frame](http://tex.stackexchange.com/a/80496/23098)
+
 ```
 \usepackage[overlay,absolute]{textpos}
 \only<2->{
