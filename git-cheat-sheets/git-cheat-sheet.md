@@ -205,16 +205,39 @@ See [How to delete a remote tag? @ StackOverflow](http://stackoverflow.com/a/548
 ### Show tags
 `git tag` or `git show v0.5`
 
-## [Git Large Files; `git-lfs`](https://github.com/github/git-lfs)
+## Git Large File Storage; `git-lfs`
 
-### Install git-lfs
+*Note:* If you use Bitbucket, then you should first [enable Git LFS](https://confluence.atlassian.com/bitbucketserver/git-large-file-storage-794364846.html) 
+for the repository as follows:
+
+- Repository settings > Large file storage (LFS) > Allow LFS > Save.
+
+### Documentation
+
+- [Git LFS](https://git-lfs.github.com/)
+- [lfs@GitHub](https://github.com/github/git-lfs)
+- [lsf@Bitbucket](https://confluence.atlassian.com/bitbucketserver/git-large-file-storage-794364846.html)
+
+### [Install git-lsf](https://git-lfs.github.com/)
 - `curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash`: install packagecloud
 - `sudo apt-get install git-lfs`
 - `git lfs install`
 
-### Using git-lfs in a repository
+### [Config `.gitconfig`](https://confluence.atlassian.com/bitbucketserver/git-large-file-storage-794364846.html)
+
+```
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+```
+
+
+#### Using git-lfs in a repository
 - `git lfs track "*.zip"`: specify file patterns to store with Git LFS (stored in `.gitattributes`)
-- `git lfs ls-files`
+- `git add .gitattributes` 
+- `git lfs ls-files`: to confirm
+- Then use git as normal
 
 ## Git Ignore `.gitignore`
 

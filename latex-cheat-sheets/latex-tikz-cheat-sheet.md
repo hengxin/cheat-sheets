@@ -1,6 +1,19 @@
 # LaTeX TikZ Cheat Sheet
 
-## Basics (no need of libraries)
+## Basics
+
+- [Imported into other documentclass]()
+
+```
+\graphicspath{{tikz-in-beamer/}}
+\begin{figure}[h!]
+  \centering
+  \begin{adjustbox}{max totalsize = {1.00\textwidth}{1.00\textheight}, center}
+    \input{tikz-in-beamer/consistency-model-distributed-system-history-beamer}
+  \end{adjustbox}
+\end{figure}
+```
+
 - [Transparent node with opaque text](http://tex.stackexchange.com/a/42408/23098)
 
 After setting the `opacity`, you have to reset the `text opacity=1` to get opaque text. 
@@ -12,14 +25,34 @@ and the `fill opacity` in turn automatically applies to the `text opacity`.
 ```
 
 - [Get arbitrary font size; How to get larger fonts than \Huge in nodes with tikz](http://tex.stackexchange.com/a/96573/23098)
+
 ```
 \usepackage{lmodern}
 \draw (2,1.5) node[font=\fontsize{52}{58}\sffamily\bfseries]{TEXT};
 ```
 
 - [Increasing math mode font size in tikz picture](http://tex.stackexchange.com/a/215813/23098)
+
 ```
 \draw (1,0) node[font=\fontsize{60}{60}\selectfont]{$\pi$} circle (1);
+```
+
+## Styles for `tikzpicture`
+
+- [TikZ add frame to a picture](http://tex.stackexchange.com/a/12643/23098)
+
+```
+\begin{tikzpicture}[framed]
+  \draw (0,0) circle (2);
+  \draw (0,0) rectangle (3,2);
+\end{tikzpicture}
+
+\usetikzlibrary{backgrounds}
+\begin{tikzpicture}[framed,
+  background rectangle/.style={double, ultra thick, draw=red, top color=blue}]
+  \draw (0,0) circle (2);
+  \draw (0,0) rectangle (3,2);
+\end{tikzpicture}
 ```
 
 ## TikZ Styles (`.style`)

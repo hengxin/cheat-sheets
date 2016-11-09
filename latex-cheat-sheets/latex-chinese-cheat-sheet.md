@@ -1,9 +1,26 @@
 # LaTeX for Chinese Cheat Sheet (LaTeX 中文环境)
 
 ## Docs and Tutorials
+
 - [[LaTeX基础]](http://olliewiki.com/NoteBook/latex/latexnote.html)
 
-## Documentclass `ctexart`
+## Chinese Setups
+
+### Using Documentclass `ctexart`
+
+- [ctexart @ ShareLaTeX](https://www.sharelatex.com/learn/Chinese#Simplified_Chinese_with_ctex_classes)
+
+*Note:* Please note that when using Chinese language fonts, 
+you will need to compile the document in XƎLATEX.
+
+```
+\documentclass{ctexart}
+ 
+\setCJKmainfont{SimSun.ttf}
+\setCJKsansfont{SimHei.ttf}
+\setCJKmonofont{SimFang.ttf}
+```
+
 - [ctexart @ tex.stackexchange](http://tex.stackexchange.com/a/17637/23098)
 
   `ctexart` is designed for Chinese typesetting. 
@@ -26,4 +43,64 @@
  \usepackage[UTF8]{ctex}
  ```
  
- ## LaTeX for PhD Thesis in Nanjing University
+### Using `XeLaTex`
+
+- Other easy way to create Chinese documents is 
+[by importing the `xeCJK` package](https://www.sharelatex.com/learn/Chinese#XeLaTeX)
+and setting up your favourite font.
+
+```
+\usepackage{xeCJK}
+ 
+\setCJKmainfont{simsun.ttf}
+\setCJKsansfont{simhei.ttf}
+\setCJKmonofont{simfang.ttf}
+```
+
+### Using `pdfLaTeX`
+
+- [The CJK package can also be used to generate a document with pdfLaTeX](https://www.sharelatex.com/learn/Chinese#pdfLaTeX).
+You may not be able to use external fonts, but here you can use traditional and 
+simplified characters as well as Latin characters.
+
+```
+\usepackage{CJKutf8}
+ 
+\begin{document}
+ 
+\begin{CJK*}{UTF8}{gbsn} % encoding + font
+  text here.
+\end{CJK*}
+```
+
+## Packages for Chinese
+
+### Package [`zhnumber`](http://www.ctan.org/pkg/zhnumber)
+
+The package `zhnumber` provides many macros to convert numbers, counters, dates and times into their Chinese representation.
+
+- [Date and time macros in Chinese](http://tex.stackexchange.com/a/96395/23098)
+
+```
+\documentclass{article}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\usepackage{zhnumber}
+\begin{document}
+Date: \zhtoday
+
+Time: \zhcurrtime
+
+\zhnumsetup{time=Chinese}
+Date: \zhtoday
+
+Time: \zhcurrtime
+
+\zhnumsetup{time=Arabic}
+1586/08/17: \zhdate{1586/08/17}
+\end{document}
+```
+
+
+## LaTeX for PhD Thesis in Nanjing University
+

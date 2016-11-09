@@ -90,6 +90,7 @@
 - [Vertical space between items](http://tex.stackexchange.com/a/12374/23098)
   
   `\setlength\itemsep{1em}`
+
 - [Reverse numbering on the enumerate environment](http://tex.stackexchange.com/a/113704/23098)
 
 ```
@@ -101,9 +102,30 @@
 \end{etaremune}
 ```
 
+- [Changing left margin in itemize environment of beamer class](http://tex.stackexchange.com/a/5954/23098)
+
+The beamer class uses the same default lengths for the left margin 
+like the base classes: \leftmargini, \leftmarginii etc. So you could adjust those lenghts.
+
+```
+\setlength{\leftmargini}{2pt}
+\setlength{\leftmarginii}{4pt}
+```
+
+- [Reduce indent in description in beamer](http://tex.stackexchange.com/a/240441/23098)
+
+```
+\setbeamersize{description width=0.57cm}
+
+\begin{description}
+  \item[FooBarBazZot] - foo bar \\ baz zot
+\end{description}
+```
+
 ## Listings and Algorithms
 - `\begin{frame}[fragile]{frame-name} % fragile cannot be ignored`
 - [Beamer and algorithm/pseudocode](http://tex.stackexchange.com/a/26544/23098)
+
 ```
 \usepackage{algorithm2e, algorithmic}
 \begin{frame}[fragile]

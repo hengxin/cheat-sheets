@@ -62,6 +62,11 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 \sout{text}
 ```
 
+### Alignment
+
+- `\begin{center}  \end{center}`
+- [`\centerline{}`](http://tex.stackexchange.com/a/24187/23098)
+
 ### Fonts
 - [Font Size](http://tex.stackexchange.com/a/107058/23098)
 
@@ -136,6 +141,7 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 ### General Settings
 - [How to change the spacing between figures/tables and text?](http://tex.stackexchange.com/a/26522/23098)
  - Single column: `\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}`
+
 ```
 \textfloatsep — distance between floats on the top or the bottom and the text;
 \floatsep — distance between two floats;
@@ -147,12 +153,14 @@ When typesetting in two column mode, two more lengths are available:
 ```
 
 ### General Packages
+
 - [rotating](https://puzzling.org/technology/2012/06/useful-latex-packages-tables-and-figures/)
 
   It is for a big table (`\begin{sidewaystable}`) or figure (`\begin{sidewaysfigure}`) that should be rotated sideways onto its own page.
 
 
 ### Figures
+
 - [subcaption vs. subfig: Best package for referencing a subfigure](http://tex.stackexchange.com/q/13625/23098)
 
 `Using subcaption > subfig > subfigure`
@@ -203,9 +211,11 @@ When typesetting in two column mode, two more lengths are available:
 ### Tables
 
 #### `table` and `table*`
+
 - `table*` for spanning two columns
 - `\renewcommand{\arraystretch}{1.2}` to stretch the table vertically
 - `\resizebox{\textwidth}{!}{% ... %}` to scale the table to text width
+
 ```
 \begin{table}[t!]
   \renewcommand{\arraystretch}{1.2}
@@ -217,6 +227,26 @@ When typesetting in two column mode, two more lengths are available:
   \end{tabular}%
   }
 \end{table}
+```
+
+#### package `xcolor`
+
+- [Table cell color](http://tex.stackexchange.com/a/50351/23098)
+
+```
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+text & \cellcolor{blue!25}text & text \\
+```
+
+#### package `multirow`
+
+- [Vertical Alignment in multirow using cells with more than one lines](http://tex.stackexchange.com/a/66599/23098)
+
+Adjust the alignment manually using the fixup-parameter `[1em]`: 
+
+```
+% \multirow{nrows}[bigstruts]{width}[fixup]{text}
+\multirow{-10}{\*}[1em]{\cellcolor{yellow}\begin{sideways}TEST\end{sideways}}
 ```
 
 - [Create a table with two parts with different tabular features](http://tex.stackexchange.com/a/26354/23098)
@@ -276,6 +306,7 @@ of different types and with a different number of columns.
 
 #### [`dcolumn` package](https://puzzling.org/technology/2012/06/useful-latex-packages-tables-and-figures/)
 The dcolumn package produces tabular columns that are perfectly aligned on a decimal point.
+
 ```
 usepackage{dcolumn}
 % create a new column type, d, which takes the . out of numbers, replacing the .
@@ -380,4 +411,11 @@ Using `footnotemark` and `footnotetext`.
   It is for LaTeX tables, HTML tables, Text tables, Markdown tables, and MediaWiki tables.
 - [Excel-to-LATEX – Convert Excel spreadsheets to LATEX tables](https://www.ctan.org/pkg/excel2latex?lang=en)
 
-  This Excel-To-LATEX converter exports the current selection as a LATEX file which can be included via the \input command in an existing LATEX document. Nearly all formatting is supported (bold, italic, border lines, multicolumn cells, ...). Works with Excel up to Excel 2010.
+  This Excel-To-LATEX converter exports the current selection as a LATEX file 
+which can be included via the \input command in an existing LATEX document.
+Nearly all formatting is supported (bold, italic, border lines, multicolumn cells, ...). Works with Excel up to Excel 2010.
+
+
+## Miscellaneous
+
+- [\rule{0.5\textwidth}{.4pt}](http://tex.stackexchange.com/a/128640/23098): horizontal line
