@@ -33,6 +33,14 @@
 \setbeamercolor{footnote mark}{fg = red}
 ```
 
+### Title Page
+
+- [Adding logos]()
+
+```
+
+```
+
 ### For Thesis
 - [Beamer2Thesis](http://cfiandra.github.io/Beamer2Thesis/)
 

@@ -5,13 +5,19 @@
 - [Imported into other documentclass]()
 
 ```
-\graphicspath{{tikz-in-beamer/}}
+\usepackage{adjustbox}
+% \graphicspath{{tikz-in-beamer/}}
+
+\newcommand{\importtikznocaption}[3]{ % #1: width; #2: height; #3: tikz file
 \begin{figure}[h!]
   \centering
-  \begin{adjustbox}{max totalsize = {1.00\textwidth}{1.00\textheight}, center}
-    \input{tikz-in-beamer/consistency-model-distributed-system-history-beamer}
+  \begin{adjustbox}{max totalsize = {#1}{#2}, center}
+    \input{#3}
   \end{adjustbox}
 \end{figure}
+}
+
+\importtikznocaption{1.00\textwidth}{1.00\textheight}{tikz-in-beamer/consistency-model-distributed-system-history-beamer}
 ```
 
 - [Transparent node with opaque text](http://tex.stackexchange.com/a/42408/23098)
@@ -98,19 +104,46 @@ qar2/.default={blue}{yellow}
 ```
 
 ## Arrows (`\usetikzlibrary{arrows, arrows.meta}`)
+
 - [Double-headed arrows](http://tex.stackexchange.com/a/120809/23098)
+
 ```
 \draw[>=triangle 90, ->>] (0,0) -- (2,0);  % set `>=` first
 ```
+
 - [Adjusting the size of an arrow](http://tex.stackexchange.com/a/150739/23098)
+
 ```
 \draw[>={Latex[length = 5pt, width = 2pt]}, ->] (0,0) -- (2,0);
 ```
 
+- [Double arrows](http://tex.stackexchange.com/a/230210/23098)
+
+```
+\usetikzlibrary{arrows.meta}
+\draw[-Implies,line width=1pt,double distance=1pt] (0,0) -- (1,1);
+```
+
 ## Background Library
 
+## Calc Library `calc`
+
+- ($(node1.center)!0.5!(node2.center)$)
+
 ## Decorations Library
+
+- [Curved waved lines (Snakes) with TikZ](http://tex.stackexchange.com/a/88951/23098)
+
+The library `snakes` has been superseded by `decorations`.
+
+```
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+\draw[draw=blue, snake it] (2,0) arc (0:180:2cm);
+```
+
 - [Text along circular path](http://tex.stackexchange.com/a/103918/23098)
+
 ```
 \usetikzlibrary{decorations.text} % decorations.text for the text along path feature
 \draw [double distance=10mm,
@@ -146,6 +179,12 @@ qar2/.default={blue}{yellow}
 \end{tikzpicture}
 ```
 
+- [Label distance](http://tex.stackexchange.com/a/260756/23098)
+
+```
+\draw (a) to node[above = 5pt, bend right] {label text} (b);
+```
+
 ## Node
 - [Itemize list inside a tikzpicture node](http://tex.stackexchange.com/a/220824/23098)
 ```
@@ -178,6 +217,7 @@ qar2/.default={blue}{yellow}
 ## Shapes
 
 - [Shapes: circle, ellipse, circle split, diamond, polygon, sign, star](http://www.texample.net/tikz/examples/node-shapes/)
+
 ```
 \node[rectangle] {Rectangle}; 
 \node[circle] {Circle};
@@ -194,14 +234,17 @@ qar2/.default={blue}{yellow}
 \node[star,star points=7,star point ratio=0.8] {$p=7$};
 \node[star,star points=9] {$p=9$};
 ```
+
 - [Size of rectangle]()
   - `minimum size = <dimen>`: to get a square
   - `minimum width = <dimen>` + `minimum height = <dimen>`
 
 ## To Path Library
+
 `\usetikzlibrary{topaths}`
 
 ### straight line
+
 ```
 \path[->] (a) edge[tree] (b)
 	(b) edge[tree] (c)
@@ -209,7 +252,10 @@ qar2/.default={blue}{yellow}
 ```
 
 ### curve
-`\path[->] (c) edge[back, bend right] (e);`
+
+- `\path[->] (c) edge[back, bend right] (e);`
+- `\draw[bend right = 40] (a) to (b);`: `bend` accepts an [optional `<angle>` value](http://tex.stackexchange.com/a/228730/23098) 
+	to simultaneously set the `in` and `out` keys symmetrically
 
 ## Fun and Miscellaneous
 - [Nice scientific pictures show off](http://tex.stackexchange.com/q/158668/23098)

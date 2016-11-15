@@ -73,6 +73,23 @@ simplified characters as well as Latin characters.
 \end{CJK*}
 ```
 
+## Theorems Environment
+
+```
+\usepackage{amsthm}
+
+\theoremstyle{plain}
+\newtheorem{cdef}{定义}[section]
+\newtheorem{ctheorem}{定理}[section]
+\newtheorem{cquestion}{问题:}[section]
+\newtheorem{cobservation}{观察:}[section]
+
+\theoremstyle{proof}
+\newtheorem{cproof}{证明}[section]
+```
+
+## Floats Environment
+
 ## Packages for Chinese
 
 ### Package [`zhnumber`](http://www.ctan.org/pkg/zhnumber)
