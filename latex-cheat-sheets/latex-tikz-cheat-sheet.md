@@ -124,6 +124,14 @@ qar2/.default={blue}{yellow}
 \draw[-Implies,line width=1pt,double distance=1pt] (0,0) -- (1,1);
 ```
 
+- [How to Draw Intervals](http://tex.stackexchange.com/a/94249/23098)
+
+```
+\draw [o-o] (0,0) -- +(1,0);
+\draw [o-*] (0,0) -- +(1,0);
+\draw [o->] (0,0) -- +(1,0);
+```
+
 ## Background Library
 
 ## Calc Library `calc`
@@ -187,6 +195,7 @@ The library `snakes` has been superseded by `decorations`.
 
 ## Node
 - [Itemize list inside a tikzpicture node](http://tex.stackexchange.com/a/220824/23098)
+
 ```
 \usepackage{varwidth}
 \node at (0, 0) {\framebox{\Large

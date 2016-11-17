@@ -19,6 +19,7 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 ## Books
 
 ### LaTeX Basics
+
 ### LaTeX Programming
 - [Victor Eijkhout/TeX by Topic](https://bitbucket.org/VictorEijkhout/tex-by-topic)
 
@@ -66,6 +67,9 @@ For Chinese language, see [latex-chinese-cheat-sheet.md](https://github.com/heng
 
 - `\begin{center}  \end{center}`
 - [`\centerline{}`](http://tex.stackexchange.com/a/24187/23098)
+- [What commands are there for horizontal spacing?](http://tex.stackexchange.com/a/74354/23098)
+
+lots of spacing units
 
 ### Fonts
 - [Font Size](http://tex.stackexchange.com/a/107058/23098)
@@ -158,7 +162,6 @@ When typesetting in two column mode, two more lengths are available:
 
   It is for a big table (`\begin{sidewaystable}`) or figure (`\begin{sidewaysfigure}`) that should be rotated sideways onto its own page.
 
-
 ### Figures
 
 - [subcaption vs. subfig: Best package for referencing a subfigure](http://tex.stackexchange.com/q/13625/23098)
@@ -236,6 +239,13 @@ When typesetting in two column mode, two more lengths are available:
 ```
 \usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
 text & \cellcolor{blue!25}text & text \\
+```
+
+- [Coloring multi-row tables in LaTeX](http://texblog.org/2014/05/19/coloring-multi-row-tables-in-latex/)
+
+```
+\rowcolor{}, 
+\columncolor{}
 ```
 
 #### package `multirow`
@@ -334,6 +344,7 @@ end{tabular}
 - `\usepackage{amsfonts}`: font (e.g., $\mathbb{R}$)
 - `\usepackage{amssymb}`: load `amsfonts` automatically
 - `usepackage{amsmath}`
+- `[usepackage{mathtools}](http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/mathtools/mathtools.pdf)`
 
 ### Math Symbols
 - [bold math symbols](http://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols)
@@ -341,6 +352,7 @@ end{tabular}
   - `\boldmath$x^2$` or `$\mathbf{x^2}$`
   - using `bm` package: `$\bm{a}=\bm{\alpha}$`
 - [Command for argmin or argmax](http://tex.stackexchange.com/a/284054/23098)
+
 ```
 % limits underneath
 \DeclareMathOperator*{\argminA}{arg\,min} % Jan Hlavacek
@@ -356,11 +368,29 @@ end{tabular}
 \DeclareMathOperator{\argminH}{argmin}   % Jan Hlavacek
 \newcommand{\argminI}{\mathop{\mathrm{argmin}}\nolimits} % ASdeL
 ```
+
+- [\Rightarrow with text above it](http://tex.stackexchange.com/a/103993/23098)
+
+```
+\usepackage{mathtools}
+$\xrightarrow{hello}$
+$\xrightarrow[world]{hello}$ % The optional argument is for "under"
+$\xRightarrow[world]{hello}$
+```
+
 - [xmark and checkmark](http://tex.stackexchange.com/a/42620/23098)
+
 ```
 \usepackage{amssymb, pifont}
 \newcommand{\cmark}{\ding{51}}
 \newcommand{\xmark}{\ding{55}}
+```
+
+OR, using tikz:
+
+```
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 ```
 
 ### Array
@@ -377,13 +407,16 @@ end{tabular}
 
 ### Align
 - [amsmath align environment: row spacing](http://tex.stackexchange.com/a/14680/23098)
+
 ```
 \begin{align*}
   X &= \frac{\textit{Some text here}}{\textit{And some text here}}\\[1em]
   Y &= \frac{\textit{Will make everything}}{\textit{Look too close together}}
 \end{align*}
 ```
+
 Or, to add a little extra spacing to every row of an align:
+
 ```
 \begingroup
   \addtolength{\jot}{1em}

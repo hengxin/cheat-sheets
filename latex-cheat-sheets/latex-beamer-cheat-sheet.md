@@ -15,6 +15,7 @@
 
 ### beamertemplate
 - [Change bullet style / formatting in Beamer](http://tex.stackexchange.com/a/11170/23098)
+
 ```
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
@@ -22,24 +23,66 @@
 
 ### beamersize
 - [Changing frame margins in Beamer Theme](http://tex.stackexchange.com/a/75983/23098)
+
 ```
 \setbeamersize{text margin left = 1em, text margin right = 1em}
 ```
 
 ### beamercolor
 - [Adding color to the footnote mark in Beamer](http://tex.stackexchange.com/a/6152/23098)
+
 ```
 \setbeamercolor{footnote}{fg = red}
 \setbeamercolor{footnote mark}{fg = red}
 ```
 
+## Beamer Document Structure
+
+- [how to include existing pdf slides into my beamer?](http://tex.stackexchange.com/a/57455/23098)
+
+```
+\usepackage{docmute}
+\makeatletter
+\newcommand*{\loadpresentation}[1]{{\beamer@inlecturefalse\input{#1}}}
+\makeatother
+
+\loadpresentation{filea.tex}
+\againframe{myframe} % labeled framed in filea.tex
+```
+
 ### Title Page
 
-- [Adding logos]()
+- [Adding a log in title page](http://tex.stackexchange.com/a/21370/23098)
 
 ```
+% Its position is dependent on, i.e. defined by, the used theme.
+\titlegraphic{\includegraphics[height = 1.3cm]{figures/nju-logo-purple.png}}
+```
+
+*Note:* The following approach does not work for me.
 
 ```
+\institute{Foo Research Institution\\[\medskipamount]
+      \includegraphics[width=\textwidth,height=.5\textheight]{imgfilename}%
+ }
+```
+
+- [How can I add more than one logo to my beamer presentation?](http://tex.stackexchange.com/a/18413/23098)
+
+```
+\titlegraphic{\includegraphics[height = 1.3cm]{figures/nju-logo-purple.png}~\includegraphics[height = 1.3cm]{figures/cs-logo.jpg}}
+```
+
+- [Adding log in all pages](http://tex.stackexchange.com/a/22149/23098)
+
+```
+\logo{\includegraphics[scale=0.618]{image-ubication}}
+```
+
+- [Beamer CambridgeUS - How to add logo above the title](http://tex.stackexchange.com/a/114092/23098)
+
+CambridgeUS uses the default title page template which inserts the title graphic at the end; 
+you can redefine the template to include it before the title.
 
 ### For Thesis
 - [Beamer2Thesis](http://cfiandra.github.io/Beamer2Thesis/)
