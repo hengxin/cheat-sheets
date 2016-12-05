@@ -26,6 +26,21 @@ sudo chown <your-user> ~/.git-credential-cache/socket
 
   I encounter this issue with Bitbucket. The resolution is to increase the Git buffer size to the largest individual file size of your repo: `git config --global http.postBuffer 157286400`
 
+### Chinese Characters
+
+- [How to handle Asian characters in file names in Git?](http://stackoverflow.com/a/4416780/1833118)
+
+```
+git config --global core.quotepath false
+```
+
+Or, alternatively, adding the following snippet to your git config file (`$HOME/.gitconfig` usually):
+
+```
+[core]
+    quotepath = false
+```
+
 ## GitHub repository and `git init` 
 
 ### [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)

@@ -9,6 +9,7 @@
 - [Beamer theme gallery](http://deic.uab.es/~iblanes/beamer_gallery/)
 - [ShareLaTeX | Templates | Presentations](https://www.sharelatex.com/templates/presentations)
 - [Overleaf | Templates | Presentations](https://www.overleaf.com/latex/templates/tagged/presentation#.VylqI2F96V4)
+- [Metropolis Theme: matze/mtheme@github](https://github.com/matze/mtheme)
 
 ## Beamer Appearance
 - [BEAMER appearance cheat sheet](http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
@@ -19,6 +20,22 @@
 ```
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
+```
+
+### beamer font
+
+- [How do I set the default beamer font to Computer Modern serif?](http://tex.stackexchange.com/a/57384/23098)
+
+```
+\usefonttheme{serif} % They are described on p. 194 of the beamer manual.
+```
+
+- [Define a separate font for slide titles in Beamer](http://tex.stackexchange.com/a/130886/23098)
+
+```
+\setbeamerfont{title}{family=\fontfamily{cyklop}\selectfont}
+\setbeamerfont{frametitle}{family=\fontfamily{cyklop}\selectfont}
+\setbeamerfont{framesubtitle}{family=\fontfamily{cyklop}\selectfont}
 ```
 
 ### beamersize
@@ -34,6 +51,12 @@
 ```
 \setbeamercolor{footnote}{fg = red}
 \setbeamercolor{footnote mark}{fg = red}
+```
+
+- [How to change the color of a block?](http://tex.stackexchange.com/a/33232/23098)
+
+```
+\setbeamercolor{block title}{bg=red!30,fg=black}
 ```
 
 ## Beamer Document Structure
@@ -83,6 +106,9 @@
 
 CambridgeUS uses the default title page template which inserts the title graphic at the end; 
 you can redefine the template to include it before the title.
+
+### Headers and Footers
+
 
 ### For Thesis
 - [Beamer2Thesis](http://cfiandra.github.io/Beamer2Thesis/)
@@ -251,6 +277,10 @@ See the wonderful blog article: [The beamer slide overlay concept](http://www.te
   \end{textblock}
 }
 ```
+
+## Bibliography
+
+
 
 ## Tools
 

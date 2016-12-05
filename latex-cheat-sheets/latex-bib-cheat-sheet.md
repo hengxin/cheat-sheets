@@ -6,6 +6,27 @@
 - [IEEE Citation Reference](http://www.ieee.org/documents/ieeecitationref.pdf)
 - [Citing and referencing: Standard abbreviations used in the IEEE Reference list](http://guides.lib.monash.edu/c.php?g=219786&p=1454302)
 
+## How to Print Bibliography
+
+
+## Appearance
+
+- [Font size of references](http://tex.stackexchange.com/a/57341/23098)
+
+```
+\renewcommand*{\bibfont}{\scriptsize} % for myself, don't put it in preamble
+```
+
+Or, alternatively, 
+
+```
+\setbeamerfont{bibliography item}{size=\footnotesize}
+\setbeamerfont{bibliography entry author}{size=\footnotesize}
+\setbeamerfont{bibliography entry title}{size=\footnotesize}
+\setbeamerfont{bibliography entry location}{size=\footnotesize}
+\setbeamerfont{bibliography entry note}{size=\footnotesize}
+```
+
 ## Abbreviations
 
 Where to find the abbreviations of journals:
