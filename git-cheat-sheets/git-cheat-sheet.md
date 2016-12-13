@@ -191,6 +191,28 @@ git remote -v
 
 Note: use `-D` for `--delete --force`; force deletion without checking merged status
 
+### Merge Branches
+
+- [Best (and safest) way to merge a git branch into master](http://stackoverflow.com/a/5602109/1833118)
+
+```
+git checkout master
+git pull origin master
+git merge test
+git push origin master
+```
+
+- [Git refusing to merge unrelated histories](http://stackoverflow.com/q/37937984/1833118)
+
+In my case, error was just `fatal: refusing to merge unrelated histories` 
+on every especially first `pull` request after remotely adding a git repo.
+
+Using `--allow-unrelated-histories` flag worked with pull request in this way:
+
+```
+git pull origin <branchname> --allow-unrelated-histories
+```
+
 ### [Move existing, uncommited work to a new branch in Git@stackoverflow](http://stackoverflow.com/q/1394797/1833118)
 `git checkout -b <new-branch>`: This will leave your current branch as is, create and checkout a new branch and keep all your changes. Then `git add <files>`, `git commit`.
 

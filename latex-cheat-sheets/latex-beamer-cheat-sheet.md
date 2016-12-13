@@ -27,7 +27,9 @@
 - [How do I set the default beamer font to Computer Modern serif?](http://tex.stackexchange.com/a/57384/23098)
 
 ```
-\usefonttheme{serif} % They are described on p. 194 of the beamer manual.
+\usefonttheme{serif} % described on p. 194 of the beamer manual.
+
+\usefonttheme[onlymath]{serif}
 ```
 
 - [Define a separate font for slide titles in Beamer](http://tex.stackexchange.com/a/130886/23098)
@@ -71,6 +73,20 @@
 
 \loadpresentation{filea.tex}
 \againframe{myframe} % labeled framed in filea.tex
+```
+
+- [Import tikz overlay files]
+
+```
+% needed: \usepackage[export]{adjustbox}
+\newcommand{\importikznocaption}[3]{% #1: width, #2: height, #3: tex
+\begin{figure}[h!]
+    \centering
+    \begin{adjustbox}{max totalsize = {#1}{#2}, center}
+	  \input{#3}
+    \end{adjustbox}
+  \end{figure}
+}
 ```
 
 ### Title Page
@@ -199,7 +215,21 @@ like the base classes: \leftmargini, \leftmarginii etc. So you could adjust thos
 \end{description}
 ```
 
+- [Right align a description list](http://tex.stackexchange.com/a/95977/23098)
+
+With beamer package, the `description` environment can use an optional argument: 
+a text to fix the maximum width of terms (cf. p. 113 of beamer guide v3.26).
+
+```
+\begin{description}[Other description]
+  \item[Name] Joel Spolsky
+  \item[Address] Some address  
+  \item[Other description] Some description
+\end{description}
+```
+
 ## Listings and Algorithms
+
 - `\begin{frame}[fragile]{frame-name} % fragile cannot be ignored`
 - [Beamer and algorithm/pseudocode](http://tex.stackexchange.com/a/26544/23098)
 
@@ -218,6 +248,7 @@ like the base classes: \leftmargini, \leftmarginii etc. So you could adjust thos
 ```
 
 ## Blocks
+
 - [Changing default width of blocks in beamer](http://tex.stackexchange.com/q/12550/23098)
   - [Original block environments with customizable width](http://tex.stackexchange.com/a/12558/23098)
 

@@ -266,6 +266,16 @@ The library `snakes` has been superseded by `decorations`.
 - `\draw[bend right = 40] (a) to (b);`: `bend` accepts an [optional `<angle>` value](http://tex.stackexchange.com/a/228730/23098) 
 	to simultaneously set the `in` and `out` keys symmetrically
 
+### edges
+
+- [circle connection bar](http://tex.stackexchange.com/q/141308/23098)
+
+```
+\usetikzlibrary{mindmap}
+
+\path (a) to[circle connection bar] (b);
+```
+
 ## Fun and Miscellaneous
 - [Nice scientific pictures show off](http://tex.stackexchange.com/q/158668/23098)
 
