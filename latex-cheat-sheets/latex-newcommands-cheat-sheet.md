@@ -8,6 +8,20 @@
 \newcommand{\set}[1]{\{#1\}}
 ```
 
+- `\seq{1,2,3}`
+
+```
+% input: sequence of numbers, separated by commas
+% output: sequence of numbers, separated by \quad
+% See http://tex.stackexchange.com/a/60026/23098
+% \usepackage{xstring}
+
+\newcommand{\seq}[1]{%
+    \noexpandarg    
+    \StrSubstitute{#1}{,}{\quad}[\ele]
+    \ele}
+```
+
 ## Floats
 
 - `\fignocaption{width = 0.618\textwidth}{figs/logo.pdf}`
