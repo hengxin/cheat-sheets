@@ -16,11 +16,25 @@
 
 ### beamertemplate
 - [Change bullet style / formatting in Beamer](http://tex.stackexchange.com/a/11170/23098)
+- [Different styles of bullets of enumerate](https://tex.stackexchange.com/q/68347/23098)
+
+There are four predefined styles: `ball`, `circle`, `square` and `default`:
 
 ```
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 ```
+
+Appropriately redefining some other templates you can change also the colors (and fonts):
+
+```
+\setbeamertemplate{enumerate items}[square]
+\setbeamercolor{item projected}{bg=green!70!black,fg=blue}
+
+\setbeamercolor{enumerate subitem}{fg=red!80!black}
+\setbeamertemplate{enumerate items}[default]
+```
+
 
 ### beamer font
 
@@ -183,6 +197,15 @@ you can redefine the template to include it before the title.
 - [Vertical space between items](http://tex.stackexchange.com/a/12374/23098)
   
   `\setlength\itemsep{1em}`
+
+- [How can I make an enumerate list start at something other than 1](https://tex.stackexchange.com/q/142/23098)
+
+```
+\begin{enumerate}
+  \setcounter{enumi}{4}
+  \item fifth element
+\end{enumerate}
+```
 
 - [Reverse numbering on the enumerate environment](http://tex.stackexchange.com/a/113704/23098)
 

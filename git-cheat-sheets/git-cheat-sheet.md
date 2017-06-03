@@ -41,6 +41,17 @@ Or, alternatively, adding the following snippet to your git config file (`$HOME/
     quotepath = false
 ```
 
+### FileMode
+
+- [How do I make Git ignore file mode (chmod) changes?](https://stackoverflow.com/q/1580596/1833118)
+
+If you do 
+```
+git config --global core.filemode false 
+```
+you'll only need to do this once for all repos.
+
+
 ## GitHub repository and `git init` 
 
 ### [Adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
