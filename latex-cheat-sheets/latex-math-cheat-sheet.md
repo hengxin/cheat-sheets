@@ -82,6 +82,22 @@ OR, using tikz:
   \]
   ```
 
+## Cases
+
+- [How to write cases with LaTeX?](https://tex.stackexchange.com/a/240911/23098)
+
+```
+$\begin{displaystyle}
+  X(m, n) = \left.
+  \begin{cases}
+    x(n), & \text{for } 0 \leq n \leq 1 \\
+    x(n - 1), & \text{for } 0 \leq n \leq 1 \\
+    x(n - 1), & \text{for } 0 \leq n \leq 1
+  \end{cases}
+  \right\} = xy
+\end{displaystyle}$
+```
+
 ## Align
 - [amsmath align environment: row spacing](http://tex.stackexchange.com/a/14680/23098)
 

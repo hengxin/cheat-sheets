@@ -1,6 +1,6 @@
-# IntelliJ Shortcuts Cheet Sheet
+# IntelliJ Shortcuts Cheat Sheet
 
-The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
+The Table Of Content (*nearly*) corresponds to the menus of Android Studio IDE.
 
 ## The Most Powerful Ones
 
@@ -108,6 +108,8 @@ The Table Of Content (*nearly*) corresponds to the menus of Android Studo IDE.
 - `F9`: Resume Program
 
 ## Tools
+
+- `Ctrl + Alt + V`: Vim emulator
 
 ## VCS
 
