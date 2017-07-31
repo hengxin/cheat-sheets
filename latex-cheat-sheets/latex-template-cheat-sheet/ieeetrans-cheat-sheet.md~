@@ -1,0 +1,47 @@
+# `IEEEtrans` Cheat Sheet
+
+## `documentclass`
+
+## `amsthm`
+
+% Theorem environment
+\usepackage{amsthm}
+
+% See "How to make the optional title of a theorem bold with amsthm?"
+% at https://tex.stackexchange.com/a/43971/23098
+\makeatletter
+\def\th@plain{%
+  \thm@notefont{}% same as heading font
+  \itshape % body font
+}
+\def\th@definition{%
+  \thm@notefont{}% same as heading font
+  \normalfont % body font
+}
+\makeatother
+
+% theorem
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem{conj}{Conjecture}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\newtheorem*{remark}{Remark}
+\newtheorem*{claim}{Claim}
+
+% See [subproof](https://tex.stackexchange.com/a/223977/23098)
+\newenvironment{subproof}[1][\proofname]{%
+  \renewcommand{\qedsymbol}{$\blacksquare$}%
+  \begin{proof}[#1]%
+}{%
+  \end{proof}%
+}
+
+## `table`
+
+## `figure`

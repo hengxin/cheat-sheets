@@ -70,6 +70,19 @@ OR, using tikz:
 \def\checkmark{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 ```
 
+## Labels
+
+- [Label equation with a symbol](https://tex.stackexchange.com/a/12027/23098)
+
+```
+\usepackage{mathtools}   % loads amsmath
+
+\begin{equation}  \label{eqn:einstein}
+  E=mc^2  \tag{*}
+\end{equation}
+\eqref{eqn:einstein}
+```
+
 ## Array
 - [Adjusting space between array rows and columns](http://tex.stackexchange.com/a/103511/23098)
   - Using `\arraycolsep` and `\arraystretch`
