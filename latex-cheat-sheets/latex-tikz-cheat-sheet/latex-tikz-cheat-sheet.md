@@ -171,6 +171,33 @@ The library `snakes` has been superseded by `decorations`.
     ] (0,0) circle (4.4cm);
 ```
 
+- [TikZ: Line with large dots](https://tex.stackexchange.com/a/52849/23098)
+
+```
+\usetikzlibrary{decorations.markings}
+
+\begin{tikzpicture}[decoration={markings,
+  mark=between positions 0 and 1 step 6pt
+  with { \draw [fill] (0,0) circle [radius=2pt];}}]
+\path[postaction={decorate}] (0,0) to (4,0);
+\end{tikzpicture}
+```
+
+OR,
+
+```
+\usetikzlibrary{decorations.shapes}
+
+\tikzset{decorate sep/.style 2 args=
+{decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
+
+\begin{tikzpicture}
+\draw[decorate sep={2mm}{4mm},fill] (0,0) -- (4,0);
+\draw[decorate sep={2mm}{6mm},fill] (0,1) -- (4,1);
+\draw[decorate sep={1mm}{4mm},fill] (0,2) -- (4,2);
+\end{tikzpicture}
+```
+
 ## Labels
 
 - [How to place label in middle of line (above and below) with TikZ](http://tex.stackexchange.com/a/96938/23098)
@@ -191,6 +218,12 @@ The library `snakes` has been superseded by `decorations`.
 
 ```
 \draw (a) to node[above = 5pt, bend right] {label text} (b);
+```
+
+- [TikZ set node label position more precisely](https://tex.stackexchange.com/a/58880/23098)
+
+```
+\node [label={[label distance=1cm]30:label}] {Node};
 ```
 
 ## Node
@@ -258,6 +291,12 @@ The library `snakes` has been superseded by `decorations`.
 \path[->] (a) edge[tree] (b)
 	(b) edge[tree] (c)
 	(c) edge[tree] (d);
+```
+
+- [Draw arrows between nodes with tikz](https://tex.stackexchange.com/a/251656/23098)
+
+```
+\draw [->] (A) edge (B) (B) edge (C) (C) edge (D);
 ```
 
 ### curve

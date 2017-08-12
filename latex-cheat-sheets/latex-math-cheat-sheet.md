@@ -15,6 +15,8 @@
 
 ## Math Symbols
 
+- [What is the difference between the different vertical bars: \mid, | (vertical bar), \vert, \lvert, \rvert, \divides](https://tex.stackexchange.com/a/506/23098)
+
 - [bold math symbols](http://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols)
   - `$\boldsymbol{\infty}$` or `$\pmb{\infty}$` to one symbol at a time
   - `\boldmath$x^2$` or `$\mathbf{x^2}$`
@@ -68,6 +70,14 @@ OR, using tikz:
 ```
 \usepackage{tikz}
 \def\checkmark{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+```
+
+- [Placeholder for variable as in f(x, .)](https://tex.stackexchange.com/q/47060/23098)
+
+I use
+
+```
+f(x,\_)
 ```
 
 ## Labels

@@ -81,3 +81,29 @@ Where to find the abbreviations of conferences:
 \begin{document}
 \bstctlcite{IEEEexample:BSTcontrol}
 ```
+
+## Formats
+
+- [How can I use BibTeX to cite a web page?](https://tex.stackexchange.com/a/3608/23098)
+
+```
+\usepackage{url} % \usepackage{hyperref}
+
+@misc{WinNT,
+  title = {{MS Windows NT} Kernel Description},
+  howpublished = {\url{http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}},
+  note = {Accessed: 2010-09-30}
+}
+```
+
+OR,
+
+```
+@online{WinNT,
+  author = {MultiMedia LLC},
+  title = {{MS Windows NT} Kernel Description},
+  year = 1999,
+  url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm},
+  urldate = {2010-09-30}
+}
+```
