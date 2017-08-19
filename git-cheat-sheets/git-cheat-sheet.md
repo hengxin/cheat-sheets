@@ -183,6 +183,12 @@ git remote -v
 - `git checkout -b branch-name`: create *and* checkout branch
 - `git fetch  \\  git checkout branch-name`: [checkout a new remote branch](http://stackoverflow.com/a/1783426/1833118)
 
+### [Show Branches](http://gitready.com/intermediate/2009/02/13/list-remote-branches.html)
+
+- `git branch`: show the local branches and mark the current local branch with (*)
+- `git branch -a`: show both the local branches and the remote branches
+- `git branch -r`: show the remote branches
+
 ### Rename local and remote branches
 
 - [Rename a local branch](http://stackoverflow.com/a/6591218/1833118)
