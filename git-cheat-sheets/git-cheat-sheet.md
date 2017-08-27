@@ -182,6 +182,12 @@ git remote -v
 - `git checkout branch-name`: checkout branch
 - `git checkout -b branch-name`: create *and* checkout branch
 - `git fetch  \\  git checkout branch-name`: [checkout a new remote branch](http://stackoverflow.com/a/1783426/1833118)
+- `git branch branch-name <sha1-of-commit>`: [Branch from a previous commit using git
+](https://stackoverflow.com/a/2816728/1833118)
+  - Or by using a symbolic ref.
+  ```
+  git branch branchname HEAD~3
+  ```
 
 ### [Show Branches](http://gitready.com/intermediate/2009/02/13/list-remote-branches.html)
 
