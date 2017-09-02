@@ -21,3 +21,16 @@ The comment package also allows one to define your own comment-like environments
 ## [`docmute`](http://www.ctan.org/pkg/docmute): Input files ignoring LATEX preamble, etc.
 
 ## [`emptypage`](https://www.ctan.org/pkg/emptypage?lang=en): Make empty pages really empty
+
+## [`savesym`](https://www.ctan.org/pkg/savesym?lang=en): Redefine symbols where names conflict
+
+- `\savesymbol{XXX}`: renames a symbol from `\XXX` to `\origXXX` 
+- `\restoresymbols{yyy}{XXX}`: renames `\origXXX` back to `\XXX` 
+  and defines a new command, `\yyyXXX`, which corresponds to the most recently loaded version of `\XXX`.
+
+```
+\usepackage{savesym}
+\usepackage{the-first-package}
+\savesymbol{a-symbol}
+\usepackage{the-second-package}
+```

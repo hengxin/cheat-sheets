@@ -33,3 +33,6 @@ for the repository as follows:
 - `git add .gitattributes` 
 - `git lfs ls-files`: to confirm
 - Then use git as normal
+
+## Git Trace
+- [`GIT_CURL_VERBOSE=1 GIT_TRACE=1 git push`](https://github.com/github/git-lfs/issues/1356)

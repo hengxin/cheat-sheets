@@ -39,7 +39,7 @@
 \newcommand{\argminI}{\mathop{\mathrm{argmin}}\nolimits} % ASdeL
 ```
 
-- [\Rightarrow vs. \implies, and “does not imply” symbol](https://tex.stackexchange.com/q/47063/23098)
+- [\Rightarrow vs. \implies, and "does not imply" symbol](https://tex.stackexchange.com/q/47063/23098)
 
 ```
 \usepackage{amsmath}
@@ -55,6 +55,28 @@ $A \centernot\implies B$
 $\xrightarrow{hello}$
 $\xrightarrow[world]{hello}$ % The optional argument is for "under"
 $\xRightarrow[world]{hello}$
+```
+
+- ["def" over the equal sign](https://tex.stackexchange.com/a/353325)
+
+```
+\usepackage{amsmath}
+$\overset{\mathrm{def}}{=}$
+```
+
+- [Typesetting the "define equals :=" symbol](https://tex.stackexchange.com/q/28836)
+
+Using `mathtools` directly:
+```
+\usepackage{mathtools}
+$a\coloneqq b \qquad b\eqqcolon a$
+```
+
+Or, define it:
+```
+\usepackage{mathtools}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
 ```
 
 - [xmark and checkmark](http://tex.stackexchange.com/a/42620/23098)
