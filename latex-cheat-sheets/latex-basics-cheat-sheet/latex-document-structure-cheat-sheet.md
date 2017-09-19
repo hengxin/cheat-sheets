@@ -1,5 +1,15 @@
 # LaTeX Document Structure Cheat Sheet
 
+## Input Files
+
+- [Scale an `\input` TeX File](https://tex.stackexchange.com/a/98142/23098)
+
+```
+% `!` keeps the aspect ratio; I prefer to this way.
+\resizebox{0.65\textwidth}{!}{\input{plot}} 
+\scalebox{0.5}{\input{plot}}
+```
+
 ## Pages and Columns
 - [What is the use of \clearpage{\thispagestyle{empty}\cleardoublepage}](https://tex.stackexchange.com/q/360739/23098)
 
@@ -15,3 +25,5 @@ odd numbered
 ```
 
 ## Footnotes
+
+

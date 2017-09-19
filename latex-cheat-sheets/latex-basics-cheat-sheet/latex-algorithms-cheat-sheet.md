@@ -56,3 +56,11 @@ OR,
 \end{lstlisting}
 ```
 
+- [Center Latex lstlisting](https://stackoverflow.com/a/19323979/1833118)
+
+```
+\lstset{
+  xleftmargin = 0.2\textwidth,
+  xrightmargin = 0.2\textwidth
+}
+```

@@ -132,6 +132,23 @@ qar2/.default={blue}{yellow}
 \draw [o->] (0,0) -- +(1,0);
 ```
 
+- [Text above and under an arrow in a tikz picture](https://tex.stackexchange.com/a/270376/23098)
+
+```
+\draw [] (from-node) to 
+	node () [below] {Below}
+	node () [above] {Above}
+	(to-node);
+```
+
+- [Create loop arrow in TikZ](https://tex.stackexchange.com/a/367009/23098)
+
+Using `out=, in=` and `looseness`:
+
+```
+\draw [] (node) to [out = -30, in = 30, looseness = 5] (node);
+```
+
 ## Background Library
 
 ## Calc Library `calc`
