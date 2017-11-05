@@ -10,6 +10,14 @@
 \scalebox{0.5}{\input{plot}}
 ```
 
+## Geometry
+
+- [Using the `geometry` package](https://tex.stackexchange.com/a/141462/23098)
+```
+\usepackage[a4paper, left = 3cm, right = 2cm, top = 2.5cm, bottom = 2.5cm]{geometry}
+```
+
+
 ## Pages and Columns
 - [What is the use of \clearpage{\thispagestyle{empty}\cleardoublepage}](https://tex.stackexchange.com/q/360739/23098)
 
@@ -26,4 +34,12 @@ odd numbered
 
 ## Footnotes
 
+- [How to restart \footnote numbering every page](https://stackoverflow.com/q/3701605/1833118)
+
+```
+\documentclass{article}
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
+\begin{document}
+```
 

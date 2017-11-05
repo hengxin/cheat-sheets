@@ -21,6 +21,30 @@
   - `$\boldsymbol{\infty}$` or `$\pmb{\infty}$` to one symbol at a time
   - `\boldmath$x^2$` or `$\mathbf{x^2}$`
   - using `bm` package: `$\bm{a}=\bm{\alpha}$`
+
+- [Force the subscripts to be under the summation](https://tex.stackexchange.com/a/218605/23098)
+
+```
+\sum\limits_{j=1} A_{xj}
+```
+
+- [How can I write multiple lines in a subscript?](https://tex.stackexchange.com/a/7504/23098)
+
+```
+\usepackage{amsmath}
+\[
+  \underbrace{...}_{\substack{\text{Some long text that} \\ \text{should be multiline}}}
+\]
+```
+
+[OR,](https://tex.stackexchange.com/a/7575/23098)
+
+```
+\[
+ \underbrace{some equation}_{\text{Some long text that}\atop\text{should be multilined}}
+\]
+```
+
 - [Command for argmin or argmax](http://tex.stackexchange.com/a/284054/23098)
 
 ```

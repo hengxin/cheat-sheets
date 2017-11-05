@@ -269,6 +269,35 @@ a text to fix the maximum width of terms (cf. p. 113 of beamer guide v3.26).
   \label{alg:seq}
 \end{algorithm}
 ```
+- [Beamer - Using `\pause` within `lstlisting`](https://tex.stackexchange.com/a/58926/23098)
+
+```
+\usepackage{listings}
+
+\lstset{basicstyle=\small\ttfamily,
+  numbers=left,
+  escapeinside=||  % adding this
+}
+
+\begin{lstlisting}
+  line1 |\pause|
+  line2 |\pause|
+  line3
+\end{lstlisting}
+```
+
+- [Uncover `lstlisting` on a particular slide using `\onslide` or `\uncover`](https://tex.stackexchange.com/a/271249/23098)
+
+```
+\begin{overlayarea}{\linewidth}{3cm}
+  \onslide<1->{Hi}
+  \begin{onlyenv}<2->  // using `onlyenv`
+  \begin{lstlisting} 
+  int i = 0; 
+  \end{lstlisting}
+  \end{onlyenv}
+\end{overlayarea}  
+```
 
 ## Blocks
 
