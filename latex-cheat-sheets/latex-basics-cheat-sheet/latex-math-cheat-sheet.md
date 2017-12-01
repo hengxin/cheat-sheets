@@ -22,6 +22,17 @@
   - `\boldmath$x^2$` or `$\mathbf{x^2}$`
   - using `bm` package: `$\bm{a}=\bm{\alpha}$`
 
+- [Change the size of a math symbol](https://tex.stackexchange.com/a/348114/23098)
+
+  - Using `\text`
+    ```
+    \[ F \longrightarrow \text{\Large$ G $}\longrightarrow H \]
+    ```
+  - Using `\mathlarger` from `relsize`
+    ```
+    \[ F \longrightarrow \mathlarger{G}\longrightarrow H \]
+    ```
+
 - [Force the subscripts to be under the summation](https://tex.stackexchange.com/a/218605/23098)
 
 ```
