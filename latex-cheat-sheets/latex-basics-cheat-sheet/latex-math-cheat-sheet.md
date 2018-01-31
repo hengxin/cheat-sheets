@@ -150,6 +150,18 @@ f(x,\_)
 \eqref{eqn:einstein}
 ```
 
+- [Labelled in-line equation](https://tex.stackexchange.com/a/78580/23098)
+
+Warning: This is not a good idea!
+
+```
+\usepackage{amsmath}
+
+The equation $a+1=b~\refstepcounter{equation}(\theequation)\label{myeq}$
+
+Here is a reference: \eqref{myeq}
+```
+
 ## Array
 - [Adjusting space between array rows and columns](http://tex.stackexchange.com/a/103511/23098)
   - Using `\arraycolsep` and `\arraystretch`
