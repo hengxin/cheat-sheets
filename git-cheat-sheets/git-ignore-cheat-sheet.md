@@ -29,10 +29,15 @@ OR, adding the following as an alias in your `.gitconfig` file and using `git ig
 ign = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 ```
 
-- [How to make Git “forget” about a file that was tracked but is now in .gitignore?](http://stackoverflow.com/a/1274447/1833118)
+- [Apply gitignore on an existing repository already tracking large number of files](https://stackoverflow.com/a/19757964/1833118)
+- [How to make Git "forget" about a file that was tracked but is now in .gitignore?](http://stackoverflow.com/a/1274447/1833118)
 
 ```
 git rm --cached <file>
+
+git add .
+git commit -m '...'
+git push
 ```
 
 - [How do I make Git ignore file mode (chmod) changes?](https://stackoverflow.com/q/1580596/1833118)

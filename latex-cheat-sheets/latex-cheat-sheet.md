@@ -81,6 +81,13 @@ lots of spacing units
 \href{http://tex.stackexchange.com/questions/13423/how-to-color-href-links-in-beamer}{Your question}
 ```
 
+- [How to change the font of URL in the bibliography](https://tex.stackexchange.com/a/106623/23098)
+
+```
+\usepackage{url}
+\urlstyle{same}
+```
+
 ## Floats
 
 ### General Settings
