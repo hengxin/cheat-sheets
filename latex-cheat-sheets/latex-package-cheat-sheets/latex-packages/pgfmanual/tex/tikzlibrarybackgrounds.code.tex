@@ -1,0 +1,148 @@
+% Copyright 2006 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/generic/pgf/licenses/LICENSE for more details.
+
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex,v 1.3 2013/07/18 17:07:38 tantau Exp $
+
+
+% Layers
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+
+% Switch command
+\tikzset{on background layer/.style={
+    execute at begin scope={%
+      \pgfonlayer{background}%
+      \let\tikz@options=\pgfutil@empty%
+      \tikzset{every on background layer/.try,#1}%
+      \tikz@options},
+    execute at end scope={\endpgfonlayer}
+  }
+}
+
+
+% Main style
+
+\tikzstyle{background rectangle}= [draw]
+\tikzstyle{background top}=       [draw]
+\tikzstyle{background bottom}=    [draw]
+\tikzstyle{background left}=      [draw]
+\tikzstyle{background right}=     [draw]
+\tikzstyle{background grid}=      [help lines,draw]
+
+\tikzoption{inner frame sep}{\def\tikz@framexsep{#1}\def\tikz@frameysep{#1}}
+\tikzoption{inner frame xsep}{\def\tikz@framexsep{#1}}
+\tikzoption{inner frame ysep}{\def\tikz@frameysep{#1}}
+\def\tikz@framexsep{1ex}
+\def\tikz@frameysep{1ex}
+
+\tikzoption{outer frame sep}{\def\tikz@outerframexsep{#1}\def\tikz@outerframeysep{#1}}
+\tikzoption{outer frame xsep}{\def\tikz@outerframexsep{#1}}
+\tikzoption{outer frame ysep}{\def\tikz@outerframeysep{#1}}
+\def\tikz@outerframexsep{0ex}
+\def\tikz@outerframeysep{0ex}
+
+
+% Looseness
+
+\tikzstyle{loose background}=     [inner frame sep=2ex]
+\tikzstyle{tight background}=     [inner frame sep=0ex]
+
+
+
+% Showing background styles
+
+\tikzstyle{framed}=                   [style=show background rectangle]
+\tikzstyle{gridded}=                  [style=show background grid]
+
+\tikzstyle{show background rectangle}=[execute at end picture=\tikz@background@framed]
+\tikzstyle{show background top}=      [execute at end picture=\tikz@background@top]
+\tikzstyle{show background bottom}=   [execute at end picture=\tikz@background@bottom]
+\tikzstyle{show background left}=     [execute at end picture=\tikz@background@left]
+\tikzstyle{show background right}=    [execute at end picture=\tikz@background@right]
+\tikzstyle{show background grid}=     [execute at end picture=\tikz@background@grid]
+
+
+% Implementation
+
+\def\tikz@background@save{%
+  \pgftransformreset%
+  \ifx\tikz@bg@minx\@undefined%
+    \pgf@xb=\pgf@picminx%
+    \pgf@yb=\pgf@picminy%
+    \pgf@xc=\pgf@picmaxx%
+    \pgf@yc=\pgf@picmaxy%
+    \pgfmathsetlength{\pgf@x}{\tikz@framexsep}%
+    \pgfmathsetlength{\pgf@y}{\tikz@frameysep}%
+    \advance\pgf@xb by-\pgf@x%
+    \advance\pgf@yb by-\pgf@y%
+    \advance\pgf@xc by\pgf@x%
+    \advance\pgf@yc by\pgf@y%
+    \edef\tikz@bg@minx{\the\pgf@xb}%
+    \edef\tikz@bg@miny{\the\pgf@yb}%
+    \edef\tikz@bg@maxx{\the\pgf@xc}%
+    \edef\tikz@bg@maxy{\the\pgf@yc}%
+    \pgfmathsetlength{\pgf@x}{\tikz@outerframexsep}%
+    \pgfmathsetlength{\pgf@y}{\tikz@outerframeysep}%
+    \advance\pgf@xb by-\pgf@x%
+    \advance\pgf@yb by-\pgf@y%
+    \advance\pgf@xc by\pgf@x%
+    \advance\pgf@yc by\pgf@y%
+    \edef\tikz@bg@outerminx{\the\pgf@xb}%
+    \edef\tikz@bg@outerminy{\the\pgf@yb}%
+    \edef\tikz@bg@outermaxx{\the\pgf@xc}%
+    \edef\tikz@bg@outermaxy{\the\pgf@yc}%
+  \fi%
+}
+
+\def\tikz@background@framed{%
+  \tikz@background@save%
+  \pgfonlayer{background}
+    \path[style=background rectangle] (\tikz@bg@minx,\tikz@bg@miny) rectangle (\tikz@bg@maxx,\tikz@bg@maxy);
+  \endpgfonlayer
+}
+
+\def\tikz@background@top{%
+  \tikz@background@save%
+  \pgfonlayer{background}
+    \path[style=background top] (\tikz@bg@outerminx,\tikz@bg@maxy) -- (\tikz@bg@outermaxx,\tikz@bg@maxy);
+  \endpgfonlayer
+}
+
+\def\tikz@background@bottom{%
+  \tikz@background@save%
+  \pgfonlayer{background}
+    \path[style=background bottom] (\tikz@bg@outerminx,\tikz@bg@miny) -- (\tikz@bg@outermaxx,\tikz@bg@miny);
+  \endpgfonlayer
+}
+
+\def\tikz@background@left{%
+  \tikz@background@save%
+  \pgfonlayer{background}
+    \path[style=background left] (\tikz@bg@minx,\tikz@bg@outerminy) -- (\tikz@bg@minx,\tikz@bg@outermaxy);
+  \endpgfonlayer
+}
+
+\def\tikz@background@right{%
+  \tikz@background@save%
+  \pgfonlayer{background}
+    \path[style=background right] (\tikz@bg@maxx,\tikz@bg@outerminy) -- (\tikz@bg@maxx,\tikz@bg@outermaxy);
+  \endpgfonlayer
+}
+
+\def\tikz@background@grid{%
+  \tikz@background@save%
+  \pgfonlayer{background}
+    \path[style=background grid] (\tikz@bg@minx,\tikz@bg@miny) grid (\tikz@bg@maxx,\tikz@bg@maxy);
+  \endpgfonlayer
+}
+
+                                    
+\endinput

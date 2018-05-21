@@ -103,6 +103,21 @@ Appropriately redefining some other templates you can change also the colors (an
 }
 ```
 
+- [How to position images in Beamer absolutely](https://bryanwweber.com/writing/personal/2014/09/02/how-to-position-images-in-beamer-absolutely/)
+
+```
+\tikz[remember picture, overlay] \node[anchor=center] at (current page.center) {\includegraphics{foo}};
+```
+
+Compile twice to have the picture placed at exactly the center of the slide. 
+The `anchors` can be changed to move the picture around, and further adjustments can be made by using the `calc` library.
+
+```
+\usetikzlibrary{calc}
+
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)-(1,0))$) {\includegraphics{foo}};
+```
+
 ### Title Page
 
 - [Adding a log in title page](http://tex.stackexchange.com/a/21370/23098)

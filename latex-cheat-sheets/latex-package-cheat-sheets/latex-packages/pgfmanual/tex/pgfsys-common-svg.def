@@ -1,0 +1,460 @@
+% Copyright 2006 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/generic/pgf/licenses/LICENSE for more details.
+
+\ProvidesFileRCS $Header: /cvsroot/pgf/pgf/generic/pgf/systemlayer/pgfsys-common-svg.def,v 1.24 2013/08/28 11:00:54 tantau Exp $
+
+
+% Driver commands for svg
+
+
+% Helping functions:
+\let\pgf@sys@svgpath=\pgfutil@empty
+\def\pgf@sys@svgnum#1{%
+  {%
+    \pgf@x=#1\relax%
+    \edef\temp{\expandafter\Pgf@geT\the\pgf@x\space}%
+    \pgfutil@toks@\expandafter\expandafter\expandafter{\expandafter\pgf@sys@svgpath\temp}%
+    \xdef\pgf@sys@svgpath{\the\pgfutil@toks@}%
+  }%
+}
+\def\pgf@sys@addtosvgpath#1{\pgfutil@g@addto@macro\pgf@sys@svgpath{#1\space}}
+\def\pgf@sys@flushsvgpath{\pgfsysprotocol@literal{\pgf@sys@svgpath}\global\let\pgf@sys@svgpath=\pgfutil@empty}
+\def\pgf@sys@svg@gs#1{%
+  {\pgfsysprotocol@literal{<g #1>\pgfsys@svg@newline }}\global\advance\pgf@sys@svg@scopecount by1\relax%
+}
+\newcount\pgf@sys@svg@objectcount
+
+{\catcode`\%=12
+\gdef\pgf@sys@svg@percentchar{%}
+}
+{\catcode`\#=11
+\gdef\pgf@sys@svg@hash{#}
+}
+
+% Path construction:
+\def\pgfsys@lineto#1#2{\pgf@sys@addtosvgpath{L }\pgf@sys@svgnum{#1}\pgf@sys@svgnum{#2}}
+\def\pgfsys@moveto#1#2{\pgf@sys@addtosvgpath{M }\pgf@sys@svgnum{#1}\pgf@sys@svgnum{#2}}
+\def\pgfsys@curveto#1#2#3#4#5#6{%
+  \pgf@sys@addtosvgpath{C }%
+  \pgf@sys@svgnum{#1}\pgf@sys@svgnum{#2}%
+  \pgf@sys@svgnum{#3}\pgf@sys@svgnum{#4}%
+  \pgf@sys@svgnum{#5}\pgf@sys@svgnum{#6}}
+\def\pgfsys@rect#1#2#3#4{%
+  \pgfsys@moveto{#1}{#2}%
+  \pgf@sys@addtosvgpath{h }\pgf@sys@svgnum{#3}%
+  \pgf@sys@addtosvgpath{v }\pgf@sys@svgnum{#4}%
+  \pgf@sys@addtosvgpath{h }{\pgf@x=#3\pgf@x=-\pgf@x\pgf@sys@svgnum{\pgf@x}}%
+  \pgfsys@closepath}
+\def\pgfsys@closepath{\pgf@sys@addtosvgpath{Z}}
+
+% Path usage:
+\newif\ifpgf@sys@svg@clipnext
+\def\pgf@sys@svg@possiblyclippedpath#1{%
+  \ifpgf@sys@svg@clipnext%
+    \global\advance\pgf@sys@svg@objectcount by1\relax%
+    \pgfsysprotocol@literal{<clipPath id="pgfcp\the\pgf@sys@svg@objectcount">
+      <path id="pgfpath\the\pgf@sys@svg@objectcount" d="}%
+    \pgf@sys@flushsvgpath%
+    \pgfsysprotocol@literal{"/>\pgfsys@svg@newline  </clipPath>\pgfsys@svg@newline }
+    \pgfsysprotocol@literal{<use xlink:href="\#pgfpath\the\pgf@sys@svg@objectcount" #1/>\pgfsys@svg@newline }%
+    \pgf@sys@svg@gs{clip-path="url(\#pgfcp\the\pgf@sys@svg@objectcount)"}
+    \pgf@sys@svg@clipnextfalse%
+  \else%
+    \pgfsysprotocol@literal{<path d="}%
+    \pgf@sys@flushsvgpath%
+    \pgfsysprotocol@literal{" #1/>\pgfsys@svg@newline }
+  \fi%
+}
+\def\pgfsys@stroke{\pgf@sys@svg@possiblyclippedpath{style="fill:none"}}
+\def\pgfsys@fill{\pgf@sys@svg@possiblyclippedpath{style="stroke:none"}}
+\def\pgfsys@fillstroke{\pgf@sys@svg@possiblyclippedpath{}}
+\def\pgfsys@clipnext{\pgf@sys@svg@clipnexttrue}
+\def\pgfsys@discardpath{%
+  \ifpgf@sys@svg@clipnext%
+    \global\advance\pgf@sys@svg@objectcount by1\relax%
+    \pgfsysprotocol@literal{<clipPath id="pgfcp\the\pgf@sys@svg@objectcount">
+      <path d="}%
+    \pgf@sys@flushsvgpath%
+    \pgfsysprotocol@literal{"/>\pgfsys@svg@newline </clipPath>\pgfsys@svg@newline }
+    \pgf@sys@svg@gs{clip-path="url(\#pgfcp\the\pgf@sys@svg@objectcount)"}
+    \pgf@sys@svg@clipnextfalse%
+  \else%
+    \global\let\pgf@sys@svgpath=\pgfutil@empty
+  \fi}
+
+% Fill rules:
+\def\pgfsys@eoruletrue{\pgf@sys@svg@gs{fill-rule="evenodd"}}
+\def\pgfsys@eorulefalse{\pgf@sys@svg@gs{fill-rule="nonzero"}}
+
+% Transparency:
+\def\pgfsys@stroke@opacity#1{\pgf@sys@svg@gs{stroke-opacity="#1"}}
+\def\pgfsys@fill@opacity#1{\pgf@sys@svg@gs{fill-opacity="#1"}\def\pgf@sys@svg@opacity{#1}}
+\def\pgf@sys@svg@opacity{1}
+\def\pgfsys@transparencygroupfrombox#1{%
+  \setbox#1=\hbox{%
+  \pgfsys@invoke{<g opacity="\pgf@sys@svg@opacity" stroke-opacity="1" fill-opacity="1">\pgfsys@svg@newline }%
+  \box#1%
+  \pgfsys@invoke{</g>\pgfsys@svg@newline }%
+  }%
+}
+
+% Transformation:
+\def\pgfsys@transformcm#1#2#3#4#5#6{%
+  {\pgf@x=#5\pgf@y=#6%
+  \pgf@sys@svg@gs{transform="matrix(#1,#2,#3,#4,\pgf@sys@tonumber{\pgf@x},\pgf@sys@tonumber{\pgf@y})"}}}
+
+% Scopes
+\newcount\pgf@sys@svg@scopecount
+\def\pgfsys@beginscope{%
+  \edef\pgf@sys@svg@thescopecount{\the\pgf@sys@svg@scopecount}%
+  \begingroup%
+    \pgf@sys@svg@scopecount=1\relax%
+    \pgfsysprotocol@literal{<g>\pgfsys@svg@newline }%
+  }
+\def\pgfsys@endscope{%
+    \loop%
+      \pgfsysprotocol@literal{</g>\pgfsys@svg@newline }%
+      \advance\pgf@sys@svg@scopecount by-1\relax%
+    \ifnum\pgf@sys@svg@scopecount>0\relax%
+    \repeat%
+  \endgroup%
+  \global\pgf@sys@svg@scopecount=\pgf@sys@svg@thescopecount\relax%  
+}
+
+% Graphics state
+\def\pgfsys@setdash#1#2{%
+  \edef\pgf@test@dashpattern{#1}%
+  \ifx\pgf@test@dashpattern\pgfutil@empty%
+    \pgf@sys@svg@gs{stroke-dasharray="none" stroke-dashoffset="#2"}%
+  \else%
+    \pgf@sys@svg@gs{stroke-dasharray="#1" stroke-dashoffset="#2"}%
+  \fi}
+\def\pgfsys@setlinewidth#1{\pgf@sys@svg@gs{stroke-width="#1"}}
+\def\pgfsys@setmiterlimit#1{\pgf@sys@svg@gs{stroke-miterlimit="#1"}}
+\def\pgfsys@buttcap{\pgf@sys@svg@gs{stroke-linecap="butt"}}
+\def\pgfsys@roundcap{\pgf@sys@svg@gs{stroke-linecap="round"}}
+\def\pgfsys@rectcap{\pgf@sys@svg@gs{stroke-linecap="square"}}
+\def\pgfsys@miterjoin{\pgf@sys@svg@gs{stroke-linejoin="miter"}}
+\def\pgfsys@roundjoin{\pgf@sys@svg@gs{stroke-linejoin="round"}}
+\def\pgfsys@beveljoin{\pgf@sys@svg@gs{stroke-linejoin="bevel"}}
+
+
+%
+% Color management
+% 
+
+\def\pgf@sys@svg@color@rgb#1,#2,#3\relax{%
+ {%
+    \pgf@xa=#1pt%
+    \pgf@xa=100\pgf@xa%
+    \pgf@xb=#2pt%
+    \pgf@xb=100\pgf@xb%
+    \pgf@xc=#3pt%
+    \pgf@xc=100\pgf@xc%
+    \xdef\pgf@sys@svg@prepared{rgb(\pgf@sys@tonumber\pgf@xa\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xb\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xc\pgf@sys@svg@percentchar)}%
+  }%
+}
+\def\pgf@sys@svg@color@cmy#1,#2,#3\relax{%
+  {%
+    \pgf@xa=1pt%
+    \advance\pgf@xa by-#1pt%
+    \pgf@xa=100\pgf@xa%
+    \pgf@xb=1pt%
+    \advance\pgf@xb by-#2pt%
+    \pgf@xb=100\pgf@xb%
+    \pgf@xc=1pt%
+    \advance\pgf@xc by-#3pt%
+    \pgf@xc=100\pgf@xc%
+    \xdef\pgf@sys@svg@prepared{rgb(\pgf@sys@tonumber\pgf@xa\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xb\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xc\pgf@sys@svg@percentchar)}%
+  }%
+}
+\def\pgf@sys@svg@color@cmyk#1,#2,#3,#4\relax{%
+  {%
+    \pgf@xa=1pt%
+    \advance\pgf@xa by-#4pt%
+    \pgf@xa=#1\pgf@xa%
+    \advance\pgf@xa by#4pt%
+    \advance\pgf@xa by-1pt%
+    \pgf@xa=-100\pgf@xa%
+    \pgf@xb=1pt%
+    \advance\pgf@xb by-#4pt%
+    \pgf@xb=#2\pgf@xb%
+    \advance\pgf@xb by#4pt%
+    \advance\pgf@xb by-1pt%
+    \pgf@xb=-100\pgf@xb%
+    \pgf@xc=1pt%
+    \advance\pgf@xc by-#4pt%
+    \pgf@xc=#3\pgf@xc%
+    \advance\pgf@xc by#4pt%
+    \advance\pgf@xc by-1pt%
+    \pgf@xc=-100\pgf@xc%
+    \xdef\pgf@sys@svg@prepared{rgb(\pgf@sys@tonumber\pgf@xa\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xb\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xc\pgf@sys@svg@percentchar)}%
+  }%
+}
+\def\pgf@sys@svg@color@gray#1\relax{%
+ {%
+    \pgf@xa=#1pt%
+    \pgf@xa=100\pgf@xa%
+    \xdef\pgf@sys@svg@prepared{rgb(\pgf@sys@tonumber\pgf@xa\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xa\pgf@sys@svg@percentchar,\pgf@sys@tonumber\pgf@xa\pgf@sys@svg@percentchar)}%
+  }%
+}
+
+\def\pgf@sys@svg@gs@color#1{%
+  \ifpgfpicture\pgf@sys@svg@gs{#1}\fi%
+}
+
+\def\pgfsys@color@rgb@stroke#1#2#3{%
+  \pgf@sys@svg@color@rgb#1,#2,#3\relax%
+  \pgf@sys@svg@gs@color{stroke="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@rgb@fill#1#2#3{%
+  \pgf@sys@svg@color@rgb#1,#2,#3\relax%
+  \pgf@sys@svg@gs@color{fill="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@cmyk@stroke#1#2#3#4{%
+  \pgf@sys@svg@color@cmyk#1,#2,#3,#4\relax%
+  \pgf@sys@svg@gs@color{stroke="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@cmyk@fill#1#2#3#4{%
+  \pgf@sys@svg@color@cmyk#1,#2,#3,#4\relax%
+  \pgf@sys@svg@gs@color{fill="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@cmy@stroke#1#2#3{%
+  \pgf@sys@svg@color@cmy#1,#2,#3\relax%
+  \pgf@sys@svg@gs@color{stroke="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@cmy@fill#1#2#3{%
+  \pgf@sys@svg@color@cmy#1,#2,#3\relax%
+  \pgf@sys@svg@gs@color{fill="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@gray@stroke#1{%
+  \pgf@sys@svg@color@gray#1\relax%
+  \pgf@sys@svg@gs@color{stroke="\pgf@sys@svg@prepared"}}
+\def\pgfsys@color@gray@fill#1{%
+  \pgf@sys@svg@color@gray#1\relax%
+  \pgf@sys@svg@gs@color{fill="\pgf@sys@svg@prepared"}}
+
+
+% Shadings:
+\def\pgf@sys@svg@shading@stops{%
+  % Step 1: Compute 1/\pgf@sys@shading@end@pos
+  \pgf@x=\pgf@sys@shading@end@pos\relax%
+  \c@pgf@counta=\pgf@x\relax%
+  \divide\c@pgf@counta by4096\relax%
+  % Step 2: Insert stops.
+  \expandafter\pgf@sys@svg@shading@dostops\pgf@sys@shading@ranges%
+    % dummy for end:
+    {{\pgf@sys@shading@end@pos}{\pgf@sys@shading@end@pos}{\pgf@sys@shading@end@rgb}{\pgf@sys@shading@end@rgb}}%
+    {}% end
+}
+\def\pgf@sys@svg@shading@dostops#1{%
+  \edef\pgf@test{#1}%
+  \ifx\pgf@test\pgfutil@empty%
+  \else%
+    \expandafter\pgf@sys@svg@shading@dostop\pgf@test%
+    \expandafter\pgf@sys@svg@shading@dostops%
+  \fi%
+}
+\def\pgf@sys@svg@shading@dostop#1#2#3#4{%
+  % #1 start pos
+  % #2 end pos
+  % #3 start rgb
+  % #4 end rgb
+  \pgf@sys@svg@addtostops{<stop offset="}%
+  \pgf@x=#1%
+  \pgf@x=16\pgf@x%
+  \divide\pgf@x by \c@pgf@counta\relax%
+  \pgf@sys@svg@addtostops{\pgf@sys@tonumber\pgf@x" stop-color="}%
+  \pgf@sys@svg@shading@dorgb#3%
+  \pgf@sys@svg@addtostops{"/>\noexpand\pgfsys@svg@newline}%
+}
+\def\pgf@sys@svg@shading@dorgb#1#2#3{%
+  \pgf@sys@svg@color@rgb#1,#2,#3\relax%
+  \pgf@sys@svg@addtostops{\pgf@sys@svg@prepared}%
+}
+
+\let\pgf@sys@svg@thestops=\pgfutil@empty
+\def\pgf@sys@svg@addtostops#1{%
+  \edef\pgf@temp{#1}%
+  \expandafter\expandafter\expandafter\def
+  \expandafter\expandafter\expandafter\pgf@sys@svg@thestops
+  \expandafter\expandafter\expandafter{\expandafter\pgf@sys@svg@thestops\expandafter\space\pgf@temp}%
+}
+
+
+\def\pgfsys@horishading#1#2#3{%
+  {%
+    \pgf@parsefunc{#3}%
+    \global\advance\pgf@sys@svg@objectcount by1\relax%
+    \pgf@sys@svg@addtostops{<linearGradient id="pgfsh\the\pgf@sys@svg@objectcount">\noexpand\pgfsys@svg@newline}
+    \pgf@sys@svg@shading@stops%
+    \pgf@sys@svg@addtostops{</linearGradient>\noexpand\pgfsys@svg@newline}%
+    \pgf@process{\pgfpoint{\pgf@sys@shading@end@pos}{#2}}%
+    \expandafter\xdef\csname @pgfshading#1!\endcsname{%
+      \def\noexpand\pgf@sys@svg@sh@defs{\noexpand\pgfsysprotocol@literal{\pgf@sys@svg@thestops}}%
+      \def\noexpand\pgf@sys@svg@sh{\noexpand\pgfsysprotocol@literal{<rect
+        width="\pgf@sys@tonumber{\pgf@x}"
+        height="\pgf@sys@tonumber{\pgf@y}"
+        style="fill:url(\noexpand\#pgfsh\the\pgf@sys@svg@objectcount);
+          stroke:none"/>\noexpand\pgfsys@svg@newline}}%
+      \def\noexpand\pgf@sys@svg@pos{\noexpand\pgfpoint{\the\pgf@x}{\the\pgf@y}}%
+    }%
+  }%
+}
+
+\def\pgfsys@functionalshading#1#2#3#4{%
+  \pgf@sys@fail{functional shadings}%
+  \expandafter\gdef\csname @pgfshading#1!\endcsname{%
+    \let\pgf@sys@svg@sh@defs\relax%
+    \let\pgf@sys@svg@sh\relax%
+    \let\pgf@sys@svg@pos\pgfpointorigin%
+  }%
+}
+
+\def\pgfsys@vertshading#1#2#3{%
+  {%
+    \pgf@parsefunc{#3}%
+    \global\advance\pgf@sys@svg@objectcount by1\relax%
+    \pgf@sys@svg@addtostops{<linearGradient
+      id="pgfsh\the\pgf@sys@svg@objectcount"
+      gradientTransform="rotate(90)">\noexpand\pgfsys@svg@newline}
+    \pgf@sys@svg@shading@stops%
+    \pgf@sys@svg@addtostops{</linearGradient>\noexpand\pgfsys@svg@newline}%
+    \pgf@process{\pgfpoint{\pgf@sys@shading@end@pos}{#2}}%
+    \expandafter\xdef\csname @pgfshading#1!\endcsname{%
+      \def\noexpand\pgf@sys@svg@sh@defs{\noexpand\pgfsysprotocol@literal{\pgf@sys@svg@thestops}}%
+      \def\noexpand\pgf@sys@svg@sh{\noexpand\pgfsysprotocol@literal{<rect
+        width="\pgf@sys@tonumber{\pgf@y}"
+        height="\pgf@sys@tonumber{\pgf@x}"
+        style="fill:url(\noexpand\#pgfsh\the\pgf@sys@svg@objectcount);
+          stroke:none"/>\noexpand\pgfsys@svg@newline}}%
+      \def\noexpand\pgf@sys@svg@pos{\noexpand\pgfpoint{\the\pgf@y}{\the\pgf@x}}%
+    }%
+  }%
+}
+
+\def\pgfsys@radialshading#1#2#3{%
+  {%
+    \pgf@parsefunc{#3}%
+    \pgf@x=\pgf@sys@shading@end@pos\relax%
+    \c@pgf@counta=\pgf@x\relax%
+    \divide\c@pgf@counta by4096\relax%
+    \global\advance\pgf@sys@svg@objectcount by1\relax%
+    \pgf@process{#2}%
+    % Divide by 2\pgf@sys@shading@end@pos%
+    \pgf@x=8\pgf@x%
+    \divide\pgf@x by \c@pgf@counta\relax%
+    \pgf@y=8\pgf@y%
+    \divide\pgf@y by \c@pgf@counta\relax%
+    \advance\pgf@x by.5pt%
+    \advance\pgf@y by.5pt%
+    \pgf@sys@svg@addtostops{<radialGradient
+      id="pgfsh\the\pgf@sys@svg@objectcount"
+      fx="\pgf@sys@tonumber\pgf@x"
+      fy="\pgf@sys@tonumber\pgf@y"
+      >\noexpand\pgfsys@svg@newline}
+    \pgf@sys@svg@shading@stops%
+    \pgf@sys@svg@addtostops{</radialGradient>\noexpand\pgfsys@svg@newline}%
+    \pgf@xa=\pgf@sys@shading@end@pos%
+    \pgf@xb=2\pgf@xa%    
+    \expandafter\xdef\csname @pgfshading#1!\endcsname{%
+      \def\noexpand\pgf@sys@svg@sh@defs{\noexpand\pgfsysprotocol@literal{\pgf@sys@svg@thestops}}%
+      \def\noexpand\pgf@sys@svg@sh{\noexpand\pgfsysprotocol@literal{<circle
+        cx="\pgf@sys@tonumber{\pgf@xa}"
+        cy="\pgf@sys@tonumber{\pgf@xa}"
+        r="\pgf@sys@tonumber{\pgf@xa}"
+        style="fill:url(\noexpand\#pgfsh\the\pgf@sys@svg@objectcount);
+          stroke:none"/>\noexpand\pgfsys@svg@newline}}%
+      \def\noexpand\pgf@sys@svg@pos{\noexpand\pgfpoint{\the\pgf@xb}{\the\pgf@xb}}%
+    }%
+  }%
+}
+
+
+% Patterns
+
+\iffalse % comment until interpage support is available
+
+\def\pgfsys@declarepattern#1#2#3#4#5#6#7#8#9{%
+  % Start building the pattern dictionary:
+  \pgf@xa=#2\relax%
+  \pgf@ya=#3\relax% 
+  \pgf@xb=#4\relax%
+  \pgf@yb=#5\relax%
+  \pgf@xc=#6\relax%
+  \pgf@yc=#7\relax%
+  \ifnum#9=1\relax%
+    % Colored. That's easy:
+    \pgfsysprotocol@literal{
+      <pattern
+        id="pgfpat#1"
+        patternUnits="userSpaceOnUse"
+        width="\the\pgf@xc"
+        height="\the\pgf@yc">
+        #8
+      </pattern>}%
+  \else%
+    % Uncolored. Yikes!
+    \pgfsysprotocol@literal{
+      <pattern
+        id="pgfpat#1"
+        patternUnits="userSpaceOnUse"
+        width="\the\pgf@xc"
+        height="\the\pgf@yc"/>
+      <symbol id="pgfsym#1">
+        #8
+      </symbol>}%
+  \fi%
+}
+
+\def\pgfsys@setpatternuncolored#1#2#3#4{%
+  \global\advance\pgf@sys@svg@objectcount by1\relax%
+  \pgf@sys@svg@color@rgb#2,#3,#4\relax%
+  \pgfsysprotocol@literal{
+    <pattern id="pgfupat\the\pgf@sys@svg@objectcount" xlink:href="\#pgfpat#1">
+    <g stroke="\pgf@sys@svg@prepared" fill="\pgf@sys@svg@prepared"> <use xlink:href="\#pgfsym#1"/> </g>
+    </pattern>}
+  \pgf@sys@svg@gs@color{fill="url(\#pgfupat\the\pgf@sys@svg@objectcount)"}%
+}
+
+\def\pgfsys@setpatterncolored#1{%
+  \pgf@sys@svg@gs@color{fill="url(\#pgfpat#1)"}%
+}
+
+\fi
+
+
+
+
+% Fadings
+
+%
+% Opacity masks
+%
+% \def\pgfsys@fadingfrombox#1#2{%
+%   \setbox#2=\hbox{%
+%     \pgfsys@invoke{<mask id="pgfmask#1">}%
+%     \box#2%
+%     \pgfsys@invoke{</mask>}%
+%   }%
+%   \wd#2=0pt%
+%   \ht#2=0pt%
+%   \dp#2=0pt%
+%   \unskip\box#2%
+% }
+% \def\pgfsys@usefading#1#2#3#4#5#6#7{%
+%   \pgf@sys@svg@gs@color{mask="url(\#pgfmask#1)"}%
+% }
+
+
+
+%
+
+\def\pgfutil@color{\pgfsetcolor}
+
+\endinput
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% End: 

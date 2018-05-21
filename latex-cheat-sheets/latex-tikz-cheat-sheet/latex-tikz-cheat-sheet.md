@@ -155,6 +155,21 @@ Using `out=, in=` and `looseness`:
 
 - ($(node1.center)!0.5!(node2.center)$)
 
+- [Perpendicular line to two-points-line given the length](https://tex.stackexchange.com/a/67397/23098)
+
+```
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[dot/.style={circle,inner sep=1pt,fill,label={#1},name=#1}]
+
+\node [dot=A] at (0,0) {};
+\node [dot=B] at (3,1) {};
+\draw (A) -- (B);
+
+\draw (B) -- ($(B)!1cm!-90:(A)$);
+\end{tikzpicture}
+```
+
 ## Decorations Library
 
 - [Curved waved lines (Snakes) with TikZ](http://tex.stackexchange.com/a/88951/23098)

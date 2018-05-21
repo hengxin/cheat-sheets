@@ -1,0 +1,40 @@
+% Copyright 2006 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/generic/pgf/licenses/LICENSE for more details.
+
+\ProvidesFileRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryer.code.tex,v 1.2 2008/02/20 11:00:42 tantau Exp $
+
+\usetikzlibrary{shapes.geometric}
+
+% Styles for entity types:
+
+\tikzstyle{every entity}=           []
+\tikzstyle{entity}=                 [rectangle,draw,
+                                     minimum height=2\baselineskip,
+                                     minimum width=4\baselineskip,every entity]
+
+
+% Styles for relationship types:
+
+\tikzstyle{every relationship}=     []
+\tikzstyle{relationship}=           [diamond,draw,
+                                     minimum size=1.5\baselineskip,
+                                     inner sep=1pt,
+                                     every relationship]
+
+
+% Styles for relationship types:
+
+\tikzstyle{every attribute}=        []
+\tikzstyle{attribute}=              [minimum size=1.5\baselineskip,ellipse,draw,every attribute]
+\tikzstyle{key attribute}=          [font=\itshape,attribute]
+
+
+
+
+\endinput

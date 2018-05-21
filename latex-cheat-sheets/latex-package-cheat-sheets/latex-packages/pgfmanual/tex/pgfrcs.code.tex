@@ -1,0 +1,109 @@
+% Copyright 2006 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/generic/pgf/licenses/LICENSE for more details.
+
+
+
+% The purpose of this file is to define the command
+% \ProvidesPackageRCS, which should be followed by an RCS id
+% string. This command will also be available in plain TeX, where it
+% prints out a message to the log.
+
+
+%\def\pgfversion{3.0.1-cvs}
+\def\pgfversion{3.0.1a}
+
+\begingroup
+\catcode`\"=12
+\pgfutil@IfUndefined{directlua}{}{%
+	\directlua{pgf = {}; pgf.pgfversion = "\pgfversion"}%
+}%
+\endgroup
+
+%\def\pgftypesetversion{\oldstylenums{3}.\oldstylenums{0}.\oldstylenums{1}-cvs}
+\def\pgftypesetversion{\oldstylenums{3}.\oldstylenums{0}.\oldstylenums{1}a}
+
+
+\ifx\pgfrcsloaded\undefined
+\def\pgfrcsloaded{}
+
+\edef\pgfrcsatcode{\the\catcode`\@}
+\catcode`\@=11
+
+% Get date and version from RCS Ids
+\def\pgf@parseid $#1: #2.#3,v #4 #5/#6/#7 #8${%
+  \pgf@parsercsfile$#2/$
+  \def\pgf@rcssuffix{#3}
+  \def\pgf@rcsrevision{#4}
+  \def\pgf@rcsdate{#5/#6/#7}
+}
+\def\pgf@parsercsfile$#1/#2${
+  \def\pgf@temp{#2}
+  \ifx\pgf@temp\pgfutil@empty
+    \def\pgf@rcsfile{#1}
+  \else
+    \pgf@parsercsfile$#2$
+  \fi}
+
+\def\ProvidesFileRCS{%
+  \def\pgfrcs@marshal{\ProvidesFile{\pgf@rcsfile.\pgf@rcssuffix}}%
+  \pgfrcs@parserest%
+}
+
+\def\ProvidesPackageRCS{%
+  \def\pgfrcs@marshal{\ProvidesPackage{\pgf@rcsfile}}%
+  \pgfrcs@parserest%
+}
+
+\def\pgfrcs@parserest{%
+  \def\pgf@rcsadditional{}%
+  \afterassignment\pgfrcs@checkforoptional\let\next=}
+
+\def\pgfrcs@checkforoptional{%
+  \ifx\next[%
+    \let\next=\pgfrcs@getoptional%
+  \else
+    \let\next=\pgfrcs@package%
+  \fi%
+  \next}%}
+
+\def\pgfrcs@getoptional#1] ${%
+  \def\pgf@rcsadditional{#1}%
+  \pgfrcs@package%
+}
+
+\def\pgfrcs@package#1${
+  \pgf@parseid $#1$
+  \pgfrcs@marshal[\pgf@rcsdate\space\pgf@rcsadditional\space(rcs-revision \pgf@rcsrevision)]
+}
+
+\def\ProvidesClassRCS $#1$ [#2]{%
+  \pgf@parseid $#1$
+  \ProvidesClass{\pgf@rcsfile}[\pgf@rcsdate\space#2\space (rcs-revision \pgf@rcsrevision)]
+}
+
+\ifx\ProvidesPackage\@undefined
+  % plain tex
+  \def\ProvidesPackage#1[#2]{\wlog{Loading package #1 version #2.}}
+\fi
+
+\ifx\ProvidesFile\@undefined
+  % plain tex
+  \def\ProvidesFile#1[#2]{\wlog{Loading file #1 version #2.}}
+\fi
+
+\ProvidesPackageRCS[v\pgfversion] $Header: /cvsroot/pgf/pgf/generic/pgf/utilities/pgfrcs.code.tex,v 1.31 2015/08/07 10:17:34 cfeuersaenger Exp $
+
+\catcode`\@=\pgfrcsatcode
+
+\fi
+
+
+% Local Variables:
+% coding: undecided-unix
+% End:
