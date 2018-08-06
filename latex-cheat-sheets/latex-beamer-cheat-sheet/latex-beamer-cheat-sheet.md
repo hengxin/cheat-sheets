@@ -92,16 +92,25 @@ Appropriately redefining some other templates you can change also the colors (an
 - [Import tikz overlay files]
 
 ```
-% needed: \usepackage[export]{adjustbox}
+\begin{center}
+  \resizebox{0.75\textwidth}{!}{\input{tikz/katomicity-trace-not12atomic}}
+\end{center}
+```
+
+
+```
+\usepackage[export]{adjustbox}
 \newcommand{\importikznocaption}[3]{% #1: width, #2: height, #3: tex
 \begin{figure}[h!]
     \centering
     \begin{adjustbox}{max totalsize = {#1}{#2}, center}
-	  \input{#3}
+      \input{#3}
     \end{adjustbox}
   \end{figure}
 }
 ```
+
+
 
 - [How to position images in Beamer absolutely](https://bryanwweber.com/writing/personal/2014/09/02/how-to-position-images-in-beamer-absolutely/)
 

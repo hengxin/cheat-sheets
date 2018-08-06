@@ -33,3 +33,13 @@ For possible issues, see [exceptions](http://stackoverflow.com/a/7200624/1833118
 
 - Rename online
 - `git remote set-url origin new_url`: change a remote's URL
+
+## [How do you merge two Git repositories?](https://stackoverflow.com/a/10548919/1833118)
+
+```
+cd path/to/project-b
+git remote add project-a path/to/project-a
+git fetch project-a
+git merge --allow-unrelated-histories project-a/master # or whichever branch you want to merge (delete the parameter "--allow-unrelated-histories" if it failed)
+git remote remove project-a
+```
