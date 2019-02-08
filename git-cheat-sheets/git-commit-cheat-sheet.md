@@ -39,11 +39,6 @@ git push --force origin master	% `--force`
  - `git reset <file>` to remove this file from the current index
  - `git reset` to unstage all due changes
 
-### Amend the commit message *before* push
- - `git commit --amend` to promote an editor with the original message; OR,
- - `git commit --amend -m 'new commit message'`
-
-
 ### Discard unstaged changes
   - `git clean -df` to first removes all untracked files if you want, and then
   - `git checkout the-file-to-discard` for specific file; OR
@@ -58,3 +53,27 @@ git push --force origin master	% `--force`
   - `git log`: to get the commit hash
   - `git revert <commit-hash>`: revert the commit
   - `git push`: send it to remote as usual
+
+## Amend Commits
+
+### Amend the commit message *before* push
+ - `git commit --amend` to promote an editor with the original message; OR,
+ - `git commit --amend -m 'new commit message'`
+
+### [Undo commit `author/email` for specific commits](https://stackoverflow.com/questions/3042437/how-to-change-the-commit-author-for-one-specific-commit)
+
+Using "Interactive Rebase" as follows.
+
+### [Using Interactive Rebase to Edit Past Commits](https://www.git-tower.com/learn/git/faq/change-author-name-email)
+The first step is to identify the last "good" commit and provide its hash to the `rebase` command:
+- `git rebase -i -p 0ad14fa5`
+You can amend the commit now, with
+- `git commit --amend`
+Once you are satisfied with your changes, run
+- `git rebase --continue`
+
+### [Using `git filter-branch` to Edit Past Commits](https://www.git-tower.com/learn/git/faq/change-author-name-email)
+Using script.
+
+### [Edit commit `author/email` for the last commit](https://www.git-tower.com/learn/git/faq/change-author-name-email)
+- `git commit --amend --author="John Doe <john@doe.org>"`
