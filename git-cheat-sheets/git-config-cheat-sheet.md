@@ -47,3 +47,17 @@ Or, alternatively, adding the following snippet to your git config file (`$HOME/
 [core]
     quotepath = false
 ```
+
+- [git cannot clone or push? failed to connect, connection refused @ StackOverflow](https://stackoverflow.com/q/24543372/1833118)
+
+```
+fatal: unable to access 'https://github.com/xxxx/xxxx.git': Failed to connect to 127.0.0.1 port 8087: Connection refused
+```
+
+  - [This happens because a proxy is configured in git.](https://stackoverflow.com/a/43137514/1833118)
+
+  ```
+  env|grep -i proxy
+
+  unset https_proxy
+  ```
