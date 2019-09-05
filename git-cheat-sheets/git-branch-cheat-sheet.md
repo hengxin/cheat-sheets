@@ -63,3 +63,38 @@ git pull origin <branchname> --allow-unrelated-histories
 
 - [Move existing, uncommited work to a new branch in Git@stackoverflow](http://stackoverflow.com/q/1394797/1833118)
 `git checkout -b <new-branch>`: This will leave your current branch as is, create and checkout a new branch and keep all your changes. Then `git add <files>`, `git commit`.
+
+## Push/Pull All Branches
+
+- [Push all local branches to origin in git @ stackoverflow](https://stackoverflow.com/a/23892232/1833118)
+
+```
+git push --all -u
+```
+
+- OR: [`git push --all origin -u`](https://stackoverflow.com/a/10479068/1833118)
+  - `---all`: Instead of naming each ref to push, specifies that all refs under refs/heads/ be pushed.
+  - `-u` (--set-upstream): For every branch that is up to date or successfully pushed,
+add upstream (tracking) reference.
+  - `-u` is useful if you intent to pull from these branches later.
+- `git push --tags origin` to push all tags.
+
+- [How to fetch all Git branches @ stackoverflow](https://stackoverflow.com/q/10312521/1833118)
+
+```
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull --all
+```
+
+```
+git fetch --all
+```
+
+`fetch` updates *local copies of remote branches* so this is always safe for your local branches BUT:
+- `fetch` will *not* update local branches (which track remote branches); 
+if you want to update your local branches you still need to `pull` every branch.
+- `fetch` will *not* create local branches (which track remote branches), 
+you have to do this manually. 
+
+If you want to list all remote branches: `git branch -a`.

@@ -64,6 +64,22 @@ may result in a hard-to-debug [error](https://tex.stackexchange.com/a/213279/230
 \end{figure}
 ```
 
+### [`subfig.sty`]()
+Used in [`IEEEtran.cls`](https://www.ctan.org/pkg/ieeetran)
+
+```
+\begin{figure*}[!t]
+  \centering
+  \subfloat[Case I]{\includegraphics[width=2.5in]{box}
+  \label{fig_first_case}}
+  \hfil
+  \subfloat[Case II]{\includegraphics[width=2.5in]{box}
+  \label{fig_second_case}}
+  \caption{Simulation results for the network.}
+  \label{fig_sim}
+\end{figure*}
+```
+
 ## Figure Styles
 
 - [How can I reduce padding after figure?](https://tex.stackexchange.com/a/23315/23098)
