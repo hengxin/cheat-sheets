@@ -15,5 +15,6 @@ Now you can login via `ssh <user>@<ip>` or `ssh <user>@<hostname>` *without* ent
 - `service ssh restart`: restart
 
 ## Files
-- `scp file user@host: /pathtowrite_file`: Copy file to remote host
+- `scp file user@host:/path/to/write_file/`: Copy file to remote host
+- `scp user@host:/path/to/file /path/to/write_file/`: Download file from remote host
 - `echo 'Some Text' | ssh user@remotehost "cat > /remotefile.txt"`: [Write to remote host](http://superuser.com/a/400720)
