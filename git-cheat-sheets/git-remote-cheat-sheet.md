@@ -17,3 +17,11 @@ git remote -v
 git remote rename origin destination
 git remote -v
 ```
+
+## [Remove a remote](https://help.github.com/en/articles/removing-a-remote)
+
+```
+git remote -v
+git remote rm destination
+git remote -v
+```
