@@ -151,6 +151,9 @@
 
 ## [`kill`]()
 - [kill -s 9 `ps aux | grep skype`](http://askubuntu.com/a/396529/306000)
+- `kill -l`: Shows all types of signals that can be sent to the kill command.
+- `kill -s SIGKILL 4500`: Sends a signal to force the process to terminate.
+- `kill -s 9 4557`: kills the process.
 
 ## Networking
 
