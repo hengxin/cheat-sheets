@@ -114,6 +114,8 @@
 - [`tar -xvzf community_images.tar.gz`](http://askubuntu.com/a/25348/306000)
   - f: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file.
   - z: tells tar to decompress the archive using gzip
+  - j: use the bzip2 compaction agent.
+  - u: “update” mode. It just updates the contents of a tar file.
   - x: tar can collect files or extract them. x does the latter.
   - v: makes tar talk a lot. Verbose output shows you all the files being extracted.
 - [`tar xf community_images.tar.gz`](http://askubuntu.com/a/398336/306000) suffices.
