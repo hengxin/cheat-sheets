@@ -25,3 +25,18 @@ $ docker version
 // Short information 
 $ docker --version
 ```
+
+## Fundamentals of Docker Container Management
+
+There are some commands you can use to work with Docker.
+
+```
+$ docker container ls (shows running containers).
+
+$ docker container ls -a (shows all containers, running, dead, stopped).
+
+$ docker container run -ti hello-world (runs a hello-world image with interactivity and connected using the -ti option).
+
+$ $ docker container attach (connects to the container).
+```
+
