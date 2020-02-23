@@ -1,8 +1,14 @@
-# LaTeX TikZ Cheat Sheet
+﻿# LaTeX TikZ Cheat Sheet
 
 ## Basics
 
 - [Imported into other documentclass]()
+```
+\resizebox{\textwidth}{!}{\input{<file>}}
+```
+```
+\includestandalone[width=\textwidth]{<file>}
+```
 
 ```
 \usepackage{adjustbox}
