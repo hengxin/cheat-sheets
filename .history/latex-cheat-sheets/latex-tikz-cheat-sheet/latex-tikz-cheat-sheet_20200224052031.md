@@ -1,8 +1,5 @@
 ﻿# LaTeX TikZ Cheat Sheet
 
-## Tutorial
-- [TikZ Blog](https://latexdraw.com/)
-
 ## Basics
 
 - [Imported into other documentclass]()
