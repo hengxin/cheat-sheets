@@ -10,6 +10,10 @@ git remote set-url origin git://new.url.here
 git remote -v
 ```
 
+- [Error with renamed repo in GitHub: "remote: This repository moved. Please use the new location"](https://stackoverflow.com/a/30443593)
+  ```
+  git remote set-url origin [updated link url https://........git]
+  ```
 ## [Rename a remote](https://help.github.com/articles/renaming-a-remote/)
 
 ```

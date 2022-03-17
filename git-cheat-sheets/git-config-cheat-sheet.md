@@ -61,3 +61,20 @@ fatal: unable to access 'https://github.com/xxxx/xxxx.git': Failed to connect to
 
   unset https_proxy
   ```
+
+- [GitHub - failed to connect to github 443 windows/ Failed to connect to gitHub - No Error](https://stackoverflow.com/a/28047670)
+  ```
+  git config --global http.proxy ""
+  ```
+
+- [ssh: connect to host github.com port 22: Connection timed out](https://stackoverflow.com/a/52817036)
+  ```
+  sudo nano ~/.ssh/config
+  ```
+  Add the following:
+  ```
+  Host github.com
+    Hostname ssh.github.com
+    Port 443
+  ```
+  Then, run the command `ssh -T git@github.com` to confirm if the issue is fixed  .
