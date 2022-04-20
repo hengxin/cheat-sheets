@@ -54,6 +54,11 @@ git push --force origin master	% `--force`
   - `git revert <commit-hash>`: revert the commit
   - `git push`: send it to remote as usual
 
+### [git - how to revert multiple recent commits](http://serebrov.github.io/html/2014-01-04-git-revert-multiple-recent-comments.html)
+  - `git reset --hard HEAD~3`
+    - `git reset` will rewirte history
+    - `--hard` will remove not-commited local changes
+
 ## Amend Commits
 
 ### Amend the commit message *before* push

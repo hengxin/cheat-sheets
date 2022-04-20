@@ -68,12 +68,12 @@
 - `mkdir <dir>`: create empty directory `<dir>`
 - `touch <file>`: create empty file `<file>`
 
-### `chmod` 
-- `sudo chmod 776 <file>` 
-- [`sudo -R chmod 776 <dir>`](http://stackoverflow.com/a/3740159/1833118): chmod recursively 
+### `chmod`
+- `sudo chmod 776 <file>`
+- [`sudo -R chmod 776 <dir>`](http://stackoverflow.com/a/3740159/1833118): chmod recursively
 
 ### `chown`
-- [`find . -type f -name '*.pdf' | xargs chown someuser:somegroup`](http://superuser.com/a/260939): This starts in current dir '.' to look for files (filetype f) of name pattern `'*.pdf'` then passes to xargs, which constructs a command line to chmod. 
+- [`find . -type f -name '*.pdf' | xargs chown someuser:somegroup`](http://superuser.com/a/260939): This starts in current dir '.' to look for files (filetype f) of name pattern `'*.pdf'` then passes to xargs, which constructs a command line to chmod.
 - [chown -R <usr:grp> <dir>](http://superuser.com/q/260925): chown recursively
 
 ### Move (Rename) and Copy
@@ -99,10 +99,10 @@
 ### [Rsync: a remote and local file synchronization tool](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps)
 - `rsync -avzP -e 'ssh' /path/to/local/dir user@remotehost:/path/to/remote/dir`
   - `-a`: a combination flag
-  - `-v`: verbose 
+  - `-v`: verbose
   - `-z`: compression
   - `-P`: show progress
-	
+
 ### Read and Write Files and Directories
 - `head -n 10 <file>`: Print the first 10 lines of file
 - `tail -n 10 <file>`: Print the last 10 lines of file
@@ -122,13 +122,17 @@
 - [How do I zip up multiple files on command line?](https://askubuntu.com/a/777050/306000)
   - `ls | grep 1-2- | zip -@ 1-2.zip`: zip files beginning with `1-2-`
   - `ls | grep .jpg | zip -@ images.zip`: zip up jpgs
-  
+
   At some point tar was upgraded to auto-decompress.
 
 ### Printer
 - [`:hardcopy`](http://stackoverflow.com/a/1410821/1833118): send this file to printer
 - [`:set printdevice = xxx`](http://stackoverflow.com/a/26287771/1833118): set options for printing
 - [`:hardcopy > output.pdf`](http://stackoverflow.com/a/26287771/1833118): print as pdf
+
+## `find`
+- [Find files larger than given size (gb/mb/kb/bytes)](https://thispointer.com/linux-find-files-larger-than-given-size/)
+  - `find /usr -type f -size +4G`: To find files larger than 4GB
 
 ## Windows
 
