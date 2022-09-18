@@ -5,6 +5,7 @@
 - [marp-team / marp-core](https://github.com/marp-team/marp-core)
 - [Marpit: Markdown slide deck framework](https://marpit.marp.app/)
 - [marp-team / marp-vscode](https://github.com/marp-team/marp-vscode)
+- [marp.app/docs](https://marp.app/docs)
 
 ## Tutorial
 ### Marp
