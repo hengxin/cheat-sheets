@@ -25,6 +25,14 @@
 - [jdbrice/marp-example.md](https://gist.github.com/jdbrice/3478cbf98acfd936f9e32d645376ebe5)
   - css for `split` and `fig`
 
+## Deploy
+- [ralexander-phi / marp-to-pages](https://github.com/ralexander-phi/marp-to-pages)
 ## QA
 - [How to move title up or down?](https://github.com/marp-team/marp-core/issues/177)
   - `<style scoped>section { justify-content: start; }</style>`
+
+## TODO
+- caption for figures
+- always centered h1 (even with two bgs)
+- css for `ins` and `del`
+- pause
