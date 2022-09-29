@@ -27,12 +27,14 @@
 
 ## Deploy
 - [ralexander-phi / marp-to-pages](https://github.com/ralexander-phi/marp-to-pages)
-## QA
+## FAQ
 - [How to move title up or down?](https://github.com/marp-team/marp-core/issues/177)
   - `<style scoped>section { justify-content: start; }</style>`
+- [Any initiative to implement columns in Marp?](https://github.com/orgs/marp-team/discussions/192)
 
 ## TODO
 - caption for figures
 - always centered h1 (even with two bgs)
 - css for `ins` and `del`
 - pause
+- [x] columns
