@@ -1,5 +1,13 @@
 # Marp
 
+## Installation
+- Install [`node.js/npm`](https://nodejs.org/en/)
+- Install [`marp-core`](https://www.npmjs.com/package/@marp-team/marp-core)
+  > npm install --save @marp-team/marp-core
+- Install [`marp-cli`](https://github.com/marp-team/marp-cli)
+  > npm install -g @marp-team/marp-cli
+- Install [`Marp for VS Code`](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
+
 ## Official
 - [Marp: Markdown Presentation Ecosystem](https://marp.app/#get-started)
 - [marp-team / marp-core](https://github.com/marp-team/marp-core)
