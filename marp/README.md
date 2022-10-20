@@ -29,9 +29,11 @@
 - [CommonMark: A strongly defined, highly compatible specification of Markdown](https://commonmark.org/)
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 
-## CSS
+## Themes and CSS
 - [jdbrice/marp-example.md](https://gist.github.com/jdbrice/3478cbf98acfd936f9e32d645376ebe5)
   - css for `split` and `fig`
+- [用Markdown写PPT ，Marp的果壳主题](https://zhuanlan.zhihu.com/p/447797515)
+- [Markdown PPT | 如何自定义Marp主题](https://zhuanlan.zhihu.com/p/449668027)
 
 ## Deploy
 - [ralexander-phi / marp-to-pages](https://github.com/ralexander-phi/marp-to-pages)
